@@ -1,38 +1,599 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* fonts */
+
+@font-face {
+  font-family: "PTSans-Regular";
+  src: url(./Components//PTSans-Regular.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: "PTSerif-Bold";
+  src: url(./Components//PTSerif-Bold.ttf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* endfont */
+
+
+
+/* Navbar///////////////////////////// */
+
+.nav{
+ background-color: aliceblue;
+ height: 10vh;
+ padding: 0px 100px 0px 100px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+
+}
+
+.nav .logo img{
+height: 45px;
+object-fit: cover;
+}
+
+.nav .links{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* End-Navbar/////////////////////////////////////////// */
+
+
+
+
+
+/* Home////////////////////////////////////////////// */
+
+
+
+
+.home img{
+ position: absolute;
+ height: 84vh;
+ width: 100%;
+ object-fit: contain;
+
+}
+
+.home .textbackgroung{
+  position: relative;
+    z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rgba(240, 248, 255, 0.219); */
+  height: 95vh;
+
+}
+
+.home .textbackgroung  .button{
+  z-index: 1;
+  height: 6vh;
+  background-color:#202020;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+.textbackgroung  .button{
+  margin-bottom: 30px;
+}
+
+.textbackgroung .button a{
+ font-weight: 600;
+  text-decoration: none;
+  color: white;
+  
+}
+
+.home .textbackgroung .paragraphbanner{
+  z-index: 1;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 40%;
+
+}
+
+/* .paragraphbanner h1{
+  font-size: 70px;
+  font-weight: bold;
+  color: black;
+  justify-content: center;
+  display: flex;
+} */
+
+.home-bikes-mtr{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-bikes-mtr .four-all{
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-bottom: 50px;
+}
+
+.first-page
+.first-page .icon{
+  height: 25px;
+}
+
+.first-page .icon--circle{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.first-page .more--less{
+  font-size: 22px;
+  font-weight: 700;
+  
+}
+
+.first-page p{
+  color: #fff;
+  font-family: "PTSans-Regular";
+}
+
+.four-all .first-page{
+padding: 5px 0px 5px 15px;
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  width: 23%;
+  background-color: #202020;
+  border-radius: 3px;
+}
+
+.first-page .plus-nikes{
+  padding-left: 8px;
+}
+
+marquee p{
+  font-family: "PTSans-Regular";
+  font-size: 17px;
+}
+
+marquee p .red{
+ color: red;
+font-weight: 600;
+ 
+
+}
+
+marquee p .blue{
+color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+/* End-Home///////////////////////////////////////////// */
+
+/* Services */
+.services{
+  padding-top:40px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F1F1;
+
+}
+.services h2{
+font-size: 40px;
+padding-bottom: 15px;
+font-family: "PTSerif-Bold";
+font-weight: 700;
+}
+
+.services .card--container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.card--container .card--services{
+  background-color: #202020;
+  border-radius: 5px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px 20px 15px;
+
+}
+
+.card--services .card--service--text{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+
+}
+
+.card--services img{
+  height: 70px;
+  width: 70px;
+  position: relative;
+  border-radius: 50%;
+}
+.card--services .name{
+  padding: 4px 0px 4px 0px;
+  font-size: 20px;
+  font-weight: 600;
+ 
+}
+.card--services p{
+  color: #fff;
+  font-family: "PTSans-Regular";
+}
+
+/* END Services */
+
+
+/* Contact--us */
+.contact--container{
+  padding-top: 50px;
+  padding-bottom: 50px;
+ 
+  background-color: #F1F1F1;
+}
+.contact--container .contact--body{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+.contact--body .contact--text{
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 14vh;
+  padding-bottom: 8px;
+
+}
+
+.contact--text h2{
+  font-size: 40px;
+  font-family: "PTSerif-Bold";
+font-weight: 700;
+}
+
+.contact--text h3{
+  font-family: "PTSerif-Bold";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.contact--body   .contact--form{
+  height: 59vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; 
+  border: none;
+} 
+input{
+  border: none;
+  outline: none;
+}
+
+.contact--form .form{
+  height: 7vh;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-top: 5px;
+  color: gray;
+  font-size: 16px;
+  font-family: "PTSans-Regular";
+  font-weight: 500;
+}
+  
+.contact--form  .form--text{
+  width: 100%;
+  height: 21vh;
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: gray;
+  font-size: 16px;
+  font-family: "PTSans-Regular";
+  font-weight: 500;
+}
+
+.contact--form .form--button{
+  margin-top: 15px;
+  height: 6vh;
+  width: 110px;
+  border: none;
+  background-color: #FFFFFF;
+  font-family: "PTSans-Regular";
+  font-weight: 600;
+  font-size: 16px;
+
+}
+
+
+/* End Contact--us */
+
+/* Footerlinks */
+.fotter--container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F1F1;
+
+}
+
+  .iconstext{
+    padding: 5px 0px 5px 0px;
+  display: flex;
+  align-items: center;
+
+}
+
+.icon--text h4{
+margin-bottom: 8px;
+font-size: 20px;
+font-family: "PTSerif-Bold";
+font-weight: 700;
+
+}
+
+.iconstext p,a{
+  padding-left: 4px;
+  text-decoration: none;
+  font-family: "PTSans-Regular";
+}
+
+ .allfourlinks  .four--links{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+ }
+
+ .allfourlinks{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ }
+/* End footerlinks */
+
+
+/* Find-YOUR-BIKE///////////////////////////////////////// */
+  
+ .Stock--container{
+  padding: 0px  20px 25px 20px;
+  display: flex;
+  height: 54.7vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: white;
+  overflow-y: auto;
+ 
+ }
+
+.Card--container{
+  border-radius: 5px;
+ box-shadow: 3px 3px 3px -3px gray;
+  padding-top: 40px;
+  width: 300px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  transition: .5s;
+}
+
+.Card--container:hover{
+
+  box-shadow: 5px 5px 5px #bfbfbf;
+
+}
+
+ .Card--container img{
+ 
+  height: 200px;
+  width: 300px;
+  object-fit: contain;
+  border-radius: 9px;
+ }
+
+ .Card--container .text{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+
+
+ }
+
+ .text .type{
+  font-weight: 700;
+  padding-bottom: 3px;
+ }
+
+ .Card--container .text p{
+  font-family: "PTSans-Regular";
+ }
+ 
+ 
+
+ 
+
+
+/* END-FIND-YOUR-BIKE///////////////////////////////////////////// */
+
+
+
+
+
+/* Oderstock///////////////////////////////////////////////////////////// */
+
+.option .buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+ 
+.option h3{
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "PTSerif-Bold";
+
+  padding: 15px 0px 15px 119px;
+  
+}
+
+.option .buttons button{
+ height: 5vh;
+ width: 85px;
+ background-color:#202020;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 3px;
+ border: none;
+ transition: .6s;color: #fff;
+ font-family: "PTSans-Regular";
+ font-weight: 600;
+
+}
+
+.option .buttons button:hover{
+ background-color: #bfbfbf;
+ scale: 1.2;
+
+}
+
+.option .buttons {
+  font-size: 16px;
+  text-decoration: none;
   color: white;
 }
+  
 
-.App-link {
-  color: #61dafb;
+.buttons .btn2{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+height: 13vh;
+padding-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* End-Oderstock////////////////////////////////////////////////////////////// */
+
+
+/* Productsrent */
+.text  .add--details .b-details-add{
+
+ width: 90px;
+ height: 4vh;
+ color: #fff;
+ font-weight: 600;
+ border: none;
+ background-color: #202020;
+ border-radius: 3px;
+
+}
+
+.text  .add--details{
+  padding-top: 15px;
+display: flex;
+justify-content: space-between;
+  width: 70%;
+
+}
+
+
+
+/* END-Productsrent */
+
+
+
+
+/* products//////////////////////////////////// */
+
+.navlinks .products-link{
+display: flex;
+justify-content: space-between;
+width: 205px;
+  margin: 20px 0px 20px 43px;
+}
+
+.navlinks .products-link .button{
+width: 86px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 3px;
+  background-color: burlywood;
+  height: 5vh;
+  transition: 0.5s ease-in-out;
+}
+
+.navlinks .products-link .button:hover{
+  background-color: aqua;
+  transform:translate 0.5s;
+}
+
+
+.navlinks .products-link a{
+  /* margin-left: 35px; */
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+.navlinks .search-bar--conatainer{
+  padding-top: 20px;
+  margin-right: 43px;
+  display: flex;
+  justify-content: flex-end;
+}
+.navlinks .search-bar--conatainer .search-bar{
+width: 700px;
+height: 5vh;
+  
 }
