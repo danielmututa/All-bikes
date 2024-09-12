@@ -1,69 +1,77 @@
-// import React, {createContext, useState} from 'react'
-// import DataCards from '../Datafile/Datafile';
+import React, {createContext, useState} from 'react'
+import DataCards from '../Datafile/Datafile';
 
-// export const ShopContext =  createContext(null);
-// const getDefaultCart = () => {
-//     let cart = {};
-//     for (let i = 1; i < DataCards.length + 1; i++ ) {
-//         cart[i] =0
-//     }
-//     return cart;
-// }
-// const Shopcontextprovider = (props) => {
-//     const [cartItems , setCartItems] =useState(getDefaultCart);
-
-
-//     // adding items to cart by id for example
-// const addToCart = (itemId) => {
-//     setCartItems((prev) => ({...prev, [itemId] : prev[itemId] + 1}))
-// }
-
-// const removeFromCart = (itemId) => {
-//     setCartItems((prev) => ({...prev, [itemId] : prev[itemId] + 1}))
-// }
+export const ShopContext =  createContext(null);
+const getDefaultCart = () => {
+    let cart = {};
+    for (let i = 1; i < DataCards.length + 1; i++ ) {
+        cart[i] =0
+    }
+    return cart;
+}
+const Shopcontextprovider = (props) => {
+    const [cartItems , setCartItems] =useState(getDefaultCart);
 
 
-// const contextValue = {cartItems, addToCart , removeFromCart}
+    const getTotalCartAmount = () => {
+      let totalAmount = 0;
 
-// //  console.log(cartItems)
-//   return(
-//      <ShopContext.Provider value={contextValue} >
-//     {props.children}
-//     </ShopContext.Provider>)
-  
-// }
+      for (const item in cartItems) {
+        if (cartItems[item] > 0) {
+          let itemInfo = DataCards.find((product) => product.id === String (item));
+          console.log(`Item ${item} info:`, itemInfo);
+      console.log(`Cart item quantity:`, cartItems[item]);
+          totalAmount += cartItems[item] * itemInfo?.price
 
-// export default Shopcontextprovider
+          
+        }
+      }
+return totalAmount
+
+    }
 
 
 
 
 
 
-import React, { createContext, useState } from 'react';
 
-export const ShopContext = createContext(null);
 
-export const ShopContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState({});
+    // adding items to cart by id for example
+const addToCart = (itemId) => {
+    setCartItems((prev) => ({...prev, [itemId] : prev[itemId] + 1}))
+}
 
-  const addToCart = (itemId) => {
-    console.log('addToCart called with itemId:', itemId);
-    setCartItems((prev) => {
-      const newCartItems = { ...prev, [itemId]: (prev[itemId] || 0) + 1 };
-      console.log('Updated cartItems:', newCartItems);
-      return newCartItems;
-    });
-  };
+const removeFromCart = (itemId) => {
+    setCartItems((prev) => ({...prev, [itemId] : prev[itemId] -1}))
+}
 
-  const contextValue = { cartItems, addToCart };
-  console.log('Current cartItems:', cartItems);
-
-  return (
-    <ShopContext.Provider value={contextValue}>
-      {children}
-    </ShopContext.Provider>
-  );
+const updatedCartItemCount = (newAmount, itemId) => {
+  setCartItems((prev) => ({...prev, [itemId]: newAmount}));
 };
 
-export default ShopContextProvider;
+const contextValue = {
+  cartItems, 
+  addToCart ,
+   removeFromCart,
+   updatedCartItemCount,
+   getTotalCartAmount
+  }
+
+//  console.log(cartItems)
+  return(
+     <ShopContext.Provider value={contextValue} >
+    {props.children}
+    </ShopContext.Provider>)
+  
+}
+
+
+
+export default Shopcontextprovider
+
+
+
+
+
+
