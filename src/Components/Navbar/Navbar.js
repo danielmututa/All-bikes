@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import React, { useContext } from 'react';
 import logo from '../images/logo1-300x158.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ShopContext } from "../context/Shop-context"; 
 const Navbar = () => {
     const { cartItems } = useContext(ShopContext);
