@@ -188,8 +188,28 @@ color: blue;
 
 
 
+.textbackground {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f0f0f03f;
+}
 
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 35s linear infinite;
+  padding: 10px 0; /* Add some padding to the text */
+}
 
+@keyframes scroll-left {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
 
 
 

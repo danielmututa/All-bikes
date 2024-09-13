@@ -25,7 +25,7 @@ const Carttab = () => {
 
       <div className='cartItems'>
         {DataCards.map((product)=> {
-          if(cartItems [product.id] > 0) {
+          if(cartItems[product.id] > 0) {
             return <Cartitem key={product.id} data = {product} />
           }
           return null

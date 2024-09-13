@@ -24,14 +24,11 @@ const Home = () => {
     
     
    
-
-<marquee direction='left' behavior='scroll' scrollamount='6'>
-  
-  
-   <p> At <span className="red">Speed<span className="blue">bikes</span>   </span> , we are committed to providing you with the best bike rental experience possible. From the quality of our bikes to our exceptional customer service, we go the extra mile to ensure you have a smooth and enjoyable ride.</p>
-  
-</marquee>
-      
+  <div className="textbackground">
+    <div className="scrolling-text">
+        At <span className="red">Speed<span className="blue">bikes</span></span>, we are committed to providing you with the best bike rental experience possible. From the quality of our bikes to our exceptional customer service, we go the extra mile to ensure you have a smooth and enjoyable ride.
+    </div>
+</div>
 
 
 
@@ -44,7 +41,7 @@ const Home = () => {
  <div className="home-bikes-mtr">
 
  <div className="button">
-   <a href="" onClick={() => navigate('oderstock', {replace:true})}>Bike Showcase</a>
+   <button onClick={() =>navigate('oderstock',{replace:true})}>Bike Showcase</button>
    </div>
 <div className="four-all">
 
