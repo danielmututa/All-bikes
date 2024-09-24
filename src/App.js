@@ -17,6 +17,8 @@ import Productsfile from './Components/AddtoCartproducts/Productsfile';
 // import Layout from './Components/AddtoCartproducts/Layout';
 import Carttab from './Components/AddtoCartproducts/Carttab';
 import Shopcontextprovider from './Components/context/Shop-context';
+import Repairandservices from './Components/repairandservices/Repairandservices';
+
 
 
 function App() {
@@ -35,10 +37,11 @@ function App() {
             <Route path='cart' element={<Carttab/>} />
             <Route path='*' element={<Nomatch/>} />
             <Route path='products' element={<Products/>}/> 
+            <Route path='repairandservices' element={<Repairandservices/>}/>
             <Route path='cart' element={<Carttab/>}/> 
             
           </Routes>
-       
+         
         <Footer/>
         </Shopcontextprovider>
       </>

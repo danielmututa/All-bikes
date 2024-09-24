@@ -15,6 +15,7 @@ export const Cartitem = (props) => {
    <img src={require(`../images/${image}`) } alt={type} />
 
    <div className="description">
+    {/* <div className="line"><span className='top-line'></span></div> */}
     <p><b> {type}</b></p>
    <p className='price' >£{price}</p>
 

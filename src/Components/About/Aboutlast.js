@@ -1,0 +1,58 @@
+import React, { useState } from 'react'
+import DataCards from '../Datafile/Datafile'
+import Aboutsection from './Aboutsection'
+
+
+const Aboutlast = () => {
+
+ const [images] =  useState([
+
+   {dimage: 'yahoo9.jpg', descriptio: 'Future Vision:Questions and answers', heading:'Why are we here?', id:1 },
+   {dimage: 'bmw7.webp', descriptio: 'Electricity not coal: the Lausitezer Seenland and the Speedbike', heading:'An act of rethinking',  id:2 },
+   {dimage: 'honda14.jpg', descriptio: 'Speedbike takesenvironmental responsibility seriouly', heading:'Sustainability',id:3 }
+
+ ])
+
+    const imagedata = ( DataCards.map(item =>{
+
+   return(
+    < Aboutsection
+    img ={item.image}
+    />
+   )
+
+
+    }))
+  return (
+    <div className='aboutlast--container'>
+      <div className="about--morearticles">
+        <h2>More articles</h2>
+        <div className="threeimages-atrticles">
+        {images.map((hoverimages)=>(
+  
+         <div className="img--hover" key={hoverimages.id}>
+         <img className='three--images' src={ require('../images/' + hoverimages.dimage) } alt="" />
+         <div className="description--container">
+          <h4>{hoverimages.heading}</h4>
+         <p>{hoverimages.descriptio}</p>
+         </div>
+        
+
+         </div>
+        ))}
+        </div>
+      </div>
+
+
+      <div className="textbackground">   
+      <div className="maque--scroll">
+     {imagedata}
+      </div>
+      
+    </div>
+    </div>
+  )
+}
+
+export default Aboutlast
+

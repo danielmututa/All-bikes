@@ -37,10 +37,12 @@ const Carttab = () => {
       <div className="checkout--container">
         <div className="background--color">       
     <div className="checkout">
-      <p>Subtotal: <span className='color--btn'> £{totalAmount}</span></p>
+
+    <span className='top-line'></span>
+      <p className='totalamount'>Subtotal: <span className='color--btn'> £{totalAmount}</span></p>
       <div className="checkout--button">
       <button onClick={() => navigate('/Rentabike')}>Continue Shopping</button>
-      <button>Checkout</button>
+      <button>Purchase</button>
       </div>
       </div> 
       </div>
