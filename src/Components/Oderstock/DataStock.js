@@ -7,6 +7,7 @@ const Datastcok = (props) => {
    
 
         <div className="Card--container">
+         
             <img src={ require('../images/' + props.image)} alt="" />
     
          <div className="text">
@@ -14,7 +15,7 @@ const Datastcok = (props) => {
             <p>{props.price}</p>
          </div>
        
-       
+    
            
         </div>
       );

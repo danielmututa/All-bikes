@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
 
             <div className="link-line">
-            <NavLink to= '/repairandservices' style={inlineStyle}>Repair and Services</NavLink>
+            <NavLink to= '/repairandservices' style={inlineStyle}>Services</NavLink>
             <div className="linehover"><span></span></div>
             </div>
 
