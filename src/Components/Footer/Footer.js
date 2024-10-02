@@ -1,13 +1,11 @@
 
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 import { Link } from 'react-router-dom'
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+
 // import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { faLinkedinIn ,faInstagram ,faFacebookF,faTwitter  } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram ,faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import './Footer.css'
 // import { useState } from 'react'
 const Footer = () => {
