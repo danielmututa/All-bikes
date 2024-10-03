@@ -22,10 +22,10 @@ const Oderstock = () => {
 
   const [parts] = useState([
 
-    {img:"acompresser.png", type:"COMPRESSOR"},
-    {img:"acylinder.webp", type:"CYLINDER"},
-    {img:"aenginebike.jpg", type:"ENGINE"},
-    {img:"ashaft.jpg", type:"CRANE SHAFT"}
+    {img:"honda8.webp", type:"HONDA"},
+    {img:"yohoo8.jpg", type:"YOHOO"},
+    {img:"bmw7.webp", type:"BMW"},
+    {img:"roadbike-two.webp", type:"YOHOO"}
 
   ]);
 
@@ -41,18 +41,16 @@ const Oderstock = () => {
 
   const Events = [
     {title:"Speedbike Weekend Ride",
-       eventimage:"dirtbike--o.jpg",  
-       date:"20/11/24", 
-       time:"10:00AM", 
-       location:"Downtown Bike Trail",
-        Description:"Join us for a scenic 20-mile ride through the city "},
+       eventimage:"dirtbike--o.jpg", 
+       view:"view" 
+    },
+      
+    
 
     {title:"Bike Maintenance Workshop",
       eventimage:"motorbike-workshop.jpg",
-        date:"2/12/24", 
-        time:"06:00AM",
-         location:"Speedbike Headquarters",
-          Description:"Learn expert tips on keeping your bike i top condition"}
+         view:"view"
+    },
   ];
 
 
@@ -121,29 +119,31 @@ const Oderstock = () => {
 <div className="jjjj">
 
 <div className="upcomingevents">
+<div className="eventheading">
+    <p>Events</p>
+  </div>
 {
    Events.map((event=>(
 
     <div className="event--container">
-      <div className="eventtitle"><p>{event.title}</p></div>
-
+ 
       <div className="evevt--allcontainer">
       <img className="eventimgo" src={require("../images/" + event.eventimage)} alt="" />
       
       <div className="date-time-decs">
-        <div className="date-time">
-        <p>{event.location}</p>
-        <p>{event.date}  {event.time}</p>
+
+        <div className="clickevent">
+          <div className="widthevent">
+        <p>{event.title}</p>
+        <p>{event.view}</p>
+          </div>
         </div>
-     <p className="descriptionevent">{event.Description}</p>
+
       </div>
       </div>
        
 
-      {/* date:"Friday,November 20th", 
-       time:"10:00AM", 
-       location:"Downtown Bike Trail",
-        Description:"Join us for a scenic 20-mile ride through the city "}, */}
+     
 
 
     </div>
