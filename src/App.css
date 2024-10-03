@@ -109,6 +109,39 @@ object-fit: cover;
 
 /* Home////////////////////////////////////////////// */
 
+.card-container {
+  display: flex;
+  justify-content: space-around; /* Space out the cards */
+  align-items: center;
+  margin: 20px;
+}
+
+.card {
+  background-color: #f8f9fa; /* Light background color */
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  width: 200px; /* Fixed width for cards */
+  text-align: center; /* Center text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+  text-align: center; /* Center title */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -325,7 +358,7 @@ font-weight: 700;
   position: absolute;
   width: 100%;
   height:50vh ;
-  opacity: 10%;
+  opacity: 2%;
   transition: .9s;
 
 }
@@ -434,7 +467,7 @@ font-weight: 700;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 
@@ -602,6 +635,85 @@ input{
   width: 16%;
 }
 
+.jjjj .login--oderstock{
+  width: 100%;
+}
+
+.upcomingevents{
+  width: 100%;
+}
+
+.upcomingevents .event--container .eventimgo{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+
+}
+
+.evevt--allcontainer{
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+/* 
+.eventimgo{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+} */
+
+.date-time-decs{
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  width: 100%;
+  height: 98%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+
+.date-time-decs .descriptionevent{
+  padding-top: 4px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "PTSans-Regular";
+  padding-left: 5px;
+
+}
+
+.date-time p{
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "PTSans-Regular";
+  padding-left: 5px;
+}
+
+
+
+.login--oderstock .loginimg{
+  width: 100%;
+}
+
+.login--oderstock .oderlogin{
+  width: 100%;
+  background-color: #201E1E;
+  height: 5vh;
+  color: #fff;
+  font-family: "PTSans-Regular";
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+
 .selector--image{
   position: relative;
   width: 100%;
@@ -737,7 +849,6 @@ align-items: center;
  
  
 
- 
 
 
 /* END-FIND-YOUR-BIKE///////////////////////////////////////////// */
@@ -747,13 +858,79 @@ align-items: center;
 
 
 /* Oderstock///////////////////////////////////////////////////////////// */
-.stock{
+
+
+.partsavlibleandmotorbikes{
   padding-left: 100px;
   padding-right: 100px;
+}
+
+.partsavilable--container{
+  margin: 20px 0px 20px 0px;
+  border: 2px solid rgba(128, 128, 128, 0.377);
+  padding: 20px 0px 20px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+ 
+ }
+
+
+
+ .partsavilable{
+  overflow: hidden;
+  position: relative;
+  width: 13%;
+  height: 140px;
+ 
+  
+  }
+  
+.partsavilable:hover .partsimgs{
+  scale: 1.3;
+  transition: .6s;
+}
+
+   .partsavilable .partsimgs{
+   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: .6s;
+   }
+
+   
+  .partsavilable .overlay--images {
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  font-family: "PTSans-Regular";
+  background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+   
+
+.stock{
+  
   display: flex;
   justify-content: space-between;
 
 }
+
+
+
+
 .option{
   /* padding-left: 100px; */
   width: 100%;

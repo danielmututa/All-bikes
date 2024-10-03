@@ -6,7 +6,8 @@ import { faBicycle } from "@fortawesome/free-solid-svg-icons";
 import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
 import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import Contact from "./Contact";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+
 import logo from '../images/logo1.png'
 // import logo from 
 // import Footerlinks from "./Footerlinks";
@@ -20,13 +21,59 @@ const Home = () => {
 
  ]);
 
+ const navigate = useNavigate()
 
 
-  const navigate = useNavigate()
+//  llllllllllllllllllllllllllllllllll
+const [cardCounts, setCardCounts] = useState([
+  {number:"0", icon:faHome, name:"Branches"},
+  {number:"0", icon:faBicycle, name:"Bikes purchased"},
+  {number:"0", icon:faPeopleGroup, name:" Happy Clares"},
+  {number:"0", icon:faMotorcycle, name:"Available Bikes"},
+  ]);
+
+    // Define target values
+    const targets = [300, 6000, 390, 4000];
+
+  
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCardCounts(prevCounts =>
+        prevCounts.map((count, index) => ({
+          ...count,
+          number:
+            parseInt(count.number) < targets[index]
+              ? parseInt(count.number) + 2
+              : count.number,
+        }))
+      );
+    }, 0.5);
+
+    return () => clearInterval(interval);
+  }, );
+
+
+
+
+
+
+
+// llllllllllllllllllllllllllllllllllllllll
+
+
+
+
+  
   
 
     return ( 
 <div className="home" >
+
+
+
+
+
 
 
 <img src={brgimage} alt=""/>
@@ -55,50 +102,31 @@ const Home = () => {
  <div className="button">
    <button onClick={() =>navigate('oderstock',{replace:true})}>Bike Showcase</button>
    </div>
+
+
+  
+
+{/* kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk */}
 <div className="four-all">
+           
+            {cardCounts.map((count, index) => (
+                <div className="first-page" key={index}>
+                  
+                  <div className="icon--circle">
+                  <FontAwesomeIcon icon={count.icon} className="icon" />
+                   </div>
 
+                   <div className="plus-nikes">
+                  <p className="more--less">{count.number}+</p>
+                  <p>{count.name}</p>
+                  </div>
 
-  <div className="first-page">
-  <div className="icon--circle">
-  <FontAwesomeIcon icon={faHome} className="icon" />
-    </div>
-    <div className="plus-nikes">
-    <p className="more--less">150+</p>
-    <p>Branches</p>
-    </div>
-  </div>
+                </div>
+            ))}
+        </div>
+{/* kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk */}
 
-  <div className="first-page">
-  <div className="icon--circle">
-    <FontAwesomeIcon icon={faBicycle}  className="icon"/>
-    </div>
-    <div className="plus-nikes">
-    <p className="more--less">6000+</p>
-    <p>Bikes purchased </p>
-  </div>
-    </div>
-
-  <div className="first-page">
-  <div className="icon--circle">
-    <FontAwesomeIcon icon={faPeopleGroup} className="icon" />
-  </div>
-    <div className="plus-nikes">
-    <p className="more--less">380+</p>
-    <p>Happy Clares</p>
-    </div>
-  </div>
-
-  <div className="first-page">
-<div className="icon--circle">
-    
-    <FontAwesomeIcon icon={faMotorcycle} className="icon" />
-  </div>
-    <div className="plus-nikes">
-    <p className="more--less">1550+</p>
-    <p>Available Bikes</p>
-    </div>
-  </div>
-  </div>
+  {/* </div> */}
 
  </div>
   </div>

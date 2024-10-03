@@ -11,6 +11,7 @@ import image5 from "../images/imageoo5.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
+import login from "../images/bmw4.jpg";
 
 
 const Oderstock = () => {
@@ -18,6 +19,15 @@ const Oderstock = () => {
 
   const [items,setItems] = useState(DataCards);
   const [currentindex, setCurrentindex]= useState(0);
+
+  const [parts] = useState([
+
+    {img:"acompresser.png", type:"COMPRESSOR"},
+    {img:"acylinder.webp", type:"CYLINDER"},
+    {img:"aenginebike.jpg", type:"ENGINE"},
+    {img:"ashaft.jpg", type:"CRANE SHAFT"}
+
+  ]);
 
   const products = [
     
@@ -27,6 +37,24 @@ const Oderstock = () => {
     {image:image4, text:"Embark on epic journeys with our Grand Tourer motorbike. Equipped with a 1000cc engine, plush seating, and spacious luggage compartments, this bike is built for long-distance travel"},
     {image:image5, text:"Step back in time with our Vintage Dream motorbike. Inspired by classic designs, this stylish bike features a 500cc engine, chrome accents, and a relaxed riding position. Perfect for cruising the countryside"},
   ];
+
+
+  const Events = [
+    {title:"Speedbike Weekend Ride",
+       eventimage:"dirtbike--o.jpg",  
+       date:"20/11/24", 
+       time:"10:00AM", 
+       location:"Downtown Bike Trail",
+        Description:"Join us for a scenic 20-mile ride through the city "},
+
+    {title:"Bike Maintenance Workshop",
+      eventimage:"motorbike-workshop.jpg",
+        date:"2/12/24", 
+        time:"06:00AM",
+         location:"Speedbike Headquarters",
+          Description:"Learn expert tips on keeping your bike i top condition"}
+  ];
+
 
 
  const handleNext = () => {
@@ -70,10 +98,66 @@ const Oderstock = () => {
 
     return(
 
+<div className="partsavlibleandmotorbikes">
+
+<div className="partsavilable--container">
+
+  {
+   parts.map((item) => (
+    <div className="partsavilable">
+      <img className="partsimgs" src={require("../images/" + item.img)} alt="" />
+      <div className="overlay--images">
+        <p>{item.type}</p>
+      </div>
+    </div>
+   ))
+  }
+
+</div>
+
+
       <div className="stock">
 
 <div className="jjjj">
-  <h1>hook</h1>
+
+<div className="upcomingevents">
+{
+   Events.map((event=>(
+
+    <div className="event--container">
+      <div className="eventtitle"><p>{event.title}</p></div>
+
+      <div className="evevt--allcontainer">
+      <img className="eventimgo" src={require("../images/" + event.eventimage)} alt="" />
+      
+      <div className="date-time-decs">
+        <div className="date-time">
+        <p>{event.location}</p>
+        <p>{event.date}  {event.time}</p>
+        </div>
+     <p className="descriptionevent">{event.Description}</p>
+      </div>
+      </div>
+       
+
+      {/* date:"Friday,November 20th", 
+       time:"10:00AM", 
+       location:"Downtown Bike Trail",
+        Description:"Join us for a scenic 20-mile ride through the city "}, */}
+
+
+    </div>
+   )))
+}
+</div>
+
+
+  <div className="login--oderstock">
+  <img className="loginimg" src={login} alt="" />
+    <div className="oderlogin">
+    <p>LOGIN</p>
+    </div>
+  </div>
 </div>
 
 
@@ -136,7 +220,7 @@ const Oderstock = () => {
 
  </div>
 
-
+ </div>
 
         
 
