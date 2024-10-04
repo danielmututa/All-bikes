@@ -3,28 +3,11 @@
 import { useState } from "react";
 import Productsrent from "./Productsrent";
 import DataCards from "../Datafile/Datafile";
-// import Databuttons from "./Databuttons";
-
-// import { useNavigate } from "react-router-dom";
-
-
-
-
-
 
 
 
 const  Productsfile = () => {
 
-
-  // const [ item,setItems] = useState(DataCards)
-  // const muneItems = [...new Set(DataCards.map((item) => item.name))]
-  // //   // const navigate = useNavigate()
-
-  //   const filterItems = (cat) => {
-  //          const newItems = DataCards.filter((newval) => newval.name === cat)
-  //          setItems(newItems)
-  //        }
 
   const [items,setItems] = useState(DataCards)
   const filterItem = (name) =>{
@@ -57,13 +40,13 @@ const  Productsfile = () => {
 
     return(
 
-      <div className="stock">
+      <div className="pro--section--container">
 
 
-<div className="option">
+<div className="pro--section">
    <h3>Explore our option</h3>
 
-   <div className="buttons">
+   <div className="All-purchase-btns">
      <div className="btn2"> 
 
      <div > <button  className="btn" onClick={() => setItems(DataCards)}  >All</button> </div> 

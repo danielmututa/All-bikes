@@ -337,7 +337,7 @@ font-weight: 700;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 86%;
 }
 
 .card--container .card--services{
@@ -637,10 +637,12 @@ input{
 
 .jjjj .login--oderstock{
   width: 100%;
+  
 }
 
 .upcomingevents{
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .upcomingevents .event--container .eventimgo{
@@ -653,7 +655,8 @@ input{
 .evevt--allcontainer{
   width: 100%;
   position: relative;
-  height: 100%;
+  height: 99%;
+  margin-bottom: 6px;
 }
 /* 
 .eventimgo{
@@ -667,7 +670,7 @@ input{
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   width: 100%;
-  height: 98%;
+  height: 100%;
   position: absolute;
   display: flex;
   /* flex-direction: column; */
@@ -726,7 +729,7 @@ font-size: 22px;
 
 .login--oderstock .oderlogin{
   width: 100%;
-  background-color: #201E1E;
+  background-color: #002AC4;
   height: 5vh;
   color: #fff;
   font-family: "PTSans-Regular";
@@ -757,9 +760,9 @@ align-items: center;
 
 .welcome--delear{
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding-left: 10px;
-  margin-top: 20px;
+  margin-top: 40px;
   border: 2px solid rgba(128, 128, 128, 0.527);
   padding-bottom: 20px;
   padding-top: 20px;
@@ -817,19 +820,17 @@ align-items: center;
 
 
  .Stock--container{
-  width: 100%;
-  /* margin-top: 50px; */
+  padding: 0px 100px 0px 100px;
   display: flex;
-  padding: 0px  50px 25px 20px;
-  height: 61.7vh;
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: white;
-  overflow-y: auto;
+  
  
  }
 
 .Card--container{
+  position: relative;
   border-radius: 5px;
  box-shadow: 3px 3px 3px -3px gray;
   padding-top: 40px;
@@ -890,7 +891,7 @@ align-items: center;
 }
 
 .partsavilable--container{
-  margin: 20px 0px 20px 0px;
+  margin: 50px 0px 50px 0px;
   border: 2px solid rgba(128, 128, 128, 0.377);
   padding: 20px 0px 20px 0px;
   width: 100%;
@@ -952,7 +953,11 @@ align-items: center;
 
 }
 
-
+.pro--section--container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
 
 
 .option{
@@ -960,16 +965,15 @@ align-items: center;
   width: 100%;
 }
 
-.option .buttons{
+.pro--section{
+  margin: 0px 100px 0px 100px;
+  /* width: 100%; */
   display: flex;
-  justify-content: space-between;
-  /* flex-direction: column; */
+  /* justify-content: space-between; */
 }
  
-
-
-.option .buttons button{
- height: 5vh;
+.pro--section  .buttons button{
+  height: 5vh;
  width: 85px;
  background-color:#202020;
  display: flex;
@@ -977,31 +981,63 @@ align-items: center;
  align-items: center;
  border-radius: 3px;
  border: none;
- transition: .6s;color: #fff;
+ transition: .6s;
+ color: #fff;
  font-family: "PTSans-Regular";
  font-weight: 600;
+}
+
+
+.option .buttons button{
+ height: 5vh;
+ width: 100%;
+ background-color:#002AC4;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border: none;
+ transition: .6s;
+ color: #fff;
+ font-family: "PTSans-Regular";
+ font-weight: 600;
+ margin-bottom: 5px;
 
 }
 
+.pro--section .buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+/* 
 .option .buttons button:hover{
  background-color: #bfbfbf;
  scale: 1.2;
 
-}
+} */
 
-.option .buttons {
-  font-size: 16px;
-  text-decoration: none;
-  color: white;
-}
-  
 
-.buttons .btn2{
+
+.buttons .right-two{
+  width: 100%;
+  margin-bottom: 10px;
+  color: #000000;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-height: 7vh;
 padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.582);
+};
+
+.right-two .filterimgs{
+  margin-bottom: 12px;
+}
+
+.right-two p{
+  padding: 10px 3px 10px 3px;
+  /* padding-top: 12px; */
+  font-size: 13px;
 }
 
 
@@ -1012,7 +1048,7 @@ padding-bottom: 10px;
 /* Productsrent */
 .text  .add--details .b-details-add{
 
- width: 100px;
+ width: 85px;
  height: 4vh;
  color: #fff;
  font-weight: 600;
@@ -1023,14 +1059,21 @@ padding-bottom: 10px;
 }
 
 .text  .add--details{
+  z-index: 1;
   padding-top: 15px;
 display: flex;
 justify-content: space-between;
-  width: 70%;
+  width: 55%;
 
 }
 
-
+.details-info{
+  top: 0;
+ height: 100%;
+  width: 100%;
+  background: rgb(0, 255, 255);
+  position: absolute;
+}
 
 /* END-Productsrent */
 
@@ -1333,10 +1376,11 @@ height: 5vh;
 
 .about-image .text--container{
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  justify-content: space-between;
+padding: 70px 100px 70px 100px ;
+
+  /* padding-top: 70px;
+  padding-bottom: 70px; */
 
 }
 
@@ -1344,7 +1388,7 @@ height: 5vh;
 .text--container .one-about{
 justify-content: end;
 display: flex;
-  width: 38%;
+  width: 44%;
 
 }
 
@@ -1364,8 +1408,8 @@ display: flex;
 }
 
 .text--container .two-about{
- margin-left: 80px;
-  width: 38%;
+ /* margin-left: 80px; */
+  width: 44%;
 }
 
 .two-about p{
@@ -1373,12 +1417,12 @@ display: flex;
   font-family:"PTSans-Regular" ;
 }
 
- .about-image .two--images{
-  justify-content: space-evenly;
-  object-fit: cover;
+.about-image .two--images {
+  padding-right: 100px;
+  justify-content: space-between;
+  padding-left: 100px;
   display: flex;
 }
-
 .two--images .motor-bike{
   height: 60vh;
   object-fit: cover;
@@ -2089,8 +2133,54 @@ h4 {
 /* about more articles */
 
 .about--morearticles{
-  display: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  /* display: none; */
 }
+
+.aboutlast--container .about--morearticles h2 {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.img--hover {
+  width: 100%;
+  height: 200px;
+}
+
+.img--hover .description--container {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+
+.img--hover:hover {
+  margin-top: 12px;
+  margin-bottom: 40px;
+  transform: scale(1.1);
+}
+
+.description--container p {
+  font-size: 14px;
+}
+
+
+
+
+.threeimages-atrticles {
+  flex-direction: column;
+  /* background-color: #FF3737; */
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
 
 
 .image--containertooimage .background--too--image {
@@ -2198,14 +2288,120 @@ h4 {
 
 /* PROUCTS */
 
-.option .buttons button {
-  font-size: 10px;
-  height: 4vh;
-  width: 53px;
-  background-color: #202020;
+
+
+
+/* END PRODUCTS */
+
+
+
+
+
+
+/* ORDERSTOCK */
+.partsavlibleandmotorbikes {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.partsavilable .overlay--images {
+ 
+  font-size: 14px;
+  
+}
+
+
+.partsavilable--container {
+  margin: 0px 0px 15px 0px;
+  border: 2px solid rgba(128, 128, 128, 0.377);
+  padding: 8px 0px 8px 0px;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+
+.partsavilable {
+  overflow: hidden;
+  position: relative;
+  width: 22%;
+  height: 70px;
+}
+
+.stock {
+  flex-direction: column-reverse;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter--container {
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+}
+
+.selector--image .position--background {
+ 
+  width: 77%;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.37);
+  position: absolute;
+  padding: 0px 10px 0px 10px;
+}
+
+.position--background p {
+  font-size: 14px;
+  font-family: "PTSans-Regular";
+  color: #fff;
+}
+
+.selector--image {
+  
+  width: 100%;
+  height: 340px;
+  
+}
+
+.welcome--delear {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  margin-top: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.welcome--delear p {
+  font-size: 14px;
+ 
+}
+
+.welcome--delear h3 {
+  font-family: "PTSerif-Bold";
+  font-size: 18px;
+}
+
+.Stock--container {
+  padding: 0px 0px 0px 0px;
+  
+}
+
+.jjjj {
+  width: 100%;
+}
+
+
+.eventheading {
+  border-radius: 3px;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 20px;
+}
+
+
+.option .buttons button {
+  border-radius: 3px;
+  font-size: 20px;
+  width: 100%;
   border-radius: 3px;
   border: none;
   transition: .6s;
@@ -2214,16 +2410,36 @@ h4 {
   font-weight: 600;
 }
 
+.right-two p {
+  padding: 10px 3px 10px 3px;
+  font-size: 14px;
+}
+
+.login--oderstock .oderlogin {
+  width: 100%;
+  height: 5vh;
+  color: #fff;
+  font-family: "PTSans-Regular";
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+
 .buttons .btn2 {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 4vh;
-  padding-bottom: 10px;
+  height: 5vh;
+  padding-bottom: 5px;
 }
 
 .option .buttons {
-  padding: 0px 20px 0px 20px;
+  flex-direction: column;
+  padding: 0px 0px 0px 0px;
   display: flex;
   justify-content: space-between;
 }
@@ -2275,9 +2491,235 @@ h4 {
 }
 
 
+.widthevent p {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  font-family: "PTSans-Regular";
+}
 
 
-/* END PRODUCTS */
+/* END-ORDERSTOCK */
+
+
+
+
+/* SERVICES */
+
+.repairimg-background {
+
+  height: 37vh;
+  
+}
+
+.okandperfect--container .okandperfect {
+  padding-top: 50px;
+  padding-bottom: 25px;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.heading h4 {
+  font-size: 10px;
+}
+
+.heading h2 {
+  font-size: 25px;
+  
+}
+
+.okandperfect .heading {
+  padding-bottom: 5px;
+}
+
+.okandperfect p {
+  font-size: 14px;
+  font-family: "PTSans-Regular";
+}
+
+.bookaservice--container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.bookaservice--container h2 {
+  font-weight: 900;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.okandperfect--container{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.bookaservice--container .bookaservice {
+  flex-direction: column-reverse;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bookimg {
+  height: 232px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.bookaservice .bookaservice--book {
+  height: 232px;
+ 
+  width: 100%;
+ 
+}
+
+.allthreebooks h3 {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.allthreebooks p {
+  font-size: 14px;
+}
+
+.allthreebooks button {
+  width: 137px;
+  padding: 12px;
+  font-size: 14px;
+  
+}
+
+
+.ourpromise--container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.ourpromise--container h2 {
+
+  font-weight: 900;
+  font-size: 25px;
+  padding-bottom: 12px;
+}
+
+.ourpromise--container .flexourpromises {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ourpromiseimg {
+  height: 232px;
+  object-fit: cover;
+  width: 100%;
+  
+}
+
+.flexourpromises .ourpromises {
+  width: 100%;
+}
+
+.ourpromises h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.ourpromises p {
+  font-size: 14px;
+}
+
+.flexourpromises .ourpromises {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.findoutmorebtn {
+  width: 150px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+
+.mot--container {
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.mot--container h2 {
+  font-size: 25px;
+  padding-bottom: 12px;
+  font-weight: 900;
+}
+
+
+.mot--container .mot--flex {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.motimg {
+  object-fit: cover;
+  width: 100%;
+  height: 232px;
+  border-radius: 5px;
+}
+
+.mot--flex .txtmot {
+  width: 100%;
+}
+
+.txtmot p {
+  font-size: 14px;
+  font-family: "PTSans-Regular";
+}
+
+.speedbikeguarantee {
+  padding-bottom: 8px;
+  padding-top: 3px;
+}
+
+.book-mot {
+  padding-top: 8px;
+}
+
+.whyneedmot {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+}
+
+.textneedmot {
+  width: 100%;
+}
+
+.textneedmot h3 {
+  font-size: 18px;
+  padding-bottom: 30px;
+  font-weight: 900;
+}
+/* EDN-SERVICES */
+
+
 
 
 

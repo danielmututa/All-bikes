@@ -1,24 +1,24 @@
 
 
 
-const Datastcok = (props) => {
-    return (
+// const Datastcok = (props) => {
+//     return (
 
    
 
-        <div className="Card--container">
+//         <div className="Card--container">
          
-            <img src={ require('../images/' + props.image)} alt="" />
+//             <img src={ require('../images/' + props.image)} alt="" />
     
-         <div className="text">
-            <p className="type">{props.type}</p>
-            <p>{props.price}</p>
-         </div>
+//          <div className="text">
+//             <p className="type">{props.type}</p>
+//             <p>{props.price}</p>
+//          </div>
        
     
            
-        </div>
-      );
-}
+//         </div>
+//       );
+// }
  
-export default Datastcok;
+// export default Datastcok;

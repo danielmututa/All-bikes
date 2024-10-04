@@ -1,13 +1,15 @@
 
 
 import { useState } from "react";
-import Datastcok from "./DataStock";
-import DataCards from "../Datafile/Datafile";
+// import Datastcok from "./DataStock";
 import image1 from "../images/imageoo1.webp";
 import image2 from "../images/imageoo2.jpg"
 import image3 from "../images/imageoo3.jpg"
 import image4 from "../images/imageoo4.jpg"
 import image5 from "../images/imageoo5.jpg"
+import filtr1 from "../images/filterbikeoneroad.webp"
+import offroad from "../images/why_we_race_hero.jpg"
+import threeler from "../images/bmw2.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
@@ -17,15 +19,15 @@ import login from "../images/bmw4.jpg";
 const Oderstock = () => {
 
 
-  const [items,setItems] = useState(DataCards);
+ 
   const [currentindex, setCurrentindex]= useState(0);
 
   const [parts] = useState([
 
     {img:"honda8.webp", type:"HONDA"},
-    {img:"yohoo8.jpg", type:"YOHOO"},
+    {img:"yohoo8.jpg", type:"YAHOO"},
     {img:"bmw7.webp", type:"BMW"},
-    {img:"roadbike-two.webp", type:"YOHOO"}
+    {img:"roadbike-two.webp", type:"YAHOO"}
 
   ]);
 
@@ -38,6 +40,14 @@ const Oderstock = () => {
     {image:image5, text:"Step back in time with our Vintage Dream motorbike. Inspired by classic designs, this stylish bike features a 500cc engine, chrome accents, and a relaxed riding position. Perfect for cruising the countryside"},
   ];
 
+  const showcasebikes = [
+    {img:"yohoo8.jpg", type:"YAHOO" , motivation:"Ride with passion, live with purpose" },
+    {img:"bmw3.webp", type:"BMW" , motivation:"Freedom found on two wheels" },
+    {img:"honda11.png", type:"HONDA" , motivation:"Ride with friends, make memories" },
+    {img:"yahoo5.webp", type:"YAHOO" , motivation:"Ride fit, live strong" },
+    {img:"bmw6.jpg", type:"BMW" , motivation:"Conquer roads, conquer fears" },
+    {img:"honda14.jpg", type:"HONDA" , motivation:"Wheels of joy" },
+  ]
 
   const Events = [
     {title:"Speedbike Weekend Ride",
@@ -65,34 +75,7 @@ const Oderstock = () => {
 
 
 
-  const filterItem = (name) =>{
-  const updatedItems = DataCards.filter((curElem) => {
-    return curElem.name === name;
-  }) 
-  setItems(updatedItems)
-  }
 
-
-   
-
-  const AllData = (items.map(item => {
-
-    return(
-      <Datastcok 
-        key={item.id}
-       price = {item.price}
-        image = {item.image}
-        type = {item.type}
-
-      
-      
-       />
-          )
-      }))
-    
-  
-    
-   
 
     return(
 
@@ -117,6 +100,11 @@ const Oderstock = () => {
       <div className="stock">
 
 <div className="jjjj">
+
+
+
+
+
 
 <div className="upcomingevents">
 <div className="eventheading">
@@ -152,6 +140,55 @@ const Oderstock = () => {
 </div>
 
 
+
+<div className="option">
+   
+
+   <div className="buttons">
+     <div className="btn2"> 
+
+     <div > <button  className="btn"  >All</button> </div> 
+   
+
+       </div> 
+       
+   
+
+       <div className="right-two" > 
+        <img className="filterimgs" src={filtr1} alt="" />
+
+    <p >Find your perfect ride with precision filtering. Browse road bikes by type,brand,size, and features</p>
+     </div>  
+
+     <div className="right-two"> 
+     <img className="filterimgs" src={offroad} alt="" />
+
+     <p >Conquer rugged terrain with  precision filtering. Browse off-road bikes by 4-stroke/2-stroke, wheel size and ground clearance</p>
+   
+     </div> 
+
+     <div className="right-two">
+     <img className="filterimgs" src={ threeler} alt="" />
+
+     
+     <p >Experience adrenaline-fueled rides with expert filtering.Find thriller bikes by horsepower, torque, and design</p>
+    
+     </div> 
+
+     
+    
+   </div>
+   
+ </div> 
+
+
+
+
+
+
+
+
+
   <div className="login--oderstock">
   <img className="loginimg" src={login} alt="" />
     <div className="oderlogin">
@@ -181,39 +218,41 @@ const Oderstock = () => {
 
 
   <div className="welcome--delear">
-<h3>Welcome to our Dealership</h3>
-<p>Experience the ultimate ride with our high-performance motorbikes, crafted for speed, comfort, and style, offering exceptional features and robust engines. Our expert team provides personalized support and competitive pricing. Unleash your passion for riding with our premium bikes.</p>
+<h3>Our Bike Models</h3>
+<p>Explore our diverse range of motorbikes, from sleek sports bikes to comfortable cruisers, each offering a unique riding experience. Our collection showcases the perfect blend of style, performance, and innovation, ensuring there's a bike to suit every rider's preference.</p>
   </div>
 </div>
 
-<div className="option">
-   
-
-   <div className="buttons">
-     <div className="btn2"> 
-
-     <div > <button  className="btn" onClick={() => setItems(DataCards)}  >All</button> </div> 
-   
-
-       </div> 
-       
-   
-
-     <div className="btn" >  <button  onClick={() => filterItem('Roadbike')}> Roadbike</button> </div> 
-     <div className="btn" >  <button  onClick={() => filterItem('Offroad')}> Offroad</button> </div> 
-
-     <div className="btn" >  <button  onClick={() => filterItem('Thriller')}> Thriller</button> </div> 
-     <div className="btn" >  <button onClick={() => filterItem('Dirtbike')}>Dirtbike </button> </div> 
-     {/* <div className="btn">  <button } > All </button> </div>  */}
-   </div>
-   
- </div> 
 
 
   
 
 <div className="Stock--container">
-  {AllData}
+{/* showcasebikes */}
+{
+  showcasebikes.map((show =>(
+
+<div className="Card--container">
+         
+         <img src={ require('../images/' + show.img)} alt="" />
+ 
+      <div className="text">
+         <p className="type">{show.type}</p>
+         <p>{show.motivation}</p>
+      </div>
+    
+ 
+        
+     </div>
+
+
+  )))
+  
+
+}
+
+
+  {/* {AllData} */}
 </div>
 
  </div>
