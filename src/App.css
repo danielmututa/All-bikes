@@ -24,11 +24,22 @@
 
 
 .hamburger-menu {
-  /* position: sticky; */
+  position: relative;
   width: 100%;
   background-color: #2f4f7f;
+  height: 49px;
 
 }
+
+
+.position--fixed{
+  position: fixed;
+}
+
+.menu--witdh{
+  position: fixed;
+}
+
 
 .all-menus{
   position: relative;
@@ -42,7 +53,8 @@ element.style {
 }
 
 .hamburger-react {
-  position: fixed; /* Fixed positioning */
+  position: fixed; 
+  /* position: absolute; */
   top: 0px; /* Adjust as needed */
   left: 20px; /* Adjust as needed */
   z-index: 3; /* Ensure it's above other elements */
@@ -75,7 +87,7 @@ element.style {
 
 
 .menu-list {
-  position: fixed; /* Fixed positioning for full-screen overlay */
+  position: relative; /* Fixed positioning for full-screen overlay */
   top: 48px;
   left: 0;
   width: 100%;
@@ -115,11 +127,11 @@ element.style {
 .menu-list ul {
   z-index: 1003; 
   position: absolute; 
-  top: 49%;
+  top: 42%;
   left: 50%; 
   transform: translate(-50%, -50%); 
   background-color: #2f4f7f;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   display: flex; 
   flex-direction: column; 
   justify-content: center; 

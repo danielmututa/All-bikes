@@ -17,70 +17,6 @@ const inlineStyle = ({isActive}) =>{
     }
 }
 
-// const HamburgerMenu = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const handleToggle = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   const handleClose = () => {
-//     setIsOpen(false);
-//   };
-
-//   return (
-//     <div className="hamburger-menu">
-//         <div className="all-menus">
-
-    
-//       <Hamburger 
-//         toggled={isOpen} 
-//         toggle={handleToggle} 
-//         className="menuclose-open" 
-//       />
-//       <div className={`menu-list ${isOpen ? 'show' : ''}`} role="navigation" aria-label="Main Menu">
-//         <ul>
-//           <li onClick={handleClose}> <NavLink to='/' style={inlineStyle}>Home</NavLink></li>
-          
-//           <li onClick={handleClose}>         <NavLink to='/about' style={inlineStyle}>About</NavLink></li>
-//           <li onClick={handleClose}><NavLink to= '/Rentabike' style={inlineStyle}>Rent a bike</NavLink></li>
-//           <li onClick={handleClose}> <NavLink to= '/repairandservices' style={inlineStyle}>Services</NavLink></li>
-//           <li onClick={handleClose}></li>
-//         </ul>
-//       </div>
-//     </div>
-//     </div>
-//   );
-// };
-
-// export default HamburgerMenu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const HamburgerMenu = () => {
@@ -96,10 +32,14 @@ const HamburgerMenu = () => {
 
     return (
         <div className="hamburger-menu">
-            <Hamburger 
+ {/* <div className="position--fixed"> */}
+
+
+            <Hamburger className="position--fixed"
                 toggled={isOpen} 
                 toggle={handleToggle} 
             />
+       
             <div className={`menu-list ${isOpen ? 'show' : ''}`} role="navigation" aria-label="Main Menu">
                 <ul>
                 <li onClick={handleClose}> <NavLink to='/' style={inlineStyle}>Home</NavLink></li>
@@ -108,7 +48,8 @@ const HamburgerMenu = () => {
           <li onClick={handleClose}> <NavLink to= '/repairandservices' style={inlineStyle}>Services</NavLink></li>
                 </ul>
             </div>
-        </div>
+            </div>
+        // </div>
     );
 };
 
