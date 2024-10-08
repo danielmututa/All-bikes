@@ -16,7 +16,7 @@ const Repairandservices = () => {
     <div className="okandperfect">
       <div className="heading">
         <h2>SPEEDBIKEZIM SERVICING</h2>
-        <h4>THE DIFFERNCE BETWEEN OK AND PERFECT</h4>
+        <h5>THE DIFFERNCE BETWEEN OK AND PERFECT</h5>
       </div>
       <p>Speedbike Service stands for quality and precision in every detail; whether it's an oil change, an annual check-up or a tyre change. Our Technicians have industry have industry recognised qualifications and use genuine Speedbike Parts, allowing us to offer you the highest stands of workmanship and efficiency</p>
     </div>

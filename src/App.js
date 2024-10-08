@@ -18,6 +18,7 @@ import Productsfile from './Components/AddtoCartproducts/Productsfile';
 import Carttab from './Components/AddtoCartproducts/Carttab';
 import Shopcontextprovider from './Components/context/Shop-context';
 import Repairandservices from './Components/repairandservices/Repairandservices';
+import HamburgerMenu from './Components/Navbar/Humbergarmenu';
 
 
 
@@ -29,6 +30,7 @@ function App() {
 
     <Shopcontextprovider>
         <Navbar />
+        <HamburgerMenu/>
           <Routes>
             <Route path='/' element={<Home/>} />
             <Route path='about' element={<About/>}/>

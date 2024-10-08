@@ -3,13 +3,31 @@
 import { useState } from "react";
 import Productsrent from "./Productsrent";
 import DataCards from "../Datafile/Datafile";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 
 
 const  Productsfile = () => {
 
 
-  const [items,setItems] = useState(DataCards)
+  const [items,setItems] = useState(DataCards);
+  const [searchQuery, setSearchQuery] = useState('');
+
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    const searchedItems = DataCards.filter((item) => {
+      return (
+        item.name.toLowerCase().includes(query) ||
+        item.type.toLowerCase().includes(query)
+      );
+    });
+    setItems(searchedItems);
+  };
+
+
   const filterItem = (name) =>{
   const updatedItems = DataCards.filter((curElem) => {
     return curElem.name === name;
@@ -44,15 +62,34 @@ const  Productsfile = () => {
 
 
 <div className="pro--section">
+  <div className="pro--section--heading">
    <h3>Explore our option</h3>
 
+<div className="search--baricon">
+
+<FontAwesomeIcon className="searchbar" icon={faSearch}/>
+   <input
+   
+      type="text"
+      value={searchQuery}
+      onChange={handleSearch}
+      placeholder="Search bikes"
+     
+    />
+</div>
+  
+    
+   
+
+  </div>
+
    <div className="All-purchase-btns">
-     <div className="btn2"> 
+      
 
      <div > <button  className="btn" onClick={() => setItems(DataCards)}  >All</button> </div> 
    
 
-       </div> 
+       
        
    
 

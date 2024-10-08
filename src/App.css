@@ -20,6 +20,161 @@
 
 
 
+
+
+
+.hamburger-menu {
+  /* position: sticky; */
+  width: 100%;
+  background-color: #2f4f7f;
+
+}
+
+.all-menus{
+  position: relative;
+}
+
+element.style {
+  cursor: pointer;
+  height: 48px;
+  /* position: relative; */
+ 
+}
+
+.hamburger-react {
+  position: fixed; /* Fixed positioning */
+  top: 0px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  z-index: 3; /* Ensure it's above other elements */
+  color: white; /* Color for visibility */
+  
+  cursor: pointer; /* Pointer cursor on hover */
+  height: 48px; /* Height of the icon */
+  width: 48px; /* Width of the icon */
+  outline: none; /* Remove outline */
+  
+  transition: transform 0.4s cubic-bezier(0, 0, 0, 1); /* Transition for smooth effect */
+  user-select: none; /* Prevent text selection */
+  
+  transform: rotateY(-180deg); 
+}
+
+
+
+/* .menu-list {
+
+  position: fixed ;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+} */
+
+
+.menu-list {
+  position: fixed; /* Fixed positioning for full-screen overlay */
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(47, 79, 123, 0.9); /* Semi-transparent blue background */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
+  transform: translateX(-100%); /* Initially hidden */
+  z-index: 1002; /* Ensure this is higher than other elements */
+}
+
+
+
+
+
+.menu-list.show {
+  transform: translateX(0);
+}
+
+/* .menu-list ul {
+  z-index: 1001;
+  position: fixed; 
+  background-color: #2f4f7f; 
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: calc(100% - 20px); 
+  height: calc(100% - 20px); 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+} */
+
+
+
+
+.menu-list ul {
+  z-index: 1003; 
+  position: absolute; 
+  top: 49%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: #2f4f7f;
+  border-radius: 5px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  width: calc(100% - 20px); 
+  height: calc(100% - 20px); 
+}
+
+
+
+.menu-list li {
+  padding: 15px; 
+  cursor:pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+  width: calc(100% - 20px); 
+   text-align: center;  /* White text for contrast */
+}
+
+.menu-list li:hover {
+  background-color: #3b5f9a;
+}
+
+.menu-list li:last-child {
+  border-bottom: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .hamburger-menu{
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Navbar///////////////////////////// */
 
 .nav{
@@ -89,8 +244,8 @@ object-fit: cover;
 
 .notification-badge{
   position: absolute;
-  height: 11px;
-  width: 11px;
+  height: 14px;
+  width: 14px;
   border-radius: 50%;
   background-color: #002AC4;
   color: white;
@@ -153,6 +308,10 @@ h1 {
 
 }
 
+/* .home{
+  background-image: url('../src/Components/images/Banner\ image.png');
+} */
+
 .home .textbackgroung{
   position: relative;
     z-index: 1;
@@ -161,7 +320,7 @@ h1 {
   align-items: center;
   flex-direction: column;
   /* background-color: rgba(240, 248, 255, 0.219); */
-  height: 95vh;
+  height: 104vh;
 
 }
 
@@ -181,6 +340,7 @@ h1 {
   font-size: 16px;
 
 }
+
 
 .textbackgroung  .button{
   margin-bottom: 30px;
@@ -222,17 +382,17 @@ h1 {
   display: flex;
   justify-content: space-between;
   width: 85%;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
-.first-page
+
 .first-page .icon{
   height: 25px;
 }
 
 .first-page .icon--circle{
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: #fff;
   display: flex;
@@ -241,23 +401,28 @@ h1 {
 }
 
 .first-page .more--less{
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 700;
   
 }
 
 .first-page p{
+  font-size: 18px;
   color: #fff;
   font-family: "PTSans-Regular";
 }
 
 .four-all .first-page{
-padding: 5px 0px 5px 15px;
+padding: 12px 0px 12px 15px;
   display: flex;
   align-items: center;
   width: 23%;
   background-color: #201E1E;
   border-radius: 3px;
+}
+
+.icon--circle .icon{
+  font-size: 12px;
 }
 
 .first-page .plus-nikes{
@@ -317,8 +482,8 @@ color: blue;
   margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding-top:40px;
-  padding-bottom: 70px;
+  padding-top: 85px;
+  padding-bottom: 90px;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -420,9 +585,9 @@ scale: 1.2;
 
 /* Contact--us */
 .contact--container{
-  padding-top: 50px; 
+  padding-top: 80px; 
   background-color:  #F7F7F7 ;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
 }
 .contact--container .contact--body{
 display: flex;
@@ -503,7 +668,7 @@ font-weight: 900;
   background-color: #201E1E;
 }
 
- h4{
+ h5{
   font-size: 16px;
   font-family: "PTSerif-Bold";
  font-weight: 900;
@@ -519,7 +684,7 @@ font-weight: 900;
   width: 100%;
 }
 
-.follow--conatiner h4{
+.follow--conatiner h5{
   margin-top: 20px;
 }
 
@@ -631,26 +796,7 @@ input{
 
 /* Find-YOUR-BIKE///////////////////////////////////////// */
 
-.jjjj{
-  width: 16%;
-}
 
-.jjjj .login--oderstock{
-  width: 100%;
-  
-}
-
-.upcomingevents{
-  width: 100%;
-  margin-bottom: 25px;
-}
-
-.upcomingevents .event--container .eventimgo{
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-
-}
 
 .evevt--allcontainer{
   width: 100%;
@@ -664,20 +810,7 @@ input{
   height: 100%;
   border-radius: 5px;
 } */
-
-.date-time-decs{
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  top: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: end;
- 
-}
+/* 
 .clickevent{
   width: 100%;
   height: 20%;
@@ -688,66 +821,21 @@ input{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
-}
-
-
-.widthevent p{
-  font-size: 9px;
-  color: #fff;
-  font-weight: 500;
-  font-family: "PTSans-Regular";
-  
-}
+} */
 
 
 
-.eventheading{
-width: 100%;
-margin-bottom: 5px;
-background-color: #002AC4;
-height: 5vh;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #fff;
-font-weight: 600;
-font-size: 22px;
-}
-
-
-.widthevent{
-  width: 95%;
-  justify-content: space-between;
-  display: flex;
-}
 
 
 
-.login--oderstock .loginimg{
+
+.selector--image {
+  position: relative;
   width: 100%;
-}
-
-.login--oderstock .oderlogin{
-  width: 100%;
-  background-color: #002AC4;
-  height: 5vh;
-  color: #fff;
-  font-family: "PTSans-Regular";
-  font-weight: 600;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3px;
-}
-
-
-.selector--image{
-  position: relative;
-  width: 100%;
-  height: 400px;
-display: flex;
-justify-content: center;
-align-items: center;
 }
 
 /* .selector--image .position--background{
@@ -760,9 +848,8 @@ align-items: center;
 
 .welcome--delear{
   border-radius: 5px;
-  margin-bottom: 40px;
+  margin: 40px 100px 40px 100px;
   padding-left: 10px;
-  margin-top: 40px;
   border: 2px solid rgba(128, 128, 128, 0.527);
   padding-bottom: 20px;
   padding-top: 20px;
@@ -808,11 +895,10 @@ align-items: center;
 
 
 .filter--container{
-  padding: 0px  0px 25px 20px;
-  width: 80%;
+  padding: 0px  0px 100px 0px;
+  width: 100%;
 }
 .nextprevimg{
-  border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -820,7 +906,7 @@ align-items: center;
 
 
  .Stock--container{
-  padding: 0px 100px 0px 100px;
+  margin: 0px 100px 0px 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -885,17 +971,18 @@ align-items: center;
 /* Oderstock///////////////////////////////////////////////////////////// */
 
 
-.partsavlibleandmotorbikes{
+/* .partsavlibleandmotorbikes{
   padding-left: 100px;
   padding-right: 100px;
-}
+} */
 
 .partsavilable--container{
+  display: none;
   margin: 50px 0px 50px 0px;
   border: 2px solid rgba(128, 128, 128, 0.377);
   padding: 20px 0px 20px 0px;
   width: 100%;
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   border-radius: 5px;
  
@@ -956,22 +1043,86 @@ align-items: center;
 .pro--section--container{
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  padding-bottom: 90px;
 }
 
 
 .option{
-  /* padding-left: 100px; */
   width: 100%;
 }
 
 .pro--section{
   margin: 0px 100px 0px 100px;
-  /* width: 100%; */
   display: flex;
-  /* justify-content: space-between; */
+  flex-direction: column;
+}
+.pro--section .All-purchase-btns{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px 20px 0px ;
+}
+
+.All-purchase-btns button{
+  width: 89px;
+  padding: 5px;
+  background-color: #202020;
+  color: #F1F1F1;
+  font-weight: 900;
+  font-size: 15px;
+  font-family: "PTSans-Regular";
+  border-radius: 3px;
+  transition: .9s;
 }
  
+.All-purchase-btns button:hover{
+background-color: #fff;
+color: #000000;
+border:2px solid #000000;
+}
+
+
+.pro--section--heading{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  background-color: #002AC4;
+}
+/* ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp */
+.search--baricon{
+  align-items: center;
+  position: relative;
+  display: flex;
+  width: 40%;
+ 
+}
+
+.searchbar {
+  color: #002AC4;
+left: 10px;
+  position: absolute;
+}
+.search--baricon input{
+  padding: 10px 0px 10px 50px;
+  font-size: 15px;
+  /* padding-left: 30px; */
+  width: 100%;
+  border-radius: 20px;
+  margin-right: 30px;
+  font-family: "PTSans-Regular";
+}
+
+
+.pro--section--heading h3{
+  font-size: 30px;
+  font-family: "PTSerif-Bold";
+  color: #fff;
+  padding-left: 30px;
+}
+
+
 .pro--section  .buttons button{
   height: 5vh;
  width: 85px;
@@ -988,7 +1139,7 @@ align-items: center;
 }
 
 
-.option .buttons button{
+/* .option .buttons button{
  height: 5vh;
  width: 100%;
  background-color:#002AC4;
@@ -1002,7 +1153,7 @@ align-items: center;
  font-weight: 600;
  margin-bottom: 5px;
 
-}
+} */
 
 .pro--section .buttons{
   display: flex;
@@ -1018,27 +1169,7 @@ align-items: center;
 
 
 
-.buttons .right-two{
-  width: 100%;
-  margin-bottom: 10px;
-  color: #000000;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-padding-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid rgba(128, 128, 128, 0.582);
-};
 
-.right-two .filterimgs{
-  margin-bottom: 12px;
-}
-
-.right-two p{
-  padding: 10px 3px 10px 3px;
-  /* padding-top: 12px; */
-  font-size: 13px;
-}
 
 
 
@@ -1150,17 +1281,27 @@ height: 5vh;
   align-items: center;
 }
 
-.cart .cart--flex{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 57vh;
-  overflow-y: auto;
+.cart--header h3{
+  font-size: 30px;
+  font-family: "PTSerif-Bold";
+ 
 }
 
+.cart .cart--flex{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+
+
+.cartItems{
+  width: 100%;
+}
 .cartItem{
   position: relative;
-  width: 600px;
+  width: 100%;
   height: 6vh;
   display: flex;
   justify-content: center;
@@ -1201,11 +1342,13 @@ height: 5vh;
 .checkout p{
   padding-top: 20px;
   font-family: "PTSans-Regular";
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 900;
   color: #201E1E;
 
 }
+
+/* .cart--header */
 
 .description .countHandler{
   margin-top: 8px;
@@ -1285,14 +1428,13 @@ height: 5vh;
 }
 
 .checkout .checkout--button button {
-  width: 125px;
-  height: 4vh;
-  background-color: #202020;
-  border-radius: 3px;
-  border: none;
-  color: #fff;
-  font-family:"PTSans-Regular" ;
-  font-weight: 900;
+  width: 95px;
+    height: 4vh;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    background-color: #202020;
+    border-radius: 3px;
  
 }
 
@@ -1309,7 +1451,7 @@ height: 5vh;
   .checkout .color--btn{
     padding-left: 5px;
     padding-right: 5px;
-    background-color: #bfbfbf;
+    background-color: #bfbfbf29;
     color: #002AC4;
     padding: 5px;
     
@@ -1317,7 +1459,7 @@ height: 5vh;
 
   .checkout .checkout--button{
     padding-top: 20px;
-    width: 46%;
+    width: 37%;
     display: flex;
     justify-content: space-between;
   }
@@ -1378,9 +1520,6 @@ height: 5vh;
   display: flex;
   justify-content: space-between;
 padding: 70px 100px 70px 100px ;
-
-  /* padding-top: 70px;
-  padding-bottom: 70px; */
 
 }
 
@@ -1469,7 +1608,7 @@ justify-content: center;
 
 .threeimages-atrticles{
   /* background-color: #FF3737; */
-  margin-bottom: 70px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -1490,7 +1629,7 @@ justify-content: center;
   width: 100%;
   height: 100%;
   object-fit: cover;
-transition: 20s;
+transition: .5s;
 }
 
 
@@ -1503,10 +1642,9 @@ transition: 20s;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Overlay background color */
     opacity: 0;
-    transition: .8s;
+    transition: .3s;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: end;
     padding-right: 20px;
     padding-left: 20px;
@@ -1524,59 +1662,15 @@ transition: 20s;
   transform: scale(1.3);
 }
 
+.description--container h5{
+  font-family: "PTSerif-Bold";
+  font-size: 16px;
+
+}
 
 .img--hover:hover .description--container, .three--images{
   opacity: 1;
   border-radius: 5px;
-  /* transition: transform 0.8s ease-in-out; */
-  /* scale: 1.1; */
-
-}
-
-
-.aboutlast--container .maque--scroll{
-  /* margin-top: 30px; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-height: 20vh;
-/* margin-bottom: 30px; */
-
-}
-
-
-
-.aboutlast--container .textbackground {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background-color: #f0f0f03f;
-}
-
-.maque--scroll{
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 35s linear infinite;
-  padding: 10px 0; /* Add some padding to the text */
-}
-
-@keyframes scroll-left {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
-}
-
-
-
-
-.aboutsection--container .allimagesonscroll{
- height: 60px;
- border-radius: 5px;
- padding-left: 30px;
-
 }
 
 
@@ -1591,8 +1685,8 @@ height: 20vh;
 }
 
 .okandperfect--container .okandperfect{
-  padding-top: 140px;
-  padding-bottom: 70px;
+  padding-top: 200px;
+  padding-bottom: 100px;
   width: 50%;
   padding-left: 100px;
   padding-right: 100px;
@@ -1607,7 +1701,7 @@ height: 20vh;
   font-family: "PTSerif-Bold";
 }
 
-.heading h4{
+.heading h5{
   font-size: 16px;
   font-weight: 900;
   font-family: "PTSerif-Bold";
@@ -1624,8 +1718,8 @@ height: 20vh;
 
 
 .bookaservice--container{
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 85px;
+  padding-bottom: 100px;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -1707,8 +1801,8 @@ height: 20vh;
 
 
 .ourpromise--container{
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -1805,8 +1899,8 @@ align-items: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 70px;
-  padding-top: 70px
+  padding-bottom: 100px;
+  padding-top: 100px
 }
 .mot--container h2{
   font-size: 40px;
@@ -1905,17 +1999,34 @@ align-items: center;
 
   }
 
+
+
+
+  /* MENU */
+  
+
+
+
+
+
+
+  /* END-MENU */
+
+
+
+
   .home img {
+    /* z-index: -1; */
     position: absolute;
     height: 52vh;
     width: 100%;
     object-fit: contain;
+    z-index: 0;
 }
 
 .home .textbackgroung {
-  position: relative;
-  z-index: 1;
-  height: 61vh;
+  
+  height: 60vh;
 }
 
 .home .textbackgroung .button button {
@@ -1931,6 +2042,14 @@ align-items: center;
   margin-bottom: 25px;
 }
 
+.first-page .icon {
+  height: 16px;
+}
+
+.first-page .icon--circle {
+  height: 30px;
+  width: 30px;
+}
 
 .four-all .first-page {
   padding: 5px 0px 5px 15px;
@@ -1960,6 +2079,8 @@ align-items: center;
 }
 
 .services {
+  z-index: -1;
+        position: relative;
   padding-right: 10px;
         padding-left: 10px;
   padding-top: 25px;
@@ -1977,6 +2098,7 @@ align-items: center;
   width: 70px;
   position: relative;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .services .card--container {
@@ -2000,6 +2122,9 @@ align-items: center;
   
   font-size: 14px;
  
+}
+h5{
+  font-size: 12px;
 }
 
 .contact--container {
@@ -2092,42 +2217,9 @@ h4 {
 
 
 
-.allfourlinks .four--links {
-  padding-right: 20px;
-  padding-left: 20px;
-  flex-wrap: wrap-reverse;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.iconstext p{
-  font-size: 14px;
-}
-
-.text--width p{
-  font-size: 14px;
-}
-
-.subscribe a{
-  font-size: 14px;
-}
-
-.subscribe {
-  padding: 8px 0px 8px 0px;
-}
-
-.icon--text {
-  width: 50%;
-}
 
 
 
-.icon--text h4 {
- 
-  font-size: 12px;
- 
-}
 
 
 /* about more articles */
@@ -2166,9 +2258,14 @@ h4 {
 }
 
 .description--container p {
+  padding-left: 15px;
   font-size: 14px;
 }
 
+.description--container h5{
+  font-size: 12px;
+  padding-left: 15px;
+}
 
 
 
@@ -2184,17 +2281,21 @@ h4 {
 
 
 .image--containertooimage .background--too--image {
+   z-index: -1;
   height: 100%;
   padding-left: 20px;
 }
 
 .about--container .about-image .too-image {
   height: 63vh;
+  z-index: -1;
+        position: relative;
 }
 
 
 .image--containertooimage {
   height: 63vh;
+  z-index: -1;
 }
 
 .background--too--image h2 {
@@ -2232,6 +2333,7 @@ h4 {
   border: 2px solid #002AC4;
   width: 90px;
   position: absolute;
+  z-index: -1;
 }
 
 .two-about p {
@@ -2261,19 +2363,6 @@ h4 {
  
 }
 
-.aboutlast--container .maque--scroll {
- 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 8vh;
-  
-}
-
-.aboutsection--container .allimagesonscroll {
-  height: 35px;
- 
-}
 
 
 /* END ABOUT */
@@ -2299,10 +2388,7 @@ h4 {
 
 
 /* ORDERSTOCK */
-.partsavlibleandmotorbikes {
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 
 .partsavilable .overlay--images {
  
@@ -2311,15 +2397,6 @@ h4 {
 }
 
 
-.partsavilable--container {
-  margin: 0px 0px 15px 0px;
-  border: 2px solid rgba(128, 128, 128, 0.377);
-  padding: 8px 0px 8px 0px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  border-radius: 5px;
-}
 
 
 .partsavilable {
@@ -2338,6 +2415,66 @@ h4 {
 .filter--container {
   padding: 0px 0px 0px 0px;
   width: 100%;
+}
+
+.All-purchase-btns button {
+  font-size: 10px;
+  width: 59px;
+}
+
+.searchbar {
+  font-size: 11px;
+  left: 20px;
+}
+
+.pro--section {
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pro--section--heading h3 {
+  font-size: 18px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+input {
+  /* ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp */
+  /* margin-left: 10px; */
+  font-size: 16px;
+  /* padding-left: 12px; */
+  width: 100%;
+  margin-right: 10px;
+}
+
+
+.search--baricon{
+  
+  width: 100%;
+ 
+}
+
+.search--baricon input {
+  margin: 0px 10px 0px 10px;
+  padding: 7px 0px 7px 30px;
+  font-size: 12px;
+  /* padding-left: 30px; */
+  width: 85%;
+  border-radius: 20px;
+  margin-right: 0px;
+  font-family: "PTSans-Regular";
+}
+
+
+.pro--section--heading {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  background-color: #002AC4;
 }
 
 .selector--image .position--background {
@@ -2363,11 +2500,9 @@ h4 {
 }
 
 .welcome--delear {
-  margin-bottom: 15px;
-  padding-left: 10px;
-  margin-top: 15px;
-  padding-bottom: 10px;
+  padding: 10px;
   padding-top: 10px;
+  margin: 15px 20px 15px 20px;
 }
 
 .welcome--delear p {
@@ -2381,13 +2516,11 @@ h4 {
 }
 
 .Stock--container {
+  margin: 0px 20px 0px 20px;
   padding: 0px 0px 0px 0px;
   
 }
 
-.jjjj {
-  width: 100%;
-}
 
 
 .eventheading {
@@ -2520,8 +2653,8 @@ h4 {
   padding-right: 0px;
 }
 
-.heading h4 {
-  font-size: 10px;
+.heading h5 {
+  font-size: 12px;
 }
 
 .heading h2 {
@@ -2701,11 +2834,11 @@ h4 {
 }
 
 .whyneedmot {
-  padding-top: 25px;
+  padding-top: 15px;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .textneedmot {
@@ -2713,14 +2846,2026 @@ h4 {
 }
 
 .textneedmot h3 {
+  padding-top: 8px;
   font-size: 18px;
-  padding-bottom: 30px;
+  padding-bottom: 3px;
   font-weight: 900;
+}
+
+.textneedmot p {
+  font-size: 14px;
+  
+}
+
+.Textmot {
+  padding-top: 8px;
+}
+
+.btnmot {
+  margin-top: 30px;
+  width: 150px;
+  padding: 12px;
+  font-size: 14px;
+  
 }
 /* EDN-SERVICES */
 
 
+/* ADD TO CART */
+.cart .cart--flex {
+  width: 100%;
+ 
+}
+
+.cartItems {
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  
+}
 
 
+.cartItem img {
+  object-fit: contain;
+  height: 200px;
+  width: 100%;
+}
+
+.description .price {
+  padding-left: 0px;
+  font-weight: 800;
+  font-size: 14px;
+  
+}
+
+.countHandler input {
+  width: 20%;
+}
+
+
+.cartItem .description {
+  width: 78%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 15px; */
+}
+
+.trash .bin {
+  right: 15px;
+  top: 17px;
+  position: absolute;
+  font-size: 19px;
+ 
+}
+
+.cart .checkout--container {
+
+  width: 100%;
+ 
+}
+
+.checkout p {
+  padding-top: 12px;
+  font-size: 17px;
+}
+
+
+.checkout .checkout--button {
+  padding-top: 17px;
+  width: 56%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.checkout .checkout--button button {
+  font-size: 10px;
+}
+
+.checkout .checkout--button button {
+  width: 76px;
+}
+/* END ADD TO CART */
+
+
+
+
+}
+
+
+
+
+
+
+/* 
+.home img {
+  position: absolute;
+  height: 37vh;
+  width: 100%;
+  object-fit: contain;
+} */
+
+
+
+
+
+@media (min-width: 569px) and (max-width: 768px) {
+
+  .home img {
+    
+    height: 34vh;
+    width: 100%;
+    
+}
+
+
+.home .textbackgroung {
+  
+  height: 40vh;
+}
+
+.first-page .more--less {
+  font-size: 18px;
+}
+
+
+  .first-page p {
+    font-size: 14px;
+    color: #fff;   
+}
+
+.textbackgroung .button {
+  margin-bottom: 17px;
+}
+
+.home .textbackgroung .button button {
+  z-index: 1;
+  height: 3vh;
+  width: 93px;
+  font-size: 12px;
+}
+
+.home-bikes-mtr .four-all {
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+
+.four-all .first-page {
+
+  width: 21%;
+  
+}
+
+.first-page .icon {
+  height: 18px;
+}
+
+.first-page .icon--circle {
+  height: 35px;
+  width: 35px;
+}
+
+.four-all .first-page {
+  padding: 8px 0px 8px 15px;
+}
+
+
+.services {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+
+
+.services h2 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  
+}
+
+
+.services .card--container {
+  width: 92%;
+}
+
+.card--services img {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.card--services .name {
+  
+  font-size: 15px;
+  
+}
+
+
+.card--services p {
+
+  font-size: 15px;
+}
+
+
+.card--container .card--services {
+  
+  width: 28%;
+  
+}
+
+.card--services .background-image {
+ 
+  height: 30vh;
+  
+}
+
+.contact--text h2 {
+  font-size: 30px;
+  font-family: "PTSerif-Bold";
+  font-weight: 700;
+}
+
+
+.contact--container {
+  padding-top: 30px;
+  background-color: #F7F7F7;
+  padding-bottom: 40px;
+}
+
+.contact--body .map--form {
+  width: 90%;
+}
+
+.contact--body .get--flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.get--intouch h3 {
+  font-size: 23px;
+}
+
+.get--intouch p {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+.follow--conatiner .line {
+  margin-top: 13px;
+}
+
+
+.follow--conatiner .follow-flex {
+  padding-top: 9px;display: flex;
+  width: 58%;
+}
+
+
+.contact--body .contact--text {
+  padding-bottom: 20px;
+}
+
+.contact--body .form--container {
+  width: 40%;
+}
+
+.form--container h3 {
+  font-size: 23px;
+}
+
+
+.contact--form .form {
+  font-size: 14px;
+  height: 3vh;
+}
+
+.form--container .contact--form {
+  height: 29vh;
+}
+
+.contact--form .form--text {
+  font-size: 14px;
+  height: 13vh;
+}
+
+
+.contact--form .form--button {
+  height: 3vh;
+  margin-top: 0px;
+  font-size: 12px;
+    
+}
+
+
+/* ABOUT */
+
+.about--container .about-image .too-image {
+  height: 32vh;
+}
+
+
+.image--containertooimage .background--too--image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+}
+
+
+.image--containertooimage {
+  height: 32vh;
+}
+
+.background--too--image h2 {
+  font-size: 30px;
+}
+
+.about-image .text--container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px 40px 40px;
+}
+
+
+.one-about .line {
+  border: 2px solid #002AC4;
+}
+
+.one-about h2 {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.two-about p {
+  font-size: 15px;
+}
+
+
+.about-image .two--images {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.two--images .motor-bike {
+  height: 22vh;
+  width: 46%;
+}
+
+.last--image {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.last--image .gold-image {
+  width: 68%;
+  height: 33vh;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.text--container .two-about {
+  width: 46%;
+}
+
+
+.aboutlast--container .about--morearticles h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+
+.threeimages-atrticles {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.img--hover {
+  width: 200px;
+  height: 135px;
+}
+
+.img--hover .description--container {
+ 
+  padding-right: 0px;
+  padding-left: 0px;
+  
+}
+
+.description--container p {
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.description--container h5 {
+  padding-left: 10px;
+  font-size: 12px;
+}
+/* END-ABOUT */
+
+
+
+/* RENT A BIKE */
+.pro--section--container {
+  padding-bottom: 40px;
+}
+
+.pro--section {
+  margin: 0px 40px 0px 40px;
+}
+
+.pro--section--heading {
+  margin-top: 15px;
+}
+
+.All-purchase-btns {
+  margin: 13px 0px 13px 0px;
+}
+
+.pro--section--heading h3 {
+  font-size: 23px;
+  padding-left: 20px;
+}
+
+
+
+.search--baricon input {
+  padding: 8px 0px 8px 35px;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.pro--section .All-purchase-btns {
+  margin: 15px 0px 15px 0px;
+}
+
+.All-purchase-btns button {
+  width: 68px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.Stock--container {
+  margin: 25px 40px 40px 40px;
+}
+
+.Card--container img {
+  height: 95px;
+}
+
+.Card--container .text p {
+  font-size: 13px;
+}
+
+.text .add--details .b-details-add {
+  font-size: 10px;
+  width: 55px;
+  height: 2vh;
+}
+
+.text .add--details {
+  width: 60%;
+}
+/* END-RENT A BIKE */
+
+
+/* SERRVIECS */
+.repairimg-background {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+
+.okandperfect--container .okandperfect {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  width: 52%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.heading h2 {
+  font-size: 30px;
+}
+
+.heading h5 {
+  font-size: 14px;
+}
+
+.okandperfect p {
+  font-size: 15px;
+}
+
+.okandperfect .heading {
+  padding-bottom: 10px;
+}
+
+.bookaservice--container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bookaservice--container h2 {
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.allthreebooks h3 {
+  font-size: 23px;
+}
+
+.bookimg {
+  height: 270px;
+  object-fit: cover;
+  width: 48%;
+  border-radius: 5px;
+}
+
+.allthreebooks button {
+  width: 136px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.bookaservice .bookaservice--book {
+  height: 270px;
+  
+}
+
+.ourpromise--container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.ourpromise--container h2 {
+  font-weight: 900;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.ourpromises p {
+  font-size: 15px;
+}
+
+.ourpromises h3 {
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 1px;
+}
+
+.ourpromiseimg {
+  height: 270px;
+ 
+}
+
+.highlyskiledtech {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.highlyskiledtech h3 {
+  font-size: 23px;
+  padding-bottom: 1px;
+}
+
+.starttech p {
+    font-size: 15px;
+}
+
+
+.findoutmorebtn {
+  margin-top: 30px;
+  width: 128px;
+  font-size: 12px;
+  
+}
+
+
+.mot--container {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.mot--container h2 {
+  font-size: 30px;
+}
+
+.motimg {
+  object-fit: cover;
+  height: 270px;;
+}
+
+.txtmot p {
+  font-size: 15px;
+}
+
+.speedbikeguarantee {
+  padding-bottom: 8px;
+}
+
+.book-mot {
+  padding-top: 8px;
+}
+
+.textneedmot h3 {
+  font-size: 23px;
+}
+
+.textneedmot p {
+  font-size: 15px;
+}
+
+.textneedmot h3 {
+  font-size: 23px;
+  padding-bottom: 1px;
+}
+
+.Textmot {
+  padding-top: 8px;
+}
+
+
+.btnmot {
+  margin-top: 16px;
+  width: 128px;
+  padding: 12px;
+  font-size: 12px;
+}
+/* END-SERVICES */
+
+
+
+/* ADD TO CART */
+.cart .cart--flex {
+  width: 100%;
+ 
+}
+
+.cartItems {
+  padding-right: 40px;
+  padding-left: 40px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 30vh;
+  
+}
+
+
+.cartItem img {
+  object-fit: contain;
+  height: 200px;
+  width: 100%;
+}
+
+.description .price {
+  padding-left: 0px;
+  font-weight: 800;
+  font-size: 15px;
+  
+}
+
+.countHandler input {
+  width: 20%;
+}
+
+
+.cartItem .description {
+  width: 78%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 15px; */
+}
+
+.trash .bin {
+  right: 15px;
+  top: 17px;
+  position: absolute;
+  font-size: 19px;
+ 
+}
+
+.cart .checkout--container {
+
+  width: 100%;
+ 
+}
+
+.checkout p {
+  padding-top: 12px;
+  font-size: 17px;
+}
+
+
+.checkout .checkout--button {
+  padding-top: 17px;
+  width: 56%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.checkout .checkout--button button {
+  font-size: 10px;
+}
+
+.checkout .checkout--button button {
+  height: 3vh;
+  font-size: 12px;
+  width: 88px;
+}
+
+.checkout .checkout--button {
+  width: 32%;
+}
+
+/* END ADD TO CART */
+
+
+/* ODERSTOCK */
+.selector--image {
+  object-fit: contain;
+  height: 32vh;
+}
+
+.selector--image .position--background {
+  height: 18vh;
+}
+
+.position--background p {
+  font-size: 15px;
+}
+
+.welcome--delear {
+  margin: 40px 40px 40px 40px;
+}
+
+.welcome--delear h3 {
+  font-size: 23px;
+}
+
+.welcome--delear p {
+  font-size: 15px;
+}
+/* ENDODERSTOCK */
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 950px) {
+
+
+
+  .home img {
+    
+    height: 34vh;
+    width: 100%;
+    
+}
+
+
+.home .textbackgroung {
+  
+  height: 39vh;
+}
+
+.first-page .more--less {
+  font-size: 18px;
+}
+
+
+  .first-page p {
+    font-size: 14px;
+    color: #fff;   
+}
+
+.textbackgroung .button {
+  margin-bottom: 17px;
+}
+
+.home .textbackgroung .button button {
+  z-index: 1;
+  height: 3vh;
+  width: 93px;
+  font-size: 12px;
+}
+
+.home-bikes-mtr .four-all {
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+
+.four-all .first-page {
+
+  width: 21%;
+  
+}
+
+.first-page .icon {
+  height: 21px;
+}
+
+.first-page .icon--circle {
+  height: 35px;
+  width: 35px;
+}
+
+
+.services {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+
+
+.services h2 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  
+}
+
+
+.services .card--container {
+  width: 92%;
+}
+
+.card--services img {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.card--services .name {
+  
+  font-size: 15px;
+  
+}
+
+
+.card--services p {
+
+  font-size: 15px;
+}
+
+
+.card--container .card--services {
+  
+  width: 28%;
+  
+}
+
+.card--services .background-image {
+ 
+  height: 30vh;
+  
+}
+
+.contact--text h2 {
+  font-size: 30px;
+  font-family: "PTSerif-Bold";
+  font-weight: 700;
+}
+
+
+.contact--container {
+  padding-top: 30px;
+  background-color: #F7F7F7;
+  padding-bottom: 40px;
+}
+
+.contact--body .map--form {
+  width: 90%;
+}
+
+.contact--body .get--flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.get--intouch h3 {
+  font-size: 23px;
+}
+
+.get--intouch p {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+.follow--conatiner .line {
+  margin-top: 13px;
+}
+
+
+.follow--conatiner .follow-flex {
+  padding-top: 9px;display: flex;
+  width: 58%;
+}
+
+
+.contact--body .contact--text {
+  padding-bottom: 20px;
+}
+
+.contact--body .form--container {
+  width: 40%;
+}
+
+.form--container h3 {
+  font-size: 23px;
+}
+
+
+.contact--form .form {
+  font-size: 14px;
+  height: 3vh;
+}
+
+.form--container .contact--form {
+  height: 29vh;
+}
+
+.contact--form .form--text {
+  font-size: 14px;
+  height: 13vh;
+}
+
+
+.contact--form .form--button {
+  height: 3vh;
+  margin-top: 0px;
+  font-size: 12px;
+    
+}
+
+
+/* ABOUT */
+
+.about--container .about-image .too-image {
+  height: 32vh;
+}
+
+
+.image--containertooimage .background--too--image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+}
+
+
+.image--containertooimage {
+  height: 32vh;
+}
+
+.background--too--image h2 {
+  font-size: 30px;
+}
+
+.about-image .text--container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px 40px 40px;
+}
+
+
+.one-about .line {
+  border: 2px solid #002AC4;
+}
+
+.one-about h2 {
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+.two-about p {
+  font-size: 15px;
+}
+
+
+.about-image .two--images {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.two--images .motor-bike {
+  height: 22vh;
+  width: 46%;
+}
+
+.last--image {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.last--image .gold-image {
+  width: 68%;
+  height: 33vh;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.text--container .two-about {
+  width: 46%;
+}
+
+
+.aboutlast--container .about--morearticles h2 {
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+
+.threeimages-atrticles {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.img--hover {
+  width: 200px;
+  height: 135px;
+}
+
+.img--hover .description--container {
+ 
+  padding-right: 0px;
+  padding-left: 0px;
+  
+}
+
+.description--container p {
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.description--container h5 {
+  padding-left: 10px;
+  font-size: 12px;
+}
+/* END-ABOUT */
+
+
+
+/* RENT A BIKE */
+
+.pro--section {
+  margin: 0px 40px 0px 40px;
+}
+
+.pro--section--heading {
+  margin-top: 15px;
+}
+
+.All-purchase-btns {
+  margin: 13px 0px 13px 0px;
+}
+
+.pro--section--heading h3 {
+  font-size: 23px;
+  padding-left: 20px;
+}
+
+
+
+.search--baricon input {
+  padding: 8px 0px 8px 35px;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.pro--section .All-purchase-btns {
+  margin: 15px 0px 15px 0px;
+}
+
+.All-purchase-btns button {
+  width: 68px;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.Stock--container {
+  margin: 25px 40px 40px 40px;
+}
+
+.Card--container img {
+  height: 95px;
+}
+
+.Card--container .text p {
+  font-size: 14px;
+}
+
+.text .add--details .b-details-add {
+  font-size: 10px;
+  width: 55px;
+  height: 2vh;
+}
+
+.text .add--details {
+  width: 60%;
+}
+/* END-RENT A BIKE */
+
+
+/* SERRVIECS */
+.repairimg-background {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+}
+
+.okandperfect--container .okandperfect {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  width: 52%;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.heading h2 {
+  font-size: 30px;
+}
+
+.heading h5 {
+  font-size: 14px;
+}
+
+.okandperfect p {
+  font-size: 15px;
+}
+
+.okandperfect .heading {
+  padding-bottom: 10px;
+}
+
+.bookaservice--container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.bookaservice--container h2 {
+  font-weight: 900;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.allthreebooks h3 {
+  font-size: 23px;
+}
+
+.bookimg {
+  height: 270px;
+  object-fit: cover;
+  width: 48%;
+  border-radius: 5px;
+}
+
+.allthreebooks button {
+  width: 136px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.bookaservice .bookaservice--book {
+  height: 270px;
+  
+}
+
+.ourpromise--container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.ourpromise--container h2 {
+  font-weight: 900;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.ourpromises p {
+  font-size: 15px;
+}
+
+.ourpromises h3 {
+  font-size: 23px;
+  font-weight: 900;
+  margin-bottom: 1px;
+}
+
+.ourpromiseimg {
+  height: 270px;
+ 
+}
+
+.highlyskiledtech {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.highlyskiledtech h3 {
+  font-size: 23px;
+  padding-bottom: 1px;
+}
+
+.starttech p {
+    font-size: 15px;
+}
+
+
+.findoutmorebtn {
+  margin-top: 30px;
+  width: 128px;
+  font-size: 12px;
+  
+}
+
+
+.mot--container {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+.mot--container h2 {
+  font-size: 30px;
+}
+
+.motimg {
+  object-fit: cover;
+  height: 270px;;
+}
+
+.txtmot p {
+  font-size: 15px;
+}
+
+.speedbikeguarantee {
+  padding-bottom: 8px;
+}
+
+.book-mot {
+  padding-top: 8px;
+}
+
+.textneedmot h3 {
+  font-size: 23px;
+}
+
+.textneedmot p {
+  font-size: 15px;
+}
+
+.textneedmot h3 {
+  font-size: 23px;
+  padding-bottom: 1px;
+}
+
+.Textmot {
+  padding-top: 8px;
+}
+
+
+.btnmot {
+  margin-top: 16px;
+  width: 128px;
+  padding: 12px;
+  font-size: 12px;
+}
+/* END-SERVICES */
+
+
+
+/* ADD TO CART */
+.cart .cart--flex {
+  width: 100%;
+ 
+}
+
+.cartItems {
+  padding-right: 40px;
+  padding-left: 40px;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+
+}
+
+.cartItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+  height: 20vh;
+}
+
+
+.cartItem img {
+  object-fit: contain;
+  height: 148px;
+  width: 100%;
+}
+
+.description .price {
+  padding-left: 0px;
+  font-weight: 800;
+  font-size: 15px;
+  
+}
+
+.countHandler input {
+  width: 20%;
+}
+
+
+.cartItem .description {
+  width: 78%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 15px; */
+}
+
+.trash .bin {
+  right: 15px;
+  top: 17px;
+  position: absolute;
+  font-size: 19px;
+ 
+}
+
+.cart .checkout--container {
+
+  width: 100%;
+ 
+}
+
+.checkout p {
+  padding-top: 12px;
+  font-size: 17px;
+}
+
+
+.checkout .checkout--button {
+  padding-top: 17px;
+  width: 56%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.checkout .checkout--button button {
+  height: 3vh;
+  font-size: 12px;
+  width: 88px;
+}
+
+.checkout .checkout--button {
+  width: 32%;
+}
+/* END ADD TO CART */
+
+
+
+/* ODERSTOCK */
+.selector--image {
+  object-fit: contain;
+  height: 32vh;
+}
+
+.selector--image .position--background {
+  height: 18vh;
+}
+
+.position--background p {
+  font-size: 15px;
+}
+
+.welcome--delear {
+  margin: 40px 40px 40px 40px;
+}
+
+.welcome--delear h3 {
+  font-size: 23px;
+}
+
+.welcome--delear p {
+  font-size: 15px;
+}
+/* ENDODERSTOCK */
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 951px) and (max-width: 1024px) {
+
+
+
+/* NAVBAR */
+.nav {
+  height: 5vh;
+}
+/* END-NAVBAR */
+
+
+
+  /* HOME */
+  .home img {
+    height: 26vh;
+}
+
+.home .textbackgroung {
+  height: 32vh;
+}
+
+.textbackgroung .button {
+  margin-bottom: 20px;
+}
+
+.home .textbackgroung .button button {
+  height: 3vh;
+  font-size: 14px;
+}
+
+.home-bikes-mtr .four-all {
+  
+  width: 86%;
+  margin-bottom: 50px;
+}
+
+.first-page .more--less {
+  font-size: 20px;
+}
+
+.first-page p {
+  font-size: 14px;
+}
+
+.four-all .first-page {
+  width: 22%;
+}
+
+.four-all .first-page {
+  padding: 10px 0px 10px 15px;
+}
+
+.first-page .icon {
+  height: 22px;
+}
+
+.first-page .icon--circle {
+  height: 35px;
+  width: 35px;
+}
+
+.services {
+  padding-top: 65px;
+  padding-bottom: 80px;
+}
+
+.services h2 {
+  font-size: 35px;
+  padding-bottom: 25px;
+}
+
+.card--services img {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.services .card--container {
+  width: 88%;
+}
+
+.card--services .name {
+  font-size: 18px;
+}
+
+.card--services p {
+  font-size: 16px;
+}
+
+.card--services .background-image {
+  height: 20vh;
+}
+
+.card--container .card--services {
+  width: 30%;
+  padding: 20px 8px 20px 8px;
+}
+
+.contact--container {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.contact--text h2 {
+  font-size: 35px;
+}
+
+
+.contact--body .contact--text {
+  padding-bottom: 25px;
+}
+
+.contact--body .get--flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact--body .map--form {
+  width: 86%;
+}
+
+.get--intouch h3 {
+  font-size: 25px;
+}
+
+.form--container h3 {
+  font-size: 25px;
+}
+
+.get--intouch p {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+.follow--conatiner h5 {
+  margin-top: 16px;
+}
+
+.follow--conatiner .follow-flex {
+  width: 48%;
+}
+
+.contact--form .form {
+  height: 3vh;
+  width: 100%;
+  font-size: 15px;
+}
+
+.contact--form .form--text {
+  width: 100%;
+  height: 8vh;
+}
+
+.contact--form .form--button {
+  margin-top: 15px;
+  height: 3vh;
+  width: 110px;
+  font-size: 14px;
+}
+
+.form--container .contact--form {
+  height: 23vh;
+}
+
+.contact--body .form--container {
+  width: 35%;
+}
+
+
+  /* END-HOME */
+
+
+  /* ODERDER */
+  .selector--image {
+    height: 25vh;
+}
+
+.selector--image .position--background {
+  height: 12vh;
+}
+
+.position--background p {
+  font-size: 16px;
+}
+
+.welcome--delear {
+  border-radius: 5px;
+  margin: 35px 70px 35px 70px;
+}
+
+.welcome--delear h3 {
+  font-size: 25px;
+}
+
+.welcome--delear p {
+  font-size: 16px;
+}
+
+.Stock--container {
+  margin: 0px 70px 0px 70px;
+}
+
+.filter--container {
+  padding: 0px 0px 80px 0px;
+}
+
+.image--containertooimage {
+  height: 26vh;
+}
+
+.about--container .about-image .too-image {
+  height: 26vh;
+}
+
+.background--too--image h2 {
+  font-size: 35px;
+}
+
+.about-image .text--container {
+  padding: 80px 70px 80px 70px;
+}
+
+.one-about .line {
+  border: 2px solid #002AC4;
+}
+
+.one-about h2 {
+  margin-top: 12px;
+  font-size: 35px;
+}
+
+.two-about p {
+  font-size: 16px;
+}
+
+
+.about-image .two--images {
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+.two--images .motor-bike {
+  height: 21vh;
+  width: 46%;
+}
+
+.last--image {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.last--image .gold-image {
+  width: 70%;
+  height: 28vh;
+}
+
+.text--container .two-about {
+  width: 46%;
+}
+
+.text--container .one-about {
+  width: 46%;
+}
+
+.aboutlast--container .about--morearticles h2 {
+  margin-bottom: 35px;
+  font-size: 35px;
+}
+
+.img--hover {
+  width: 260px;
+  height: 170px;
+}
+
+
+.img--hover .description--container {
+  padding-right: 0px;
+  padding-left: 10px;
+}
+
+.description--container h5 {
+  font-size: 15px;
+}
+
+.description--container p {
+  font-size: 16px;
+  
+}
+
+.threeimages-atrticles {
+  margin-bottom: 80px;
+}
+  /* END-ODERSTOCK */
+
+
+
+
+/* PRODUCTS */
+.pro--section {
+  margin: 0px 70px 0px 70px;
+}
+
+.pro--section--heading h3 {
+  font-size: 25px;
+  padding-left: 30px;
+}
+
+
+.All-purchase-btns button {
+  width: 84px;
+  font-size: 14px;
+}
+
+.text .add--details .b-details-add {
+  font-size: 13px;
+  width: 77px;
+  height: 2vh;
+}
+
+.text .add--details {
+  width: 63%;
+}
+
+.Card--container img {
+  height: 138px;
+  
+}
+
+.pro--section--container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+/* END-PRODUCTS */
+
+
+/* SEVICES */
+.repairimg-background {
+  height: 24vh;
+}
+
+.okandperfect--container .okandperfect {
+  padding-top: 160px;
+  padding-bottom: 80px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.heading h2 {
+  font-size: 35px;
+}
+
+.heading h5 {
+  font-size: 15px;
+}
+
+.okandperfect .heading {
+  padding-bottom: 20px;
+}
+
+.okandperfect p {
+  font-size: 16px;
+}
+
+.bookaservice--container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.bookaservice--container h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.bookimg {
+  height: 300px;
+}
+
+.bookaservice .bookaservice--book {
+  height: 300px;
+  width: 48%;
+}
+
+allthreebooks h3 {
+  font-size: 25px;
+}
+
+.allthreebooks p {
+  font-size: 16px;
+}
+
+.allthreebooks button {
+  width: 132px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.ourpromise--container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.ourpromise--container h2 {
+  font-size: 35px;
+  padding-bottom: 30px;
+}
+
+.ourpromiseimg {
+  height: 300px;
+}
+
+.ourpromises h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.ourpromises p {
+  font-size: 16px;
+}
+
+.highlyskiledtech h3 {
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+
+.starttech p {
+  font-size: 16px;
+}
+
+.findoutmorebtn {
+  margin-top: 30px;
+  width: 143px;
+  font-size: 14px;
+}
+
+.mot--container {
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+.txtmot p {
+  font-size: 16px;
+}
+
+.speedbikeguarantee {
+  padding-bottom: 10px;
+}
+
+.book-mot {
+  padding-top: 10px;
+}
+
+.mot--container h2 {
+  font-size: 35px;
+}
+
+.textneedmot h3 {
+  font-size: 25px;
+  padding-bottom: 3px;
+}
+
+.textneedmot p {
+  font-size: 16px;
+}
+
+.Textmot {
+  padding-top: 9px;
+}
+
+.btnmot {
+  width: 132px;
+  padding: 12px;
+  font-size: 14px;
+}
+/* END-SERVICES */
+
+/* CART */
+.cart .cart--flex {
+  width: 51%;
+}
+
+.cartItem {
+  height: 3vh;
+}
+
+.checkout .checkout--button {
+  width: 48%;
+}
+
+.checkout .checkout--button button {
+  width: 95px;
+  height: 3vh;
+  font-size: 13px;
+}
+
+.checkout p {
+  font-size: 20px;
+}
+
+.cart .checkout--container {
+  padding-bottom: 10px;
+}
+
+.cart--header h3 {
+  font-size: 25px;
+}
+/* ENDCART */
 
 }

@@ -113,7 +113,7 @@ const [cardCounts, setCardCounts] = useState([
                 <div className="first-page" key={index}>
                   
                   <div className="icon--circle">
-                  <FontAwesomeIcon icon={count.icon} className="icon" />
+                  <FontAwesomeIcon  icon={count.icon} className="icon" />
                    </div>
 
                    <div className="plus-nikes">

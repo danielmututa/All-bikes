@@ -20,10 +20,7 @@
 
 
 .fotter--container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+   
     background-color: #F1F1F1;
   
   }
@@ -56,12 +53,11 @@
    }
   
    .allfourlinks{
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding: 70px 100px 70px 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
+    /* align-items: center; */
+    /* width: 100%; */
    }
 
 .icon--text{
@@ -87,8 +83,165 @@
 
 
 
-/* 
+
  @media (min-width: 200px) and (max-width: 568px) {
   
+ /* FOooter */
+.allfourlinks {
+       flex-wrap: wrap;
+        padding: 25px 20px 15px 20px;
+        display: flex;
+        justify-content: center;
+}
+
+.icon--text h4 {
+  margin-bottom: 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.iconstext p {
+  font-size: 13px;
   
- } */
+}
+.text--width p{
+  font-size: 13px;
+}
+
+.subscribe {
+  padding: 8px 0px 8px 0px;
+  font-size: 13px;
+}
+
+
+.iconstext {
+  padding: 0px 0px 4px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.last--tet p{
+  font-size: 13px;
+}
+
+.icon--text {
+  padding-bottom: 10px;
+  width: 50%;
+}
+
+.last--tet .twicons {
+  width: 23%;
+}
+
+
+.allfourlinks .four--links {
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+
+
+.footer--background p {
+  font-size: 13px;
+}
+
+.footer--background {
+  height: 5vh;
+}
+/* END-FOOTER */
+
+  
+ }
+
+
+
+
+ 
+ @media (min-width: 569px) and (max-width: 768px){
+ 
+  .allfourlinks{
+    padding: 40px 40px 40px 40px;
+    
+  } 
+
+
+  .icon--text h4 {
+    font-size: 16px;
+}
+
+.iconstext {
+  font-size: 15px;
+}
+
+.text--width p{
+  font-size: 15px;
+}
+
+.subscribe {
+  font-size: 15px;
+  padding: 8px 0px 8px 0px;
+}
+
+.last--tet {
+  font-size: 13px;
+}
+
+.footer--background p {
+  font-size: 14px;
+}
+
+.footer--background {
+  height: 6vh;
+
+}
+
+ } 
+
+
+
+
+@media (min-width: 951px) and (max-width: 1024px) {
+
+
+
+  .allfourlinks {
+    padding: 80px 70px 80px 70px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* width: 100%; */
+  }
+
+  .icon--text h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.iconstext {
+  font-size: 15px;
+}
+
+.text--width p{
+  font-size: 15px;
+}
+
+.subscribe {
+  font-size: 15px;
+  padding: 12px 0px 12px 0px;
+}
+
+.last--tet {
+  font-size: 15px;
+}
+
+.footer--background {
+  height: 4vh;
+}
+
+.footer--background p {
+  font-size: 15px;
+}
+
+}

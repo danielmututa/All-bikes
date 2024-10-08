@@ -3,6 +3,8 @@ import DataCards from '../Datafile/Datafile'
 import { ShopContext } from '../context/Shop-context'
 import { Cartitem } from './Cartitem'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 const Carttab = () => {
  const {cartItems ,  getTotalCartAmount} = useContext(ShopContext);
  const totalAmount =  getTotalCartAmount();
@@ -14,7 +16,7 @@ const Carttab = () => {
     <div className='cart'>
 
       <div className='cart--header'>
-        <h1>Your Cart Items</h1>
+        <h3>Your Cart Items</h3>
       </div>
       <div className="cart--flex">
 
@@ -41,7 +43,7 @@ const Carttab = () => {
     <span className='top-line'></span>
       <p className='totalamount'>Subtotal: <span className='color--btn'> £{totalAmount}</span></p>
       <div className="checkout--button">
-      <button onClick={() => navigate('/Rentabike')}>Continue Shopping</button>
+      <button onClick={() => navigate('/Rentabike')}>Continue <FontAwesomeIcon icon={faShoppingCart}/></button>
       <button>Purchase</button>
       </div>
       </div> 

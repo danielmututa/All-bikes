@@ -3,10 +3,10 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShopContext } from '../context/Shop-context';
 
-// import {useCart} from 'react-use-cart'
+
 const Productsrent = (props) => {
 
-//  const {addItem} = useCart();
+
 
 const [showDetails, setShowDetails] = useState(false);
 
@@ -36,11 +36,7 @@ const handleAddToCart = () => {
 
     <img src={ require('../images/' + props.image)} alt="" />
 
-    {/* {showDetails && (
-          <div className="details-info">
-        <p>uehduiedebkebuedbd</p>
-      </div>
-      )} */}
+    
 
  <div className="text">
     <p className="type">{props.type}</p>

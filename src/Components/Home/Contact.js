@@ -46,7 +46,7 @@ const Contact = () => {
               <FontAwesomeIcon className='color' icon={item.ticon} />
               </div>
             <div className="get-two">
-              <h4>{item.heading}</h4>
+              <h5>{item.heading}</h5>
               <p>{item.description}</p>
             </div>
 
@@ -59,7 +59,7 @@ const Contact = () => {
         </div>
 <div className="follow--conatiner">
   <div className='line' ><span ></span></div>
-  <h4>Follow Us:</h4>
+  <h5>Follow Us:</h5>
   <div className="follow-flex">
 
 <div className="icon-background">

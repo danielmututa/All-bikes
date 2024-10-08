@@ -1,19 +1,16 @@
 
 
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 // import Datastcok from "./DataStock";
 import image1 from "../images/imageoo1.webp";
 import image2 from "../images/imageoo2.jpg"
 import image3 from "../images/imageoo3.jpg"
 import image4 from "../images/imageoo4.jpg"
 import image5 from "../images/imageoo5.jpg"
-import filtr1 from "../images/filterbikeoneroad.webp"
-import offroad from "../images/why_we_race_hero.jpg"
-import threeler from "../images/bmw2.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { faLessThan } from "@fortawesome/free-solid-svg-icons";
-import login from "../images/bmw4.jpg";
+
 
 
 const Oderstock = () => {
@@ -49,21 +46,11 @@ const Oderstock = () => {
     {img:"honda14.jpg", type:"HONDA" , motivation:"Wheels of joy" },
   ]
 
-  const Events = [
-    {title:"Speedbike Weekend Ride",
-       eventimage:"dirtbike--o.jpg", 
-       view:"view" 
-    },
-      
-    
-
-    {title:"Bike Maintenance Workshop",
-      eventimage:"motorbike-workshop.jpg",
-         view:"view"
-    },
-  ];
 
 
+
+
+  
 
  const handleNext = () => {
   setCurrentindex((currentindex + 1)% products.length);
@@ -72,6 +59,17 @@ const Oderstock = () => {
  const handleprev = () => {
   setCurrentindex((currentindex - 1 + products.length)% products.length);
  };
+
+
+
+ useEffect(() => {
+  const intervalId = setInterval(() => {
+    handleNext();
+  }, 10000); // 10000ms = 5s
+
+  return () => clearInterval(intervalId);
+}, );
+
 
 
 
@@ -98,106 +96,6 @@ const Oderstock = () => {
 
 
       <div className="stock">
-
-<div className="jjjj">
-
-
-
-
-
-
-<div className="upcomingevents">
-<div className="eventheading">
-    <p>Events</p>
-  </div>
-{
-   Events.map((event=>(
-
-    <div className="event--container">
- 
-      <div className="evevt--allcontainer">
-      <img className="eventimgo" src={require("../images/" + event.eventimage)} alt="" />
-      
-      <div className="date-time-decs">
-
-        <div className="clickevent">
-          <div className="widthevent">
-        <p>{event.title}</p>
-        <p>{event.view}</p>
-          </div>
-        </div>
-
-      </div>
-      </div>
-       
-
-     
-
-
-    </div>
-   )))
-}
-</div>
-
-
-
-<div className="option">
-   
-
-   <div className="buttons">
-     <div className="btn2"> 
-
-     <div > <button  className="btn"  >All</button> </div> 
-   
-
-       </div> 
-       
-   
-
-       <div className="right-two" > 
-        <img className="filterimgs" src={filtr1} alt="" />
-
-    <p >Find your perfect ride with precision filtering. Browse road bikes by type,brand,size, and features</p>
-     </div>  
-
-     <div className="right-two"> 
-     <img className="filterimgs" src={offroad} alt="" />
-
-     <p >Conquer rugged terrain with  precision filtering. Browse off-road bikes by 4-stroke/2-stroke, wheel size and ground clearance</p>
-   
-     </div> 
-
-     <div className="right-two">
-     <img className="filterimgs" src={ threeler} alt="" />
-
-     
-     <p >Experience adrenaline-fueled rides with expert filtering.Find thriller bikes by horsepower, torque, and design</p>
-    
-     </div> 
-
-     
-    
-   </div>
-   
- </div> 
-
-
-
-
-
-
-
-
-
-  <div className="login--oderstock">
-  <img className="loginimg" src={login} alt="" />
-    <div className="oderlogin">
-    <p>LOGIN</p>
-    </div>
-  </div>
-</div>
-
-
 
 <div className="filter--container">
 

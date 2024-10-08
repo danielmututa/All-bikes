@@ -22,7 +22,7 @@ const Footer = () => {
 
 <div className="allfourlinks">
      
-     <div className="four--links">
+    
 
 
 
@@ -127,7 +127,7 @@ const Footer = () => {
 
 
 
-    </div>
+   
   
 
      </div>

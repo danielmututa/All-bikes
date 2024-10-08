@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import DataCards from '../Datafile/Datafile'
-import Aboutsection from './Aboutsection'
+
 
 
 const Aboutlast = () => {
@@ -13,16 +12,7 @@ const Aboutlast = () => {
 
  ])
 
-    const imagedata = ( DataCards.map(item =>{
-
-   return(
-    < Aboutsection
-    img ={item.image}
-    />
-   )
-
-
-    }))
+  
   return (
     <div className='aboutlast--container'>
       <div className="about--morearticles">
@@ -33,7 +23,7 @@ const Aboutlast = () => {
          <div className="img--hover" key={hoverimages.id}>
          <img className='three--images' src={ require('../images/' + hoverimages.dimage) } alt="" />
          <div className="description--container">
-          <h4>{hoverimages.heading}</h4>
+          <h5>{hoverimages.heading}</h5>
          <p>{hoverimages.descriptio}</p>
          </div>
         
@@ -43,13 +33,6 @@ const Aboutlast = () => {
         </div>
       </div>
 
-
-      <div className="textbackground">   
-      <div className="maque--scroll">
-     {imagedata}
-      </div>
-      
-    </div>
     </div>
   )
 }
