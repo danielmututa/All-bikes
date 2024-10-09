@@ -18,6 +18,131 @@
 
 /* endfont */
 
+/* 
+.sign-upform--container{
+  width: 60%;
+
+} */
+
+.all-sign-upform-conatainer{
+  width: 100%;
+  background-color: #0F1316;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.sign-upform--container{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+} 
+
+.form-sign-backgroundcolor{
+  display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 100%;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 20px 20px 0px 50px;
+    margin-bottom: 30px;
+
+}
+
+
+.formsignin-back{
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.mix-toggle--form{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background-color: #272F32;
+  padding-bottom: 50px;
+  border-radius: 20px 20px 20px 20px;
+  margin:40px 0px 40px 0px;
+}
+
+.last-form-toggle{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.log--out{
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log--out p{
+  padding-top: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+.signup-form-name{
+  margin-top: 50px;
+  background-color: #272F32;
+  padding: 4px 0px 4px 20px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  outline: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+}
+
+.sign-upform-password{
+  background-color: #272F32;
+  padding: 4px 0px 4px 20px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  outline: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+}
+
+
+.sign-up-button{
+  border: none;
+    border-radius: 5px;
+    margin: 20px 0px 15px 0px;
+    width: 75px;
+    padding: 9px;
+}
+
+.having-no-account{
+  color: #fff;
+  font-size: 14px;
+}
+
+
+.switch--to--form{
+  color: #fff;
+  font-size: 14px;
+  cursor:pointer;
+}
+
+
 
 
 
@@ -152,6 +277,10 @@ element.style {
   color: #fff;
   width: calc(100% - 20px); 
    text-align: center;  /* White text for contrast */
+}
+
+.menu-list li .white{
+  color: #fff;
 }
 
 .menu-list li:hover {
@@ -738,7 +867,8 @@ border-radius: 10px;
   width: 100%; 
   border: none;
 } 
-input{
+
+.form{
   border: none;
   outline: none;
 }
@@ -1117,6 +1247,7 @@ left: 10px;
   position: absolute;
 }
 .search--baricon input{
+  border: none;
   padding: 10px 0px 10px 50px;
   font-size: 15px;
   /* padding-left: 30px; */
@@ -1475,6 +1606,35 @@ height: 5vh;
     display: flex;
     justify-content: space-between;
   }
+
+
+.cartisempty--container{
+  height: 81vh;
+  width: 100%;
+  background-color: #201e1e00;
+}
+
+.cart-coverempty{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100%;
+}
+
+.cart-coverempty p{
+  font-size: 40px;
+  color: #FF3737;
+  /* font-weight: 600; */
+  font-family:"PTSans-Regular" ;
+}
+
+
+
+
+
+
+
 /* END-TO-CCART */
 
 
@@ -2016,8 +2176,23 @@ align-items: center;
 
   /* MENU */
   
+.hamburger-menu .carticon{
+  font-size: 24px;
+        color: #fff;
+        top: 9px;
+        position: absolute;
+        right: 30px;
+}
+   
 
-
+.notification-badge {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #201E1E;
+  color: white;
+  
+}
 
 
 
@@ -2293,21 +2468,21 @@ h4 {
 
 
 .image--containertooimage .background--too--image {
-   z-index: -1;
+   /* z-index: -1; */
   height: 100%;
   padding-left: 20px;
 }
 
 .about--container .about-image .too-image {
   height: 63vh;
-  z-index: -1;
+  /* z-index: -1; */
         position: relative;
 }
 
 
 .image--containertooimage {
   height: 63vh;
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .background--too--image h2 {
@@ -2449,6 +2624,10 @@ h4 {
   font-size: 18px;
   padding-left: 10px;
   margin-bottom: 5px;
+}
+
+.pro--section--container {
+  padding-bottom: 15px;
 }
 
 input {
@@ -2967,6 +3146,19 @@ input {
 
 .checkout .checkout--button button {
   width: 76px;
+}
+
+
+.cartisempty--container {
+  height: 58vh;
+}
+
+
+.cart-coverempty p {
+  font-size: 30px;
+  color: #FF3737;
+  /* font-weight: 600; */
+  font-family: "PTSans-Regular";
 }
 /* END ADD TO CART */
 
@@ -3633,6 +3825,21 @@ h5 {
 .checkout .checkout--button {
   width: 32%;
 }
+
+
+.cartisempty--container {
+  height: 32vh;
+}
+
+
+.cart-coverempty p {
+  font-size: 32px;
+  color: #FF3737;
+  /* font-weight: 600; */
+  font-family: "PTSans-Regular";
+}
+
+
 
 /* END ADD TO CART */
 
@@ -4313,6 +4520,20 @@ h5 {
 .checkout .checkout--button {
   width: 32%;
 }
+
+.cartisempty--container {
+  height: 25vh;
+}
+
+
+.cart-coverempty p {
+  font-size: 32px;
+  color: #FF3737;
+  /* font-weight: 600; */
+  font-family: "PTSans-Regular";
+}
+
+
 /* END ADD TO CART */
 
 
@@ -4872,12 +5093,30 @@ allthreebooks h3 {
 }
 
 .cart .checkout--container {
-  padding-bottom: 10px;
+  padding-bottom: 70px;
 }
 
 .cart--header h3 {
   font-size: 25px;
 }
+
+.cartisempty--container {
+  height: 26vh;
+}
+
+
+.cart-coverempty p {
+  font-size: 35px;
+  color: #FF3737;
+  /* font-weight: 600; */
+  font-family: "PTSans-Regular";
+}
+
+
+.cart .checkout--container .background--color .checkout {
+  height: 8vh;
+}
+
 /* ENDCART */
 
 }

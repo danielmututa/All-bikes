@@ -5,6 +5,8 @@ import { Cartitem } from './Cartitem'
 import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
+
 const Carttab = () => {
  const {cartItems ,  getTotalCartAmount} = useContext(ShopContext);
  const totalAmount =  getTotalCartAmount();
@@ -50,7 +52,14 @@ const Carttab = () => {
       </div>
       </div>   
     : (
-    <h3>Your Cart is Empty</h3>
+      <div className="cartisempty--container">
+<div className="cart-coverempty">
+
+       
+      <p>Your Cart Is Empty!!</p>
+       
+        </div>
+      </div>
    )
   }
       </div>

@@ -10,8 +10,11 @@ import Products from './Components/Products/Products';
 import Footer from './Components/Footer/Footer';
 import './Components/Footer/Footer.css'
 import './Components/Products/Products.css'
+import Authentication from './Components/authentication/Pages/Authentication'
+// import Dashboard from './Components/authentication/Pages/Dashboard'
+import PrivateRouteLayout from  './Components/authentication/Layout/PrivateRouteLayout'
 // import {CartProvider} from 'react-use-cart'
-
+import Signup from './Components/authentication/Login/Signup'
 // import DataCards from './Components/Datafile/Datafile';
 import Productsfile from './Components/AddtoCartproducts/Productsfile';
 // import Layout from './Components/AddtoCartproducts/Layout';
@@ -35,13 +38,20 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='about' element={<About/>}/>
             <Route path='oderstock' element={< Oderstock />} />
-            <Route path='Rentabike' element={<Productsfile/>} />
+            {/* <Route path='Rentabike' element={<Productsfile/>} /> */}
             <Route path='cart' element={<Carttab/>} />
             <Route path='*' element={<Nomatch/>} />
             <Route path='products' element={<Products/>}/> 
             <Route path='repairandservices' element={<Repairandservices/>}/>
             <Route path='cart' element={<Carttab/>}/> 
+            <Route path='/authentication'  element={<Authentication/>}/>
+            <Route path='/signup'  element={  <Signup />}/>
             
+
+            <Route  element={<PrivateRouteLayout/>} >
+            <Route path='Rentabike' element={<Productsfile/>} />
+ </Route> 
+
           </Routes>
          
         <Footer/>

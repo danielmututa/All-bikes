@@ -8,6 +8,7 @@ import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import Contact from "./Contact";
 import { useState , useEffect} from "react";
 
+
 import logo from '../images/logo1.png'
 // import logo from 
 // import Footerlinks from "./Footerlinks";
