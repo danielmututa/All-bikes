@@ -1510,6 +1510,7 @@ height: 5vh;
 }
 
 .countHandler input{
+  border: none;
   width: 25%;
   text-align: center;
   font-weight: bolder;
@@ -3162,7 +3163,41 @@ input {
 }
 /* END ADD TO CART */
 
+/* SIGN IN FORM */
 
+.mix-toggle--form {
+ 
+  width: 100%;
+  padding-bottom: 24px;
+  border-radius: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.form-sign-backgroundcolor {
+  width: 100%;
+  height: 190px;
+  background-color: #fff;
+  border-radius: 0px 0px 0px 50px;
+  margin-bottom: 30px;
+}
+
+.signup-form-name {
+  margin-top: 50px;
+  background-color: #272F32;
+  padding: 4px 0px 4px 0px;
+  font-size: 14px;
+  
+}
+
+.sign-upform-password {
+  background-color: #272F32;
+  padding: 4px 0px 4px 0px;
+  font-size: 14px;
+  
+}
+
+
+/* END SIGNOUT FORM */
 
 
 }
@@ -3871,6 +3906,39 @@ h5 {
 }
 /* ENDODERSTOCK */
 
+/* SIGNIN FORM */
+.mix-toggle--form {
+  width: 58%;
+  background-color: #272F32;
+  padding-bottom: 30px;
+  border-radius: 20px 20px 20px 20px;
+  margin: 30px 0px 30px 0px;
+}
+
+
+.form-sign-backgroundcolor {
+ 
+  width: 100%;
+  height: 160px;
+ 
+}
+
+
+.signup-form-name {
+ 
+  font-size: 15px;
+  
+}
+
+.sign-upform-password {
+ 
+  font-size: 14px;
+}
+.createan-account{
+  font-size: 15px;
+}
+/* SIGNOUT-FORM */
+
 
 
 }
@@ -4566,6 +4634,37 @@ h5 {
 /* ENDODERSTOCK */
 
 
+.mix-toggle--form {
+  width: 58%;
+  background-color: #272F32;
+  padding-bottom: 30px;
+  border-radius: 20px 20px 20px 20px;
+  margin: 30px 0px 30px 0px;
+}
+
+
+.form-sign-backgroundcolor {
+ 
+  width: 100%;
+  height: 160px;
+ 
+}
+
+
+.signup-form-name {
+ 
+  font-size: 15px;
+  
+}
+
+.sign-upform-password {
+ 
+  font-size: 14px;
+}
+.createan-account{
+  font-size: 15px;
+}
+/* SIGNOUT-FORM */
 
 
 
@@ -5118,5 +5217,28 @@ allthreebooks h3 {
 }
 
 /* ENDCART */
+
+
+/* SIGNIN-FORM */
+.mix-toggle--form {
+  width: 45%;
+  background-color: #272F32;
+  padding-bottom: 35px;
+  border-radius: 20px 20px 20px 20px;
+  margin: 35px 0px 35px 0px;
+}
+
+.form-sign-backgroundcolor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 160px;
+  background-color: #fff;
+  border-radius: 20px 20px 0px 50px;
+  margin-bottom: 30px;
+}
+/* SIGNOUT-FORM */
+
 
 }
