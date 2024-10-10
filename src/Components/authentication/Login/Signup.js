@@ -11,7 +11,7 @@ const Signup = (props) => {
   
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/dashboard";
+  const from = location.state?.from?.pathname || "/Rentabike";
 
   const { error, isLoading, signup } = Usersignup();
 
