@@ -12,7 +12,7 @@ export const Cartitem = (props) => {
   return (
   
   <div className='cartItem'>
-   <img src={require(`../images/${image}`) } alt={type} />
+   <img loading="lazy" src={require(`../images/${image}`) } alt={type} />
 
    <div className="description">
     {/* <div className="line"><span className='top-line'></span></div> */}

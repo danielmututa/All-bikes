@@ -21,7 +21,7 @@ const Aboutlast = () => {
         {images.map((hoverimages)=>(
   
          <div className="img--hover" key={hoverimages.id}>
-         <img className='three--images' src={ require('../images/' + hoverimages.dimage) } alt="" />
+         <img loading="lazy" className='three--images' src={ require('../images/' + hoverimages.dimage) } alt="" />
          <div className="description--container">
           <h5>{hoverimages.heading}</h5>
          <p>{hoverimages.descriptio}</p>

@@ -34,7 +34,7 @@ const handleAddToCart = () => {
       </div>
       )}
 
-    <img src={ require('../images/' + props.image)} alt="" />
+    <img loading="lazy" src={ require('../images/' + props.image)} alt="" />
 
     
 

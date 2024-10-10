@@ -33,7 +33,7 @@ const Navbar = () => {
        
 
             <div className="logo">
-                <NavLink><img src={logo } alt="" /></NavLink>
+                <NavLink><img loading="lazy" src={logo } alt="" /></NavLink>
             </div>
 
         <div className="links">

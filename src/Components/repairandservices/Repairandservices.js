@@ -10,7 +10,7 @@ import motimg from "../images/motimg.jpg"
 const Repairandservices = () => {
   return (
     <div className='repair--container'>
-<img className='repairimg-background' src={fisrtimg } alt="" />
+<img loading="lazy" className='repairimg-background' src={fisrtimg } alt="" />
    
    <div className="okandperfect--container">
     <div className="okandperfect">
@@ -34,7 +34,7 @@ const Repairandservices = () => {
           </div>
           <div className="line"><span></span></div>
       </div>
- <img className='bookimg' src={bookimg} alt="" />
+ <img loading="lazy" className='bookimg' src={bookimg} alt="" />
 
     </div>
   </div>
@@ -44,7 +44,7 @@ const Repairandservices = () => {
    <h2>OUR PROMISE TO YOU</h2>
 
 <div className="flexourpromises">
-<img className='ourpromiseimg' src={bikerepair1} alt="" />
+<img loading="lazy" className='ourpromiseimg' src={bikerepair1} alt="" />
    <div className="ourpromises">
     <h3>What You Expect</h3>
     <p>Experience transparency and peace of mind at Speedbikezim. We provide comprehensive quotes and utilize advanced video inspections to identify any issues, ensuring you're fully informed before we begin work. Our team keeps you updated throughout the process, and your approval is always required before commencing any repairs. At Speedbikezim, we're dedicated to exceeding your expectations</p>
@@ -64,7 +64,7 @@ const Repairandservices = () => {
 
     
    <div className="flexourpromises">
-<img className='ourpromiseimg' src={Motorhealth} alt="" />
+<img loading="lazy" className='ourpromiseimg' src={Motorhealth} alt="" />
    <div className="ourpromises">
     <h3>Complimentary Motorcycle Health</h3>
     <p>We will carry out a free of charge comprehensive Motorcycle health check when your bike is being serviced. The condition of all critical components and safety ralated items are cheacked including brakes, suspension and tyres.</p>
@@ -83,7 +83,7 @@ const Repairandservices = () => {
 </div>
 
 <div className="flexourpromises">
-<img className='ourpromiseimg' src={Recallbike} alt="" />
+<img loading="lazy" className='ourpromiseimg' src={Recallbike} alt="" />
    <div className="ourpromises">
     <h3>Recalls</h3>
     <p>We check every bike for any outstanding factory recalls or campaigns every time your bike is booked in for a service. These will be carrried out free of charge.</p>
@@ -107,7 +107,7 @@ const Repairandservices = () => {
 
 
 <div className="flexourpromises">
-<img className='ourpromiseimg' src={bikewash} alt="" />
+<img loading="lazy" className='ourpromiseimg' src={bikewash} alt="" />
    <div className="ourpromises">
     <h3>Bike Wash</h3>
     <p>We will always offfer you a complimentary bike wash after your bike is serviced. You will also find a wide range of Speedbike motorcycle CARE products for sale to help you keep your bike in tip-top condition. </p>
@@ -124,7 +124,7 @@ const Repairandservices = () => {
 <div className="mot--container">
   <h2>MOT</h2>
   <div className="mot--flex">
-    <img className='motimg' src={motimg} alt="" />
+    <img loading="lazy" className='motimg' src={motimg} alt="" />
 
     <div className="txtmot">
 
@@ -148,7 +148,7 @@ const Repairandservices = () => {
 
          <button className='btnmot'>BOOK AN MOT</button>
     </div>
-    <img className='motimg' src={motimg} alt="" />
+    <img loading="lazy" className='motimg' src={motimg} alt="" />
   </div>
 </div>
 

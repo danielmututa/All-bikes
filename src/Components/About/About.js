@@ -15,7 +15,7 @@ const About = () => {
                <div className="about-image">
 
                   <div className="image--containertooimage">
-                  <img src={aboutimgae} alt="" className="too-image" />
+                  <img loading="lazy" src={aboutimgae} alt="" className="too-image" />
                 <div className="background--too--image">
                 <h2>About Speedbikeszim.com</h2>
                 </div>
@@ -33,8 +33,8 @@ const About = () => {
                 </div>
 
                <div className="two--images">
-                <img className="motor-bike" src={img1} alt="" />
-                <img className="motor-bike" src={imgdust} alt="" />
+                <img loading="lazy" className="motor-bike" src={img1} alt="" />
+                <img loading="lazy" className="motor-bike" src={imgdust} alt="" />
                </div>
 
 
@@ -49,13 +49,13 @@ const About = () => {
                 </div>
 
                 <div className="two--images">
-                <img className="motor-bike" src={bm150} alt="" />
-                <img className="motor-bike" src={bm150one} alt="" />
+                <img loading="lazy" className="motor-bike" src={bm150} alt="" />
+                <img loading="lazy" className="motor-bike" src={bm150one} alt="" />
                
                </div>
 
                   <div className="last--image">
-                    <img className="gold-image" src={lastimage} alt="" />
+                    <img loading="lazy" className="gold-image" src={lastimage} alt="" />
                   </div>
                </div>
                   

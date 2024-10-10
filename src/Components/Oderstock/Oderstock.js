@@ -84,7 +84,7 @@ const Oderstock = () => {
   {
    parts.map((item) => (
     <div className="partsavilable">
-      <img className="partsimgs" src={require("../images/" + item.img)} alt="" />
+      <img loading="lazy" className="partsimgs" src={require("../images/" + item.img)} alt="" />
       <div className="overlay--images">
         <p>{item.type}</p>
       </div>
@@ -103,7 +103,7 @@ const Oderstock = () => {
 
 <div className="selector--image">
 
- <img className="nextprevimg" src={products[currentindex].image} alt={products[currentindex].text} />
+ <img loading="lazy" className="nextprevimg" src={products[currentindex].image} alt={products[currentindex].text} />
  <div className="position--background">
   <p>{products[currentindex].text}</p>
  </div>

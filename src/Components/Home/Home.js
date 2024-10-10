@@ -77,7 +77,7 @@ const [cardCounts, setCardCounts] = useState([
 
 
 
-<img src={brgimage} alt=""/>
+<img src={brgimage} loading="lazy" alt=""/>
 
   <div className="textbackgroung">
 
@@ -140,8 +140,8 @@ const [cardCounts, setCardCounts] = useState([
       datacard.map((item =>(
 
         <div className="card--services">
-    <img className="background-image" src={logo} alt="" />
-        <img src={ require('../images/' + item.image)} alt="" />
+    <img loading="lazy" className="background-image" src={logo} alt="" />
+        <img loading="lazy" src={ require('../images/' + item.image)} alt="" />
         <div className="card--service--text">
       <p className='name'>{item.name}</p>
     <div className="contact-speak"><span></span></div>
