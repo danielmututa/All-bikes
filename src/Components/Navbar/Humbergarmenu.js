@@ -7,7 +7,7 @@ import { Sling as Hamburger } from 'hamburger-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ShopContext } from "../context/Shop-context"; 
-
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -64,6 +64,8 @@ const HamburgerMenu = () => {
                 toggle={handleToggle} 
             />
 
+<NavLink className="authentication--menu" to= '/authentication' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
+
 
        
 <NavLink className="carticon" to= '/cart' style={inlineStyle}>
@@ -77,7 +79,7 @@ const HamburgerMenu = () => {
 
        
             <div className={`menu-list ${isOpen ? 'show' : ''}`} role="navigation" aria-label="Main Menu">
-                <ul>
+                <ul className="height--menu">
                 <li onClick={handleClose}> <NavLink to='/' className="white" style={inlineStyle}>Home</NavLink></li>
                 <li onClick={handleClose}>         <NavLink to='/about' className="white" style={inlineStyle}>About</NavLink></li>
           <li onClick={handleClose}><NavLink to= '/Rentabike' className="white" style={inlineStyle}>Rent a bike</NavLink></li>

@@ -42,13 +42,22 @@ const Signup = (props) => {
    }
  }
 
+
+
+ const handleBack = () => {
+    navigate(-1);
+  };
+ 
+
+
+
   return (
     <div className="all-sign-upform-conatainer">
         <div className="mix-toggle--form">
 
         <div className="form-sign-backgroundcolor">
             <div className="formsignin-back">
-            <FontAwesomeIcon icon={faArrowLeft}/>
+            <FontAwesomeIcon className="arrow-back" onClick={handleBack} icon={faArrowLeft}/>
         <p className="createan-account">Create your account</p>
         </div>
         </div>

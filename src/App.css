@@ -130,6 +130,20 @@
     padding: 9px;
 }
 
+.arrow-back{
+  color: #0F1316;
+  transition: transform 0.6s;
+}
+
+.arrow-back:hover{
+  transform: translateY(-10px);
+}
+
+
+
+
+
+
 .having-no-account{
   color: #fff;
   font-size: 14px;
@@ -213,11 +227,11 @@ element.style {
 
 .menu-list {
   position: relative; /* Fixed positioning for full-screen overlay */
-  top: 48px;
+  /* top: 48px; */
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(47, 79, 123, 0.9); /* Semi-transparent blue background */
+  background-color: rgb(47, 79, 123); /* Semi-transparent blue background */
   transition: transform 0.5s ease-in-out; /* Smooth transition */
   transform: translateX(-100%); /* Initially hidden */
   z-index: 1002; /* Ensure this is higher than other elements */
@@ -248,25 +262,13 @@ element.style {
 
 
 
-
 .menu-list ul {
-  z-index: 1003; 
-  position: absolute; 
-  top: 42%;
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  background-color: #2f4f7f;
-  /* border-radius: 5px; */
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  padding: 10px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-  width: calc(100% - 20px); 
-  height: calc(100% - 20px); 
+  margin-top: 130px;
+  width: 100%;
+  z-index: 1003;
+  position: absolute;
+  height: 500px;
 }
-
 
 
 .menu-list li {
@@ -291,13 +293,20 @@ element.style {
   border-bottom: none;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .hamburger-menu{
     display: none;
   }
+} */
+
+
+@media screen and (min-width: 950px) {
+  
+  .hamburger-menu{
+    display: none;
+  }
+
 }
-
-
 
 
 
@@ -2195,8 +2204,13 @@ align-items: center;
   
 }
 
-
-
+.authentication--menu {
+  font-size: 24px;
+  color: #fff;
+  top: 9px;
+  position: absolute;
+  right: 77px;
+}
 
   /* END-MENU */
 
@@ -2206,7 +2220,7 @@ align-items: center;
   .home img {
     /* z-index: -1; */
     position: absolute;
-    height: 52vh;
+    height: 375px;
     width: 100%;
     object-fit: contain;
     z-index: 0;
@@ -2214,7 +2228,7 @@ align-items: center;
 
 .home .textbackgroung {
   
-  height: 60vh;
+  height: 418px;
 }
 
 .home .textbackgroung .button button {
@@ -3221,17 +3235,69 @@ input {
 
 @media (min-width: 569px) and (max-width: 768px) {
 
+  .nav {
+   display: none;
+}
+
+
+
+/* HAMBARMENU */
+ 
+.hamburger-menu .carticon{
+  font-size: 24px;
+        color: #fff;
+        top: 9px;
+        position: absolute;
+        right: 30px;
+}
+   
+
+.notification-badge {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #201E1E;
+  color: white;
+  
+}
+
+.height--menu .white{
+  font-size: 20px;
+}
+
+
+
+.authentication--menu {
+  font-size: 24px;
+  color: #fff;
+  top: 9px;
+  position: absolute;
+  right: 95px;
+}
+
+
+
+/* END-HAMBAGERMENU */
+
+
+
+
+
+
+
   .home img {
     
-    height: 34vh;
+    height: 360px;
     width: 100%;
     
 }
 
 
+
+
 .home .textbackgroung {
   
-  height: 40vh;
+  height: 406px;
 }
 
 .first-page .more--less {
@@ -3959,11 +4025,14 @@ h5 {
 
 @media (min-width: 769px) and (max-width: 950px) {
 
+  .nav {
+    display: none;
+}
 
 
   .home img {
     
-    height: 34vh;
+    height: 400px;
     width: 100%;
     
 }
@@ -3971,8 +4040,51 @@ h5 {
 
 .home .textbackgroung {
   
-  height: 39vh;
+  height: 456px;
 }
+
+
+
+/* HAMBARMENU */
+ 
+.hamburger-menu .carticon{
+  font-size: 24px;
+        color: #fff;
+        top: 9px;
+        position: absolute;
+        right: 30px;
+}
+   
+
+.notification-badge {
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #201E1E;
+  color: white;
+  
+}
+
+.height--menu .white{
+  font-size: 20px;
+}
+
+
+
+.authentication--menu {
+  font-size: 24px;
+  color: #fff;
+  top: 9px;
+  position: absolute;
+  right: 95px;
+}
+
+
+
+
+/* END-HAMBAGERMENU */
+
+
 
 .first-page .more--less {
   font-size: 18px;
@@ -4695,11 +4807,11 @@ h5 {
 
   /* HOME */
   .home img {
-    height: 26vh;
+    height:356px;
 }
 
 .home .textbackgroung {
-  height: 32vh;
+  height: 443px;
 }
 
 .textbackgroung .button {

@@ -4,6 +4,7 @@ import logo from '../images/logo1.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ShopContext } from "../context/Shop-context"; 
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 const Navbar = () => {
     const { cartItems } = useContext(ShopContext);
 
@@ -57,6 +58,9 @@ const Navbar = () => {
             <NavLink to= '/repairandservices' style={inlineStyle}>Services</NavLink>
             <div className="linehover"><span></span></div>
             </div>
+
+
+             <NavLink to= '/authentication' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
 
 
             <NavLink to= '/cart' style={inlineStyle}>
