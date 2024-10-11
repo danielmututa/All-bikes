@@ -1217,20 +1217,64 @@ border-radius: 10px;
 .All-purchase-btns button{
   width: 89px;
   padding: 5px;
-  background-color: #202020;
-  color: #F1F1F1;
+  color: #0F1316;
   font-weight: 900;
   font-size: 15px;
   font-family: "PTSans-Regular";
   border-radius: 3px;
   transition: .9s;
+  overflow: hidden;
+  position: relative;
 }
  
-.All-purchase-btns button:hover{
-background-color: #fff;
-color: #000000;
-border:2px solid #000000;
+
+.All-purchase-btns button:hover {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
 }
+
+.All-purchase-btns button:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #002AC4;
+  z-index: -1;
+  animation: load 1s ease-in-out forwards;
+}
+
+@keyframes load {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @keyframes load {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+} */
 
 
 .pro--section--heading{
@@ -1954,6 +1998,8 @@ transition: .5s;
     background-color: #fff;
     border-radius: 3px;
     transition: .9s;
+    overflow: hidden;
+    position: relative;
 
 }
 
@@ -1966,11 +2012,28 @@ transition: .5s;
 }
 
 .allthreebooks button:hover{
-  background-color: #002AC4;
+  background-color: transparent;
   color: #fff;
-  border: #fff;
+  /* border: #fff; */
   
 }
+
+.allthreebooks button:hover::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  z-index: -1;
+  animation: load 1s ease-in-out forwards;
+  background-color: #002AC4;
+}
+
+
+
+
+
 
 .bookimg{
   height: 400px;
@@ -2045,6 +2108,26 @@ align-items: center;
     background-color: #fff;
     border-radius: 3px;
     transition: .9s;
+    position: relative;
+    overflow: hidden;
+   
+}
+
+.findoutmorebtn:hover{
+  background-color: transparent;
+  color: #fff;
+}
+
+.findoutmorebtn:hover::after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  content: "";
+  z-index: -1;
+  background-color: #002AC4;
+  animation: load 1s ease-in-out forwards;
 }
 
 
@@ -2164,9 +2247,27 @@ align-items: center;
   background-color: #fff;
   border-radius: 3px;
   transition: .9s;
+  position: relative;
+  overflow: hidden;
 
 }
 
+.btnmot:hover{
+  background-color: transparent;
+  color: #fff;
+}
+
+.btnmot:hover::after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  content: "";
+  z-index: -1;
+  background-color: #002AC4;
+  animation: load 1s ease-in-out forwards;
+}
 
 /* END-Repairandservices****************************** */
 
