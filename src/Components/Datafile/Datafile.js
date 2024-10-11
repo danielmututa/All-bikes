@@ -13,11 +13,10 @@
     show:"Show Bike",
     review:"Bike Review",
     details:"Details"
-
    },
     {
       id:'2',
-    image:'honda1.webp',
+    image:'dirtbike--100.jpg',
     add:'Cart',
     price: '1450',
     name:'Dirtbike',
@@ -118,7 +117,7 @@
    },
     {
       id:'11',
-    image:'yahoo2.jpg',
+    image:'dirt-bike-one.jpg',
     add:'Cart',
     price: '2400',
     name:'Dirtbike',
@@ -130,7 +129,7 @@
    },
     {
       id:'12',
-    image:'yahoo3.webp',
+    image:'dirt-bike-two.jpg',
     add:'Cart',
     price: '4500',
     name:'Dirtbike',
