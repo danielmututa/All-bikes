@@ -3549,12 +3549,10 @@ input {
 
 
 
-
 .video {
   position: relative;
-  height: 35vh;
+  height: 400px;
 }
-
 
 .overlaybackground p {
   font-size: 25px;
@@ -4308,10 +4306,9 @@ h5 {
 
 
   
-
 .video {
   position: relative;
-  height: 35vh;
+  height: 400px;
 }
 
 .overlaybackground h1 {
@@ -5089,12 +5086,23 @@ h5 {
 
 
   /* HOME */
-  .home img {
-    height:356px;
+  .video {
+    position: relative;
+    height: 454px;
 }
 
-.home .textbackgroung {
-  height: 443px;
+.overlaybackground h1 {
+  font-size: 60px;
+}
+
+.overlaybackground p {
+  font-size: 23px;
+  padding-bottom: 25px;
+}
+
+.overlaybackground .button button {
+  height: 43px;
+  width: 98px;
 }
 
 .textbackgroung .button {
