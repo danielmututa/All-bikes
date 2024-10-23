@@ -212,17 +212,7 @@ element.style {
 
 
 
-/* .menu-list {
 
-  position: fixed ;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); 
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%);
-} */
 
 
 .menu-list {
