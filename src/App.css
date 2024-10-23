@@ -4307,20 +4307,26 @@ h5 {
 }
 
 
-  .home img {
-    
-    height: 400px;
-    width: 100%;
-    
-}
-
-
-.home .textbackgroung {
   
-  height: 456px;
+
+.video {
+  position: relative;
+  height: 35vh;
 }
 
+.overlaybackground h1 {
+  font-size: 48px;
+}
 
+.overlaybackground p {
+  font-size: 25px;
+  padding-bottom: 21px;
+}
+
+.overlaybackground .button button {
+  height: 40px;
+  width: 101px;
+}
 
 /* HAMBARMENU */
  
