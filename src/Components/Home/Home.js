@@ -18,8 +18,8 @@ import logo from '../images/logo1.png'
 const Home = () => {
 
  const [datacard] = useState ([
-  {image:'one-person.jpg', name:'Sabbir Hossain Abir', description:"Speedbikes' attention to detail and craftsmanship is impressive. The riding experience is smooth and exhilarating. Highly recommended for cycling enthusiasts!"},
-  {image:'one-persontwo.jpg', name:'Zakaria Bin Moti', description:"Impressive customer service at Speedbikes helped me find the perfect bike seamlessly. Expert advice is guaranteed every time. The team's knowledge and support exceeded my expectations. Five-star service!"},
+  {image:'one-person.jpg', name:'Sabbir Hossain Abir', description:"Impressive attention to detail and craftsmanship make Speedbikes stand out. The riding experience is smooth and exhilarating, making them a fantastic choice for cycling enthusiasts everywhere."},
+  {image:'one-persontwo.jpg', name:'Zakaria Bin Moti', description:"Exceptional customer service at Speedbikes helped me find the perfect bike. Their knowledgeable team provided expert advice that exceeded my expectations. Truly a five-star experience every time!"},
   {image:'one-personthree.jpg', name:'John Brian Sira', description:"The Speedbike offers an amazing ride with smooth handling. Its sleek design makes every outing enjoyable for both casual and serious cyclists. Let me know if you need any further adjustments!"}
 
  ]);
