@@ -1,0 +1,119 @@
+*{
+
+margin: 0px;
+padding: 0px;
+}
+
+
+.buttonsfilters--allfeatures  .twofilterbuttons{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px 20px 43px;
+}
+
+.buttonsfilters--allfeatures  .twofilterbuttons .button--filter{
+    height: 5vh;
+    width: 85px;
+    background-color: gray;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-weight: 600;
+ 
+    
+}
+
+
+
+
+.allfeatures{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 63.5vh;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.wrap--feature-cards .featre--container{
+    position: relative;
+    height: 250px;
+    width: 300px;
+  
+ 
+}
+.wrap--feature-cards .featre--container img{
+ 
+    height:100%;
+    width: 100%;
+    border-radius: 9px;
+    object-fit: cover;
+    
+   
+
+}
+
+
+
+.featre--container:hover .text-overlay{
+  opacity: 1;
+}
+
+
+.text-overlay{
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    transition: 2s;
+    border-radius: 9px;
+    opacity: 0;
+
+}
+
+
+
+
+
+
+.text-overlay p{
+    color: white;
+}
+
+
+
+
+.wrap--feature-cards .buttons--container .button {
+ 
+display: flex;
+justify-content: space-between;
+}
+
+
+.wrap--feature-cards .buttons--container .button .viewmore{
+    border: none;
+    background: none;
+    height: 28px;
+    width: 75px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.wrap--feature-cards .buttons--container .button .viewmore:hover{
+    height: 28px;
+    width: 75px;
+    font-weight: 500;
+    background-color: aquamarine;
+    border-radius: 3px;
+    color: white;
+}
+
+.wrap--feature-cards{
+    padding-bottom: 30px;
+}
