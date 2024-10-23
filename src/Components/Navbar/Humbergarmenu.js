@@ -64,7 +64,8 @@ const HamburgerMenu = () => {
                 toggle={handleToggle} 
             />
 
-<NavLink className="authentication--menu" to= '/authentication' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
+
+<NavLink className="authentication--menu" to='/authentication' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
 
 
        

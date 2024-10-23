@@ -1,5 +1,5 @@
 import aboutimgae from "../images/motorcycle-showcase-faded-frame.jpg"
-import img1 from "../images/bmw-is-working-on-an-electric-boxer-motorcycle.webp"
+import img1 from "../images/bannerimg.jpg"
 import bm150one from "../images/150-bm--one.jpg"
 import imgdust from "../images/why_we_race_hero.jpg"
 import bm150 from "../images/dirtbike--o.jpg"
