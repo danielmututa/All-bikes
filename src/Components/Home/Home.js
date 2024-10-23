@@ -1,11 +1,20 @@
 import { useNavigate } from "react-router-dom";
+// import brgimage from '../images/Banner image.png'
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {faHome} from "@fortawesome/free-solid-svg-icons"
+// import { faBicycle } from "@fortawesome/free-solid-svg-icons";
+// import { faPeopleGroup } from "@fortawesome/free-solid-svg-icons";
+// import { faMotorcycle } from "@fortawesome/free-solid-svg-icons";
 import Contact from "./Contact";
 import { useState } from "react";
-import vedio from "../videos/5052676-hd_1920_1080_30fps.mp4"
-
+import vedio from "../videos/5198958-uhd_4096_2160_25fps.mp4"
+// import backgroungimg from "../images/Banner image.png"
 
 
 import logo from '../images/logo1.png'
+// import logo from 
+// import Footerlinks from "./Footerlinks";
+
 const Home = () => {
 
  const [datacard] = useState ([
@@ -143,7 +152,7 @@ const Home = () => {
         </div>
       ))}
     </div> */}
-
+{/* kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk */}
 
 
 
