@@ -366,7 +366,7 @@ element.style {
 
 .nav{
  background-color: #fff;
- height: 10vh;
+ height: 11vh;
  padding: 0px 100px 0px 100px;
  display: flex;
  align-items: center;
@@ -539,7 +539,7 @@ h1 {
 
 .video {
   position: relative;
-  height: 90vh;
+  height: 89vh;
 }
 
 .video video {
@@ -986,6 +986,7 @@ font-weight: 900;
 .get--intouch p{
   font-size: 18px;
   font-family: "PTSans-Regular";
+  padding: 8px 0px;
 }
 
 .A-P-EMAIL .get-icons{
@@ -1396,7 +1397,7 @@ border-radius: 10px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 20px 0px 20px 0px ;
+  margin: 20px 0px 40px 0px ;
 }
 
 .All-purchase-btns button{
@@ -1467,7 +1468,7 @@ border-radius: 10px;
 .pro--section--heading{
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px 0px 10px 0px;
   width: 100%;
   background-color: #002AC4;
