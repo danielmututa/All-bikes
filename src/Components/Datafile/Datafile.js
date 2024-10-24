@@ -9,7 +9,7 @@
     add: 'Cart',
     price: '1400',
     type: "BMW",
-    name:'Roadbike',
+    name:'Offroad',
     show:"Show Bike",
     review:"Bike Review",
     details:"Details"
@@ -19,7 +19,7 @@
     image:'dirtbike--100.jpg',
     add:'Cart',
     price: '1450',
-    name:'Dirtbike',
+    name:'Thriller',
     show:"Show Bike",
     type: "Honda",
     review:"Bike Review",
