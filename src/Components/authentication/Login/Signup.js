@@ -1,133 +1,14 @@
 
-// import { useState } from "react";
-// import Usersignup from "../auth/Usersignup";
-// import { useNavigate, useLocation } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-// import UserLogout from "../auth/Userlogout"
-// const Signup = (props) => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-  
-//   const navigate = useNavigate();
-//   const location = useLocation();
-//   const from = location.state?.from?.pathname || "/Rentabike";
-
-//   const { error, isLoading, signup } = Usersignup();
-
-//   const handleSignUp = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       await signup(email, password);
-//       // If successful (no error thrown), proceed with navigation
-//       navigate(from, { replace: true });
-//       setEmail("");
-//       setPassword("");
-//     } catch (err) {
-//       // Error handling is done in the hook, no need to do anything here
-//       // as the error state will be updated automatically
-//     }
-//   };
-
-
-
-//   const { logOut} = UserLogout();
-
-//  const handleLogOut = async () =>{
-//    await logOut();
- 
-//    if (!error) {
-//      navigate("/");
-//    }
-//  }
-
-
-
-//  const handleBack = () => {
-//     navigate(-1);
-//   };
- 
-
-
-
-//   return (
-//     <div className="all-sign-upform-conatainer">
-//         <div className="mix-toggle--form">
-
-//         <div className="form-sign-backgroundcolor">
-//             <div className="formsignin-back">
-//             <FontAwesomeIcon className="arrow-back" onClick={handleBack} icon={faArrowLeft}/>
-//         <p className="createan-account">Create your account</p>
-//         </div>
-//         </div>
-
-//       <form className="sign-upform--container" onSubmit={handleSignUp}>
-
-//         {/* <div className="form-sign-backgroundcolor">
-//             <h3>create an account</h3>
-//         <h2>Create your account</h2>
-//         </div> */}
-
-//         <input
-//         className="signup-form-name"
-//           type="email"
-//           placeholder="email"
-//           value={email}
-//           onChange={(e) => setEmail(e.target.value)}
-//           disabled={isLoading}
-//         />
-        
-//         <input
-//         className="sign-upform-password"
-//           type="password"
-//           placeholder="password"
-//           value={password}
-//           onChange={(e) => setPassword(e.target.value)}
-//           disabled={isLoading}
-//         />
-
-//         {error && <p className="error">{error}</p>}
-//         <button className="sign-up-button" type="submit" disabled={isLoading}>
-//           {isLoading ? 'Loading...' : 'Sign up'}
-//         </button>
-//       </form>
-
-//       <div className="last-form-toggle">
-//       <p className="having-no-account">Have an account?</p>
-//       <p className="switch--to--form" onClick={props.toggleForm} disabled={isLoading}>Login</p>
-//       </div>
-
-//       <div className="log--out">
-//       <p  onClick = {handleLogOut}>Log Out</p>
-//        </div>
-
-//     </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
-
-
-
-
-
-
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Usersignup from "../auth/Usersignup";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import UserLogout from "../auth/Userlogout";
-
+import UserLogout from "../auth/Userlogout"
 const Signup = (props) => {
-  const [email, setEmail] = useState(props.initialEmail || "");
-  const [password, setPassword] = useState(props.initialPassword || "");
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/Rentabike";
@@ -149,71 +30,190 @@ const Signup = (props) => {
     }
   };
 
-  const { logOut } = UserLogout();
 
-  const handleLogOut = async () => {
-    await logOut();
-    if (!error) {
-      navigate("/");
-    }
-  };
 
-  const handleBack = () => {
+  const { logOut} = UserLogout();
+
+ const handleLogOut = async () =>{
+   await logOut();
+ 
+   if (!error) {
+     navigate("/");
+   }
+ }
+
+
+
+ const handleBack = () => {
     navigate(-1);
   };
+ 
 
-  // Effect to update email and password if props change
-  useEffect(() => {
-    setEmail(props.initialEmail || "");
-    setPassword(props.initialPassword || "");
-  }, [props.initialEmail, props.initialPassword]);
+
 
   return (
     <div className="all-sign-upform-conatainer">
-      <div className="mix-toggle--form">
+        <div className="mix-toggle--form">
+
         <div className="form-sign-backgroundcolor">
-          <div className="formsignin-back">
-            <FontAwesomeIcon className="arrow-back" onClick={handleBack} icon={faArrowLeft} />
-            <p className="createan-account">Create your account</p>
-          </div>
+            <div className="formsignin-back">
+            <FontAwesomeIcon className="arrow-back" onClick={handleBack} icon={faArrowLeft}/>
+        <p className="createan-account">Create your account</p>
+        </div>
         </div>
 
-        <form className="sign-upform--container" onSubmit={handleSignUp}>
-          <input
-            className="signup-form-name"
-            type="email"
-            placeholder="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={isLoading}
-          />
+      <form className="sign-upform--container" onSubmit={handleSignUp}>
 
-          <input
-            className="sign-upform-password"
-            type="password"
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            disabled={isLoading}
-          />
+        {/* <div className="form-sign-backgroundcolor">
+            <h3>create an account</h3>
+        <h2>Create your account</h2>
+        </div> */}
 
-          {error && <p className="error">{error}</p>}
-          <button className="sign-up-button" type="submit" disabled={isLoading}>
-            {isLoading ? 'Loading...' : 'Sign up'}
-          </button>
-        </form>
+        <input
+        className="signup-form-name"
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          disabled={isLoading}
+        />
+        
+        <input
+        className="sign-upform-password"
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          disabled={isLoading}
+        />
 
-        <div className="last-form-toggle">
-          <p className="having-no-account">Have an account?</p>
-          <p className="switch--to--form" onClick={props.toggleForm} disabled={isLoading}>Login</p>
-        </div>
+        {error && <p className="error">{error}</p>}
+        <button className="sign-up-button" type="submit" disabled={isLoading}>
+          {isLoading ? 'Loading...' : 'Sign up'}
+        </button>
+      </form>
 
-        <div className="log--out">
-          <p onClick={handleLogOut}>Log Out</p>
-        </div>
+      <div className="last-form-toggle">
+      <p className="having-no-account">Have an account?</p>
+      <p className="switch--to--form" onClick={props.toggleForm} disabled={isLoading}>Login</p>
       </div>
+
+      <div className="log--out">
+      <p  onClick = {handleLogOut}>Log Out</p>
+       </div>
+
+    </div>
     </div>
   );
 };
 
 export default Signup;
+
+
+
+
+
+
+
+
+
+// import { useState, useEffect } from "react";
+// import Usersignup from "../auth/Usersignup";
+// import { useNavigate, useLocation } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+// import UserLogout from "../auth/Userlogout";
+
+// const Signup = (props) => {
+//   const [email, setEmail] = useState(props.initialEmail || "");
+//   const [password, setPassword] = useState(props.initialPassword || "");
+
+//   const navigate = useNavigate();
+//   const location = useLocation();
+//   const from = location.state?.from?.pathname || "/Rentabike";
+
+//   const { error, isLoading, signup } = Usersignup();
+
+//   const handleSignUp = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       await signup(email, password);
+//       // If successful (no error thrown), proceed with navigation
+//       navigate(from, { replace: true });
+//       setEmail("");
+//       setPassword("");
+//     } catch (err) {
+//       // Error handling is done in the hook, no need to do anything here
+//       // as the error state will be updated automatically
+//     }
+//   };
+
+//   const { logOut } = UserLogout();
+
+//   const handleLogOut = async () => {
+//     await logOut();
+//     if (!error) {
+//       navigate("/");
+//     }
+//   };
+
+//   const handleBack = () => {
+//     navigate(-1);
+//   };
+
+//   // Effect to update email and password if props change
+//   useEffect(() => {
+//     setEmail(props.initialEmail || "");
+//     setPassword(props.initialPassword || "");
+//   }, [props.initialEmail, props.initialPassword]);
+
+//   return (
+//     <div className="all-sign-upform-conatainer">
+//       <div className="mix-toggle--form">
+//         <div className="form-sign-backgroundcolor">
+//           <div className="formsignin-back">
+//             <FontAwesomeIcon className="arrow-back" onClick={handleBack} icon={faArrowLeft} />
+//             <p className="createan-account">Create your account</p>
+//           </div>
+//         </div>
+
+//         <form className="sign-upform--container" onSubmit={handleSignUp}>
+//           <input
+//             className="signup-form-name"
+//             type="email"
+//             placeholder="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             disabled={isLoading}
+//           />
+
+//           <input
+//             className="sign-upform-password"
+//             type="password"
+//             placeholder="password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             disabled={isLoading}
+//           />
+
+//           {error && <p className="error">{error}</p>}
+//           <button className="sign-up-button" type="submit" disabled={isLoading}>
+//             {isLoading ? 'Loading...' : 'Sign up'}
+//           </button>
+//         </form>
+
+//         <div className="last-form-toggle">
+//           <p className="having-no-account">Have an account?</p>
+//           <p className="switch--to--form" onClick={props.toggleForm} disabled={isLoading}>Login</p>
+//         </div>
+
+//         <div className="log--out">
+//           <p onClick={handleLogOut}>Log Out</p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Signup;
