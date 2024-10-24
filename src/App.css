@@ -2099,8 +2099,8 @@ transition: .5s;
 }
 
 .okandperfect--container .okandperfect{
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding-top: 100px;
+  padding-bottom: 80px;
   width: 50%;
   padding-left: 100px;
   padding-right: 100px;
@@ -2132,8 +2132,8 @@ transition: .5s;
 
 
 .bookaservice--container{
-  padding-top: 85px;
-  padding-bottom: 100px;
+  padding-top: 65px;
+  padding-bottom: 80px;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -2234,8 +2234,8 @@ transition: .5s;
 
 
 .ourpromise--container{
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   padding-left: 100px;
   padding-right: 100px;
   display: flex;
@@ -2352,8 +2352,8 @@ align-items: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 100px;
-  padding-top: 100px
+  padding-bottom: 80px;
+  padding-top: 80px
 }
 .mot--container h2{
   font-size: 40px;
