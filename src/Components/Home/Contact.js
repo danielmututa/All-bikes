@@ -35,7 +35,7 @@ const Contact = () => {
        <div className="get--intouch">
 
         <h3>Get In Touch</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas possimus minima quos molestias ipsam id quam vero quae velit itaque perferendis dolore aut culpa natus temporibus, dolorem tempora dignissimos illum?</p>
+        <p>Contact us today to learn more about our services or to inquire about our bikes.</p>
 
         <div className="A-P-EMAIL">
 

@@ -617,7 +617,7 @@ const Login = (props) => {
   const handleSignupRedirect = () => {
     props.toggleForm();
     props.setSignupEmail(preservedEmail);
-    props.setSignupPassword(preservedPassword);
+  props.setSignupPassword(preservedPassword);
   };
 
   const handleLogOut = async () => {
