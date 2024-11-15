@@ -40,9 +40,9 @@ function LoginForm({ onSwitchForm, showMessage }) {
     showMessage(
       <div>
         Remember?{' '}
-        <a onClick={() => handleSave()}>YES</a>{' '}
-        <a onClick={() => showMessage('')}>NO</a>{' '}
-        <a onClick={() => handleErase()}>ERASE</a>
+        <p onClick={() => handleSave()}>YES</p>{' '}
+        <p onClick={() => showMessage('')}>NO</p>{' '}
+        <p onClick={() => handleErase()}>ERASE</p>
       </div>
     );
   };
@@ -83,8 +83,8 @@ function LoginForm({ onSwitchForm, showMessage }) {
         />
         <button className="login-btn1" type="submit">SignIn</button>
         <section className='login-section' >
-          <span><a href="#">Forgot Password?</a></span>
-          <span><a onClick={onSwitchForm}>Don't have an account?</a></span>
+          <span><p className='AlreadyRegistered' href="#">Forgot Password?</p></span>
+          <span><p className='AlreadyRegistered' onClick={onSwitchForm}>Don't have an account?</p></span>
         </section>
       </center>
     </form>
