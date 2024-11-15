@@ -18,7 +18,7 @@ const MotBooking = () => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [ setIsLoading] = useState(false);
 
   const selectservice = [
     { name: 'Oil change' },
