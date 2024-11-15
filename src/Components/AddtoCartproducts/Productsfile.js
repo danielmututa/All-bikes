@@ -1,18 +1,18 @@
 
 
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import Productsrent from "./Productsrent";
 import DataCards from "../Datafile/Datafile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
+
 
 
 
 
 const  Productsfile = () => {
 
-const[data,setData] = useState([]);
+
   const [items,setItems] = useState(DataCards);
   const [searchQuery, setSearchQuery] = useState('');
 

@@ -1,7 +1,6 @@
 import React,{useContext} from 'react'
 import { ShopContext } from '../context/Shop-context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faAdd , faTrash , faMinus  } from '@fortawesome/free-solid-svg-icons'
 
 export const Cartitem = (props) => {
