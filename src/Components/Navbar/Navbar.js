@@ -49,25 +49,7 @@ const Navbar = () => {
         <div className="linehover"><span></span></div>
         </div>
             
-            {/* <NavLink to= '/products' style={inlineStyle}>Products</NavLink> */}
-            {/* <div className="link-line">
-            <NavLink to= '/Rentabike' style={inlineStyle}>Rent a bike</NavLink>
-            <div className="linehover"><span></span></div>
-            </div> */}
-
-            {/* reviewandrating */}
-            {/* <div className="link-line">
-            <NavLink to= '/booking' style={inlineStyle}>Review</NavLink>
-            <div className="linehover"><span></span></div>
-            </div> */}
-
-            {/* <div className="link-line">
-            <NavLink to= '/managelistings' style={inlineStyle}>Manage</NavLink>
-            <div className="linehover"><span></span></div>
-            </div> */}
-
-
-
+            
 <div className="link-line">
             <NavLink to= '/repairandservices' style={inlineStyle}>Services</NavLink>
             <div className="linehover"><span></span></div>

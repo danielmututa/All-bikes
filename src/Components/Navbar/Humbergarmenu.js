@@ -65,7 +65,7 @@ const HamburgerMenu = () => {
             />
 
 
-<NavLink className="authentication--menu" to='/authentication' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
+<NavLink className="authentication--menu" to='/auth' style={inlineStyle}><FontAwesomeIcon icon={faUser}/> </NavLink>
 
 
        
@@ -75,6 +75,8 @@ const HamburgerMenu = () => {
                         <span className="notification-badge">{getTotalItemsInCart()}</span>
                     )}
             </NavLink>
+
+
 
 
 
