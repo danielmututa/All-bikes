@@ -129,7 +129,7 @@ const handleAddToCart = () => {
          
 
       <button className='b-details-add' onClick={handleAddToCart}>
-        <FontAwesomeIcon icon={faShoppingCart}/>  {props.addToCart}  {cartItemAmount > 0 && `(${cartItemAmount})`}
+        <FontAwesomeIcon icon={faShoppingCart}/>  {props.add}  {cartItemAmount > 0 && `(${cartItemAmount})`}
           </button>
       
     </div>
