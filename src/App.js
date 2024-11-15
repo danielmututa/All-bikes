@@ -1,6 +1,5 @@
 import {Routes,Route} from 'react-router-dom'
  import './App.css'
-// import { useState } from 'react';
  import About from './Components/About/About';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
@@ -10,23 +9,22 @@ import Products from './Components/Products/Products';
 import Footer from './Components/Footer/Footer';
 import './Components/Footer/Footer.css'
 import './Components/Products/Products.css'
-import Authentication from './Components/authentication/Pages/Authentication'
-// import Dashboard from './Components/authentication/Pages/Dashboard'
-import PrivateRouteLayout from  './Components/authentication/Layout/PrivateRouteLayout'
-// import {CartProvider} from 'react-use-cart'
-import Signup from './Components/authentication/Login/Signup'
-// import DataCards from './Components/Datafile/Datafile';
 import Productsfile from './Components/AddtoCartproducts/Productsfile';
-// import Layout from './Components/AddtoCartproducts/Layout';
 import Carttab from './Components/AddtoCartproducts/Carttab';
 import Shopcontextprovider from './Components/context/Shop-context';
 import Repairandservices from './Components/repairandservices/Repairandservices';
 import HamburgerMenu from './Components/Navbar/Humbergarmenu';
-
-
+import ServiceBooking from './Components/repairandservices/Servicebooking';
+import Reviewandrating from './Components/reviewandratinng/Reviewandrating';
+import AccountForm from './Components/AddtoCartproducts/Accountform';
+import SellerDashboard from './Components/ManageListings/SellerDashboard';
+import UserEventListing from './Components/ManageListings/Usereventlistings';
+import MechanicEventManagement from './Components/ManageListings/Mechanicsandevents';
+import UserListing from './Components/ManageListings/UserListing';
+import Auth from './Components/authentication/auth/Auth';
+import MotBooking from './Components/repairandservices/MotBooking';
 
 function App() {
-  // const [item] = useState(DataCards)
   return (
     <div className="App">
       <>
@@ -38,19 +36,32 @@ function App() {
             <Route path='/' element={<Home/>} />
             <Route path='about' element={<About/>}/>
             <Route path='oderstock' element={< Oderstock />} />
-            {/* <Route path='Rentabike' element={<Productsfile/>} /> */}
             <Route path='cart' element={<Carttab/>} />
             <Route path='*' element={<Nomatch/>} />
             <Route path='products' element={<Products/>}/> 
             <Route path='repairandservices' element={<Repairandservices/>}/>
             <Route path='cart' element={<Carttab/>}/> 
-            <Route path='/authentication'  element={<Authentication/>}/>
-            <Route path='/signup'  element={  <Signup />}/>
-            
+              <Route path='/reviews' element={ <Reviewandrating/> }/>
+              <Route path='/servicebooking' element={<ServiceBooking/> } />
+              <Route path='/payments' element={<AccountForm/> } />
+              <Route path='userlistings' element={<UserListing/> } />
+            <Route path='seller' element={<SellerDashboard/>}/>
+               <Route path='usermechanics' element={<UserEventListing/>} />
+               <Route path='mechanicevents' element={<MechanicEventManagement/>} />
+                <Route path='motbooking' element={<MotBooking/>} />
 
-            <Route  element={<PrivateRouteLayout/>} >
+
+
+        <Route path="/auth" element={<Auth />} />
+        
+
+  
+
+
+
+            {/* <Route  element={<PrivateRouteLayout/>} > */}
             <Route path='Rentabike' element={<Productsfile/>} />
- </Route> 
+           {/* </Route>  */}
 
           </Routes>
          

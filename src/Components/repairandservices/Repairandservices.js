@@ -6,8 +6,22 @@ import Motorhealth from "../images/health-checkbike.webp"
 import Recallbike from "../images/recallbike.jpg"
 import bikewash from "../images/bikewash.jpg"
 import motimg from "../images/motimg.jpg"
+import { useNavigate } from 'react-router-dom'
+
+
 
 const Repairandservices = () => {
+   
+  const navigate = useNavigate();
+
+  const navigateservice = () =>{
+    navigate('/servicebooking')
+  }
+
+  const navigatemot = () => {
+         navigate('/motbooking')
+  }
+
   return (
     <div className='repair--container'>
 <img loading="lazy" className='repairimg-background' src={fisrtimg } alt="" />
@@ -30,7 +44,8 @@ const Repairandservices = () => {
           <div className="allthreebooks">
           <h3>Book A Service</h3>
           <p>Find Out More</p>
-          <button>Book A Service</button>
+          <button onClick={navigateservice}> BOOK A SERVICE</button>
+         
           </div>
           <div className="line"><span></span></div>
       </div>
@@ -146,7 +161,7 @@ const Repairandservices = () => {
 
          <p  className='Textmot'>Use the Speedbike Service Online Booking System to book your MOT quickly and easly.</p>
 
-         <button className='btnmot'>BOOK AN MOT</button>
+         <button onClick={navigatemot} className='btnmot'>BOOK AN MOT</button>
     </div>
     <img loading="lazy" className='motimg' src={motimg} alt="" />
   </div>

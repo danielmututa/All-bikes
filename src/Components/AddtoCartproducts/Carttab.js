@@ -12,6 +12,9 @@ const Carttab = () => {
  const totalAmount =  getTotalCartAmount();
  const navigate = useNavigate();
 
+const purchasebtn = () =>{
+  navigate('/payments')
+} 
  console.log('Cart Items:', cartItems);
 
   return (
@@ -46,7 +49,7 @@ const Carttab = () => {
       <p className='totalamount'>Subtotal: <span className='color--btn'> £{totalAmount}</span></p>
       <div className="checkout--button">
       <button onClick={() => navigate('/Rentabike')}>Continue <FontAwesomeIcon icon={faShoppingCart}/></button>
-      <button>Purchase</button>
+      <button onClick={purchasebtn}>Purchase</button>
       </div>
       </div> 
       </div>

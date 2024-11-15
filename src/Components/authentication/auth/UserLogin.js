@@ -1,64 +1,86 @@
-// import {ProjectAuth} from "../firebase/Firebase";
 
 
+// // // auth/Userlogin.js
+// // import { getAuth, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 
-// let error = null;
+// // const Userlogin = () => {
+// //   const auth = getAuth();
 
-// const login = async (email, password) => {
-//   error =null;
+// //   const userExists = async (email) => {
+// //     try {
+// //       const methods = await fetchSignInMethodsForEmail(auth, email);
+// //       return methods.length > 0; // User exists if methods are found
+// //     } catch (error) {
+// //       console.error("Error checking user:", error);
+// //       return false;
+// //     }
+// //   };
 
-//   try {
-//     const res = await ProjectAuth.signInWithEmailAndPassword(email,password);
-//     error = null;
-//     console.log(res.user)
-//     return res
+// //   const login = async (email, password) => {
+// //     try {
+// //       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+// //       return userCredential.user;
+// //     } catch (error) {
+// //       console.error("Login failed:", error);
+// //       return null;
+// //     }
+// //   };
 
-//   } catch (err) {
+// //   return { userExists, login };
+// // };
 
-//     error = err.message;
-//     console.log(error);
-    
-//   }
-
-// };
-
-
-// const Userlogin = () => {
-//     return {error , login}
-// };
-
-// export default Userlogin
-
-
-
-
-
+// // export default Userlogin;
 
 
-// import { ProjectAuth } from "../firebase/Firebase";
-
-// let error = null;
-// let isLoading = false;
-
-// const login = async (email, password) => {
-//   isLoading = true;
-//   error = null;
-
-//   try {
-//     const res = await ProjectAuth.signInWithEmailAndPassword(email, password);
-//     error = null;
-//     console.log(res.user);
-//     isLoading = false;
-//     return res;
-//   } catch (err) {
-//     error = err.message;
-//     console.log(error);
-//     isLoading = false;
-//   }
-// };
+// import { getAuth, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 
 // const Userlogin = () => {
-//   return { error, isLoading, login };
+//     const auth = getAuth();
+
+//     // Check if user exists by email
+//     const userExists = async (email) => {
+//       try {
+//         const methods = await fetchSignInMethodsForEmail(auth, email);
+//         return methods.length > 0; // User exists if methods are found
+//       } catch (error) {
+//         console.log("Error checking user:", error);
+//         return false;
+//       }
+//     };
+
+//     // Login with email and password
+//     // const login = async (email, password) => {
+//     //     try {
+//     //         const userCredential = await signInWithEmailAndPassword(auth, email, password);
+//     //         console.log("Login successful:", userCredential.user); // Log user details on successful login
+//     //         return userCredential.user;
+//     //     } catch (error) {
+//     //         console.error("Login failed:", error.message); // Log detailed error message
+//     //         return null; // Return null on failure
+//     //     }
+//     // };
+
+
+
+//     const login = async (email, password) => {
+   
+
+//       const signup = async (email, password) => {
+//         setIsLoading(true);
+//         try {
+//           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+//           console.log("Signup successful:", userCredential.user);
+//           setIsLoading(false);
+//         } catch (error) {
+//           console.error("Signup error:", error);
+//           setIsLoading(false);
+//           throw error;
+//         }
+//       };
+
+
+
+//     return { userExists, login };
 // };
 
 // export default Userlogin;
@@ -68,74 +90,3 @@
 
 
 
-
-// import { ProjectAuth } from "../firebase/Firebase";
-
-// let error = null;
-// let isLoading = false;
-
-// const login = async (email, password) => {
-//   isLoading = true;
-//   error = null;
-
-//   try {
-//     const res = await ProjectAuth.signInWithEmailAndPassword(email, password);
-//     error = null;
-//     isLoading = false;
-//     return res;
-//   } catch (err) {
-//     if (err.code === 'auth/invalid-credential') {
-//       error = 'no-account';
-//     } else {
-//       error = err.message;
-//     }
-//     console.log(error);
-//     isLoading = false;
-//   }
-// };
-
-// const Userlogin = () => {
-//   return { error, isLoading, login };
-// };
-
-// export default Userlogin;
-
-
-
-
-
-// UserLogin.js
-import { ProjectAuth } from "../firebase/Firebase";
-
-let error = null;
-let isLoading = false;
-
-const login = async (email, password) => {
-  isLoading = true;
-  error = null;
-
-  try {
-    const res = await ProjectAuth.signInWithEmailAndPassword(email, password);
-    error = null;
-    isLoading = false;
-    return res;
-  } catch (err) {
-    console.log("Firebase error code:", err.code); // Add this line for debugging
-    
-    // Check for all possible "no user" error codes
-    if (err.code === 'auth/invalid-credential' || 
-        err.code === 'auth/user-not-found' ||
-        err.code === 'auth/wrong-password') {
-      error = 'no-account';
-    } else {
-      error = err.message;
-    }
-    isLoading = false;
-  }
-};
-
-const Userlogin = () => {
-  return { error, isLoading, login };
-};
-
-export default Userlogin;

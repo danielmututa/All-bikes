@@ -1,91 +1,75 @@
-// import { ProjectAuth } from "../firebase/Firebase";
+// // import { ProjectAuth } from "../firebase/Firebase";
 
-// let error = null;
+// // let error = null;
 
 
-// const signUp = async (email , password)  => {
-//  error = null;
+// // const signUp = async (email , password)  => {
+// //  error = null;
 
-//  try{
-//     const res = await ProjectAuth.createUserWithEmailAndPassword (email,password);
+// //  try{
+// //     const res = await ProjectAuth.createUserWithEmailAndPassword (email,password);
    
-//     if (!res) {
-//         throw new Error("Something went wrong");
+// //     if (!res) {
+// //         throw new Error("Something went wrong");
+// //     }
+
+// //  }catch (err) {
+// //  error = err.message;
+// //  console.log(error)
+
+// //  }
+// // }
+
+// // const Usersignup = () =>{
+// //     return {error , signUp};
+// //     // alert ('you must have an account')
+// // };
+
+// // export default Usersignup
+
+
+
+
+
+
+
+
+
+// // auth/Usersignup.js
+// import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
+// import { useState } from "react";
+
+// // Assuming this file manages Firebase logic for signup
+
+// const Usersignup = () => {
+//   const [isLoading, setIsLoading] = useState(false);
+
+//   const auth = getAuth();
+
+//   // This function checks if the user exists using Firebase's method for checking existing email
+//   const userExists = async (email) => {
+//     try {
+//       const methods = await fetchSignInMethodsForEmail(auth, email);
+//       return methods.length > 0; // If methods are found, it means the user exists
+//     } catch (error) {
+//       console.log("Error checking user:", error);
+//       return false;
 //     }
+//   };
 
-//  }catch (err) {
-//  error = err.message;
-//  console.log(error)
+//   // This function handles the signup process
+//   const signup = async (email, password) => {
+//     setIsLoading(true);
+//     try {
+//       await createUserWithEmailAndPassword(auth, email, password);
+//       setIsLoading(false);
+//     } catch (error) {
+//       setIsLoading(false);
+//       throw error; // Rethrow error for handling in the signup component
+//     }
+//   };
 
-//  }
-// }
-
-// const Usersignup = () =>{
-//     return {error , signUp};
-//     // alert ('you must have an account')
+//   return { signup, isLoading, userExists };
 // };
 
-// export default Usersignup
-
-
-
-
-
-
-
-
-
-
-
-
-import { useState } from 'react';
-import { ProjectAuth } from "../firebase/Firebase";
-
-const Usersignup = () => {
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const signup = async (email, password) => {
-    setIsLoading(true);
-    setError(null);
-
-    // Input validation
-    if (!email || !password) {
-      setError("Please fill in all fields.");
-      setIsLoading(false);
-      return;
-    }
-
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      setError("Invalid email format.");
-      setIsLoading(false);
-      return;
-    }
-
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters.");
-      setIsLoading(false);
-      return;
-    }
-
-    try {
-      const res = await ProjectAuth.createUserWithEmailAndPassword(email, password);
-      if (!res) {
-        throw new Error("Failed to create user");
-      }
-      setIsLoading(false);
-      return res; // Return the response for potential use in the component
-    } catch (err) {
-      setError(err.message);
-      console.log(err.message);
-      setIsLoading(false);
-      throw err; // Re-throw the error for handling in the component
-    }
-  };
-
-  return { error, isLoading, signup };
-};
-
-export default Usersignup;
-
+// export default Usersignup;
