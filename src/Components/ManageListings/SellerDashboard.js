@@ -95,29 +95,29 @@ const SellerDashboard = () => {
   };
 
   return (
-    <div className="container">
+    <div className="seller-container">
       <h2>{isEditing ? "Edit Your Listing" : "List Your Motorcycle"}</h2>
       <form onSubmit={handleSubmit}>
-        <div className="image-upload">
+        <div className="seller-image-upload">
           <input type="file" accept="image/*" onChange={handleImageChange} />
-          {preview && <img src={preview} alt="Preview" style={{ maxWidth: '300px', marginTop: '10px' }} />}
+          {preview && <img src={preview} alt="Preview" className='seller-inputwidth-img'   />}
         </div>
 
         <div className="form-grid">
-          <input type="text" name="bikeType" placeholder="Bike Type" value={listing.bikeType} onChange={handleInputChange} />
-          <input type="number" name="price" placeholder="Price" value={listing.price} onChange={handleInputChange} />
-          <input type="number" name="year" placeholder="Year" value={listing.year} onChange={handleInputChange} />
-          <input type="text" name="model" placeholder="Model" value={listing.model} onChange={handleInputChange} />
-          <input type="text" name="engine" placeholder="Engine" value={listing.engine} onChange={handleInputChange} />
-          <input type="text" name="horsepower" placeholder="Horsepower" value={listing.horsepower} onChange={handleInputChange} />
-          <input type="text" name="transmission" placeholder="Transmission" value={listing.transmission} onChange={handleInputChange} />
-          <input type="text" name="fuelCapacity" placeholder="Fuel Capacity" value={listing.fuelCapacity} onChange={handleInputChange} />
-          <input type="text" name="seatHeight" placeholder="Seat Height" value={listing.seatHeight} onChange={handleInputChange} />
-          <input type="text" name="weight" placeholder="Weight" value={listing.weight} onChange={handleInputChange} />
+          <input className='seller-input-form'  type="text" name="bikeType" placeholder="Bike Type" value={listing.bikeType} onChange={handleInputChange} />
+          <input className='seller-input-form' type="number" name="price" placeholder="Price" value={listing.price} onChange={handleInputChange} />
+          <input className='seller-input-form' type="number" name="year" placeholder="Year" value={listing.year} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="model" placeholder="Model" value={listing.model} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="engine" placeholder="Engine" value={listing.engine} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="horsepower" placeholder="Horsepower" value={listing.horsepower} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="transmission" placeholder="Transmission" value={listing.transmission} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="fuelCapacity" placeholder="Fuel Capacity" value={listing.fuelCapacity} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="seatHeight" placeholder="Seat Height" value={listing.seatHeight} onChange={handleInputChange} />
+          <input className='seller-input-form' type="text" name="weight" placeholder="Weight" value={listing.weight} onChange={handleInputChange} />
           <textarea name="features" placeholder="Features" value={listing.features} onChange={handleInputChange} />
         </div>
 
-        <button type="submit">{isEditing ? "Update Listing" : "List Motorcycle"}</button>
+        <button type="submit" className='seller-update-listbutton' >{isEditing ? "Update Listing" : "List Motorcycle"}</button>
       </form>
 
       <h3>Your Listings</h3>
@@ -125,7 +125,7 @@ const SellerDashboard = () => {
         {listings.map((item, index) => (
           <div key={index} className="listing-item">
             <h4>{item.bikeType} - {item.model}</h4>
-            <div>
+            <div className='seller-buttons'>
               <button onClick={() => handleEdit(index)}>Edit</button>
               <button onClick={() => handleDelete(index)}>Delete</button>
             </div>

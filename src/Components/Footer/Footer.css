@@ -3,7 +3,7 @@
     padding: 0px;
 }
 
-.footer--background{
+/* .footer--background{
     height: 7vh;
     background-color: #262626;
     display: flex;
@@ -41,7 +41,6 @@
   }
   
   .iconstext p{
-    /* padding-left: 4px; */
     text-decoration: none;
     font-family: "PTSans-Regular";
   }
@@ -56,8 +55,6 @@
     padding: 70px 100px 70px 100px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* width: 100%; */
    }
 
 .icon--text{
@@ -81,74 +78,365 @@
   padding: 20px 0px 20px 0px;
  }
 
+ */
 
 
+
+
+
+
+
+   .footer-section {
+    background: #201E1E;
+    position: relative;
+   }
+   .footer-cta {
+    border-bottom: 1px solid #373636;
+    padding-bottom:25px ;
+   }
+
+   .footer-row{
+    
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .footer-flex-stpt{
+    padding-top: 25px;
+width: 30%;
+   }
+
+   .footer-flex-fullmd{
+    padding-top: 25px;
+width: 30%;
+   }
+
+   .single-cta  {
+    align-items: center;
+    display: flex;
+    margin-top: 8px;
+   }
+
+   .cta-text{
+    padding-left: 20px;
+   }
+   .footer--circle{
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+   }
+
+   .footer-icon{
+    font-size: 25px;
+    color: #fff;
+   }
+   
+   .footer--t-icn{
+    border: 1px solid #fff;
+    padding: 15px;
+    width: 28%;
+    border-radius: 10px;
+  }
+   .cta-text h4 {
+    font-family: "PTSerif-Bold";
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+   }
+   .cta-text span {
+    font-family: "PTSans-Regular";
+    color: #757575;
+    font-size: 15px;
+    transition: .5s;
+    cursor: pointer;
+   }
+
+   .cta-text span:hover{
+    color: #002AC4;
+   }
+
+   .footer-content {
+    position: relative;
+    z-index: 2;
+   }
+
+   .footer-container{
+    padding: 80px 100px 30px 100px;
+    border-bottom: 1px solid #373636;
+   }
+   .footer-pattern img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 330px;
+    background-size: cover;
+    background-position: 100% 100%;
+   }
+   .footer-logo {
+    margin-bottom: 30px;
+   }
+   .footer-logo img {
+      max-width: 200px;
+   }
+   .footer-text p {
+    margin-bottom: 14px;
+    font-size: 14px;
+        color: #7e7e7e;
+    line-height: 1.5;
+   }
+   .footer-social-icon h4 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: "PTSerif-Bold";
+    margin-bottom: 20px;
+   }
+
+   .footer-social-icon  {
+   display: flex;
+   flex-direction: column;
+   
+   }
+
+   .footer--icon-container{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+   }
+
+   .footer--circle-icon{
+    border: 1px solid #fff;
+    height: 40px;
+    width: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    border-radius: 50%;
+    color: #fff;
+   }
+
+  
+  
+   
+   .footer-widget-heading h4 {
+    font-family: "PTSerif-Bold";
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+   }
+   
+   .footer-widget p{
+    font-family: "PTSans-Regular";
+    font-size: 16px;
+    color: #fff;
+  
+   }
+
+   
+   .subscribe-form {
+    position: relative;
+    overflow: hidden;
+   }
+   .subscribe-form input {
+    outline: none;
+    width: 100%;
+    padding: 14px 28px;
+    background: #fff;
+    border: 1px solid #2E2E2E;
+    color: #202020;
+   }
+   .subscribe-form button {
+      position: absolute;
+      right: 0;
+      background: #002AC4;
+      padding: 13px 20px;
+      border: 1px solid #002AC4;
+      top: 0;
+   }
+   .subscribe-form button i {
+    color: #fff;
+    font-size: 22px;
+    transform: rotate(-6deg);
+   }
+   .copyright-area{
+    background: #201E1E;
+    padding: 25px 100px;
+    display: flex;
+    justify-content: space-between;
+   }
+   .copyright-text p {
+    font-family: "PTSans-Regular";
+    margin: 0;
+    font-size: 14px;
+    color: #878787;
+   }
+    .footerallright{
+      cursor: pointer;
+    color: #878787;
+    transition: .5s;
+   }
+    .footerallright:hover{
+    color: #002AC4;
+   }
+
+   .footer-menu  {
+    display: flex;
+    color: #fff;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+   }
+  
+   .footer-menu p{
+    font-family: "PTSans-Regular";
+    padding-left: 15px;
+    transition: .5s;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+   }
+
+   .footer-menu p:hover{
+    color: #002AC4;
+   }
+
+   .footer--useful-links{
+    line-height: 2.1;
+   transition: .5s;
+   }
+
+   .footer--useful-links:hover{
+    color: #002AC4;
+   }
 
  @media (min-width: 200px) and (max-width: 568px) {
+
+ /* FOOTER */
+ .footer-container {
+  padding: 50px 20px 15px 20px;
   
- /* FOooter */
-.allfourlinks {
-       flex-wrap: wrap;
-        padding: 25px 20px 15px 20px;
-        display: flex;
-        justify-content: center;
 }
 
-.icon--text h4 {
-  margin-bottom: 2px;
+.cta-text h4 {
   font-size: 15px;
-  font-weight: 700;
 }
 
-.iconstext p {
-  font-size: 13px;
-  
-}
-.text--width p{
-  font-size: 13px;
-}
-
-.subscribe {
-  padding: 8px 0px 8px 0px;
-  font-size: 13px;
-}
-
-
-.iconstext {
-  padding: 0px 0px 4px 0px;
+.footer-row {
+ flex-wrap: wrap;
   display: flex;
-  align-items: center;
-}
-
-.last--tet p{
-  font-size: 13px;
-}
-
-.icon--text {
-  padding-bottom: 10px;
-  width: 50%;
-}
-
-.last--tet .twicons {
-  width: 23%;
-}
-
-
-.allfourlinks .four--links {
-  flex-direction: column-reverse;
-  flex-wrap: wrap;
-  display: flex;
-  width: 90%;
   justify-content: space-between;
 }
 
-
-.footer--background p {
-  font-size: 13px;
+.footer--t-icn {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 94.5%;
 }
 
-.footer--background {
-  height: 5vh;
+.footer--circle {
+  height: 45px;
+  width: 46px;
+}
+
+.footer-icon {
+  font-size: 17px;
+}
+
+.cta-text {
+  padding-left: 12px;
+}
+
+.cta-text span {
+  font-size: 14px;
+}
+
+.footer-cta {
+  padding-bottom: 15px;
+}
+
+.footer-logo img {
+  max-width: 200px;
+}
+
+.footer-flex-fullmd{
+  width: 100%;
+}
+
+.footer-logo {
+  margin-bottom: 6px;
+}
+
+.footer-widget p {
+  font-size: 14px;
+}
+
+.footer--icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.footer--circle-icon {
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+}
+
+.footer-flex-stpt {
+  padding-top: 20px;
+  width: 50%;
+}
+
+.footer-widget-heading h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.subscribe-form input {
+  font-size: 12px;
+  width: 90%;
+  padding: 14px 8px;
+}
+
+.subscribe-form button {
+  padding: 10px 15px;
+}
+
+.copyright-area {
+  flex-direction: column-reverse;
+  display: flex;
+  padding: 16px 20px 20px 20px;
+}
+
+.footer-menu {
+  width: 100%; 
+}
+
+.footer-menu p {
+ 
+  padding-left: 0px;
+ 
+}
+
+.copyright-text p {
+  text-align: center;
+  font-family: "PTSans-Regular";
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+  padding-top: 10px;
+}
+
+.footer-social-icon h4{
+  font-size: 15px;
+  margin-bottom: 16px;
 }
 /* END-FOOTER */
 
@@ -161,43 +449,151 @@
  
  @media (min-width: 569px) and (max-width: 768px){
  
-  .allfourlinks{
-    padding: 40px 40px 40px 40px;
-    
-  } 
 
-
-  .icon--text h4 {
-    font-size: 16px;
+  .footer--t-icn {
+    padding: 10px;
+    width: 29%;
 }
 
-.iconstext {
+  .footer-container {
+    padding: 80px 40px 22px 40px;
+}
+
+.cta-text h4 {
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.cta-text span {
+  font-size: 12px;
+}
+
+.footer-icon {
+  font-size: 20px;
+}
+
+.footer-cta {
+  padding-bottom: 25px;
+}
+
+
+.footer--icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.cta-text {
+  padding-left: 12px;
+}
+
+.footer-widget p {
   font-size: 15px;
 }
 
-.text--width p{
-  font-size: 15px;
+.footer-widget-heading h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
-.subscribe {
-  font-size: 15px;
-  padding: 8px 0px 8px 0px;
+.subscribe-form input {
+  font-size: 12px;
+  width: 90%;
+  padding: 14px 10px;
 }
 
-.last--tet {
-  font-size: 13px;
+
+.footer-social-icon h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.footer--background p {
-  font-size: 14px;
+.copyright-area {
+  padding: 22px 40px;
 }
 
-.footer--background {
-  height: 6vh;
 
-}
 
  } 
+
+
+
+ @media (min-width: 769px) and (max-width: 950px){
+
+  .footer--t-icn {
+    padding: 10px;
+    width: 29%;
+}
+
+  .footer-container {
+    padding: 80px 40px 22px 40px;
+}
+
+.cta-text h4 {
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+.cta-text span {
+  font-size: 12px;
+}
+
+.footer-icon {
+  font-size: 20px;
+}
+
+.footer-cta {
+  padding-bottom: 25px;
+}
+
+
+.footer--icon-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-logo {
+  margin-bottom: 15px;
+}
+
+.cta-text {
+  padding-left: 12px;
+}
+
+.footer-widget p {
+  font-size: 15px;
+}
+
+.footer-widget-heading h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.subscribe-form input {
+  font-size: 12px;
+  width: 90%;
+  padding: 14px 10px;
+}
+
+
+.footer-social-icon h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.copyright-area {
+  padding: 22px 40px;
+}
+
+
+ }
 
 
 
@@ -206,42 +602,39 @@
 
 
 
-  .allfourlinks {
-    padding: 80px 70px 80px 70px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    /* width: 100%; */
-  }
-
-  .icon--text h4 {
-    margin-bottom: 5px;
-    font-size: 18px;
+  .footer-container {
+    padding: 80px 70px 25px 70px;
+    border-bottom: 1px solid #373636;
 }
 
-.iconstext {
+
+
+.cta-text {
+  padding-left: 15px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-widget-heading h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.footer-widget p {
   font-size: 15px;
 }
 
-.text--width p{
-  font-size: 15px;
+.footer--icon-container {
+  width: 87%;
 }
 
-.subscribe {
-  font-size: 15px;
-  padding: 12px 0px 12px 0px;
+.copyright-area {
+  padding: 25px 70px;
 }
 
-.last--tet {
-  font-size: 15px;
-}
+ 
 
-.footer--background {
-  height: 4vh;
-}
-
-.footer--background p {
-  font-size: 15px;
-}
 
 }

@@ -86,25 +86,36 @@ const UserEventListing = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6">Upcoming Events</h2>
-      <div className="mb-8">
-        <h3 className="text-xl font-bold mb-4">All Events</h3>
+    <div className="userevent--container">
+      <h2>Upcoming Events</h2>
+      <div className="userevent--allevents">
+        <h3 >All Events</h3>
         {events.map((event, index) => (
           <div key={index} className="border rounded p-4 mb-4">
-            {event.image && <img src={event.image} alt={event.title} className="w-full h-48 object-cover mb-2 rounded" />}
-            <h5>{event.title}</h5>
+
+            <div className="userevent--cover">
+             {event.image && <img src={event.image} alt={event.title} className="userevent--imgfull" />}
+              <div className="userevent--overlay-cover">
+              <h3>{event.title}</h3>
             <p>Date: {event.date} at {event.time}</p>
             <p>Location: {event.location}</p>
             <p>Ticket Price: ${event.ticketPrice}</p>
             <p>Capacity: {event.capacity}</p>
-            <p>{event.description}</p>
+              </div>
+            </div>
+           
+           
+           <div className="userevent--description">
+           <p >{event.description}</p>
+           </div>
+           
+  
             {registeredEvents.includes(index) ? (
-              <p className="text-green-500">Registered</p>
+              <p className="userevents--registered">Registered</p>
             ) : (
               <button
                 onClick={() => handleOpenRegisterForm(index)}
-                className="bg-blue-500 text-white px-2 py-1 rounded"
+                className="event--regester"
               >
                 Register
               </button>
@@ -115,9 +126,9 @@ const UserEventListing = () => {
 
       {/* Registration Form Modal */}
       {showRegisterForm && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded shadow-lg w-1/3">
-            <h3 className="text-xl font-bold mb-4">Register for Event</h3>
+        <div className="event--forregister--container">
+          <div className="event--forregister">
+            <h4 className="text-xl font-bold mb-4">Register for Event</h4>
             <form onSubmit={handleRegister}>
               <input
                 type="email"
@@ -125,16 +136,28 @@ const UserEventListing = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="w-full p-2 border rounded mb-4"
+                className="userevent--input-form"
               />
-              <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+
+
+
+              <div className="userevent--regesterbtns">
+
+              <button type="submit" className='usreevent--twobtns'>Submit</button>
               <button
                 type="button"
+                className='usreevent--twobtns'
                 onClick={() => setShowRegisterForm(false)}
-                className="ml-4 text-gray-500"
+                
               >
                 Cancel
               </button>
+
+
+              </div>
+
+
+              
             </form>
           </div>
         </div>

@@ -60,28 +60,29 @@ const MechanicEventManagement = () => {
   };
 
   return (
-    <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6">Event Management</h2>
-      <div>
-        <input type="file" accept="image/*" onChange={handleImageChange} className="mb-2" />
-        {preview && <img src={preview} alt="Preview" className="w-48 h-48 object-cover rounded" />}
-        
-        {/* Event Form Inputs */}
-        <input type="text" name="title" placeholder="Event Title" value={newEvent.title} onChange={handleEventChange} className="p-2 border rounded" />
-        <input type="date" name="date" value={newEvent.date} onChange={handleEventChange} className="p-2 border rounded" />
-        <input type="time" name="time" value={newEvent.time} onChange={handleEventChange} className="p-2 border rounded" />
-        <input type="text" name="location" placeholder="Location" value={newEvent.location} onChange={handleEventChange} className="p-2 border rounded" />
-        <input type="number" name="ticketPrice" placeholder="Ticket Price" value={newEvent.ticketPrice} onChange={handleEventChange} className="p-2 border rounded" />
-        <input type="number" name="capacity" placeholder="Capacity" value={newEvent.capacity} onChange={handleEventChange} className="p-2 border rounded" />
-        <textarea name="description" placeholder="Description" value={newEvent.description} onChange={handleEventChange} className="w-full p-2 border rounded" rows="4" />
-        
-        <button onClick={addEvent} className="bg-blue-500 text-white px-4 py-2 rounded">Add Event</button>
+    <div className="event-container">
+      <h2 className="event--management">Event Management</h2>
+      <div className='event--allforms'>
+        <input type="file" accept="image/*" onChange={handleImageChange} className="event--uploadimg" />
+        {preview && <img src={preview} alt="Preview" className="event--imgsize" />}
+  
+
+  <div className="event--flexwrap"> 
+        <input type="text" name="title" placeholder="Event Title" value={newEvent.title} onChange={handleEventChange} className="event--input-form" />
+        <input type="date" name="date" value={newEvent.date} onChange={handleEventChange} className="event--input-form" />
+        <input type="time" name="time" value={newEvent.time} onChange={handleEventChange} className="event--input-form" />
+        <input type="text" name="location" placeholder="Location" value={newEvent.location} onChange={handleEventChange} className="event--input-form"/>
+        <input type="number" name="ticketPrice" placeholder="Ticket Price" value={newEvent.ticketPrice} onChange={handleEventChange} className="event--input-form" />
+        <input type="number" name="capacity" placeholder="Capacity" value={newEvent.capacity} onChange={handleEventChange} className="event--input-form" />
+        <textarea name="description" placeholder="Description" value={newEvent.description} onChange={handleEventChange} className="event--input-formtextarea"  />
+        </div>
+        <button onClick={addEvent} className="event--delete">Add Event</button>
       </div>
 
       {/* Display Events */}
       <div className="mt-8">
         {events.map((event, index) => (
-          <div key={index} className="border rounded p-4 mb-4">
+          <div key={index} className="event--allsection">
             {event.image && <img src={event.image} alt={event.title} className="w-full h-48 object-cover mb-2 rounded" />}
             <h5>{event.title}</h5>
             <p>Date: {event.date} at {event.time}</p>
@@ -89,12 +90,12 @@ const MechanicEventManagement = () => {
             <p>Ticket Price: ${event.ticketPrice}</p>
             <p>Capacity: {event.capacity}</p>
             <p>{event.description}</p>
-            <button onClick={() => deleteEvent(index)} className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+            <button onClick={() => deleteEvent(index)} className="event--delete">Delete</button>
           </div>
         ))}
       </div>
 
-      <button onClick={() => navigate('/usermechanics')} className="bg-blue-500 text-white px-4 py-2 rounded">Go to User Event Listing</button>
+      <button onClick={() => navigate('/usermechanics')} className="event--gotolistings">Go to User Event Listing</button>
     </div>
   );
 };
