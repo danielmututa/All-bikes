@@ -56,8 +56,10 @@ const HamburgerMenu = () => {
 
     return (
         <div className="hamburger-menu">
- {/* <div className="position--fixed"> */}
 
+
+
+    
 
             <Hamburger className="position--fixed"
                 toggled={isOpen} 
@@ -87,11 +89,11 @@ const HamburgerMenu = () => {
                 <li onClick={handleClose}>         <NavLink to='/about' className="white" style={inlineStyle}>About</NavLink></li>
           <li onClick={handleClose}><NavLink to= '/Rentabike' className="white" style={inlineStyle}>Rent a bike</NavLink></li>
           <li onClick={handleClose}> <NavLink to= '/repairandservices' className="white" style={inlineStyle}>Services</NavLink></li>
-          {/* <li onClick={handleClose}>  </li> */}
+
                 </ul>
             </div>
             </div>
-        // </div>
+     
     );
 };
 

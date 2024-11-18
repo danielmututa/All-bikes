@@ -46,8 +46,8 @@ function App() {
               <Route path='/payments' element={<AccountForm/> } />
               <Route path='userlistings' element={<UserListing/> } />
             <Route path='seller' element={<SellerDashboard/>}/>
-               <Route path='usermechanics' element={<UserEventListing/>} />
-               <Route path='mechanicevents' element={<MechanicEventManagement/>} />
+               <Route path='events' element={<UserEventListing/>} />
+               <Route path='eventsupload' element={<MechanicEventManagement/>} />
                 <Route path='motbooking' element={<MotBooking/>} />
 
 

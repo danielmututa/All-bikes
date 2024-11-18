@@ -1,182 +1,3 @@
-
-// import React from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import { Link } from 'react-router-dom'
-
-// // import { faInstagram } from '@fortawesome/free-brands-svg-icons'
-// import { faInstagram ,faFacebookF } from '@fortawesome/free-brands-svg-icons'
-// import './Footer.css'
-// // import { useState } from 'react'
-// const Footer = () => {
-
-//   // const [fotterdata] = useState ([
-//   //   {header:'Our Branches',  }
-//   // ])
-
-//     return ( 
-//    <div className="fotter--container">
-
-
-
-
-// <div className="allfourlinks">
-     
-    
-
-
-
-//     <div className="icon--text">
-//        <h4>SHOP</h4>
-
-//        <div className="iconstext">
-     
-//         <p>All</p>
-//        </div>
-
-//        <div className="iconstext">
-     
-//         <p>BMW</p>
-//        </div>
-
-//        <div className="iconstext">
-     
-//         <p>Honda</p>
-//        </div>
-
-//        <div className="iconstext">
-      
-//         <p>Yahoo</p>
-//        </div>
-
-//     </div>
-
-
-
-//     <div className="icon--text">
-//        <h4>ABOUT</h4>
-
-//        <div className="iconstext">
-     
-//        <p>Who we are</p>
-//        </div>
-
-//        <div className="iconstext">
-//      <p>Values</p>
-//        </div>
-
-//     </div>
-    
-
-
-//     <div className="icon--text">
-//        <h4>INFORMATION</h4>
-
-//        <div className="iconstext">
-      
-//         <p>Contact us</p>
-//        </div>
-
-//        <div className="iconstext">
-      
-//         <p>Terms of service</p>
-//        </div>
-
-//        <div className="iconstext">
-      
-//         <p>Privacy policy</p>
-//        </div>
-
-//     </div>
-    
-
-
-
-
-
-//     <div className="icon--text">
-//        <h4>STAY UPDATE</h4>
-
-      
-//      <div className="text--width">
-//       <p>Be the first to know about events, new content, products or brands at <b>FWilliams</b>. </p> 
-     
-//        </div>
-
-//        <div className="subscribe">
-     
-//       <Link to="">Subscribe to our channel</Link>
-     
-//        </div>
-
-       
-
-//        <div className="last--tet">
-//            <p><b>FOLLOW US ON</b> </p>
-
-//            <div className="twicons">
-//       <FontAwesomeIcon icon={faFacebookF}/>
-//       <FontAwesomeIcon icon={faInstagram}/>
-//            </div>
-//        </div>
-
-      
-//     </div>
-    
-
-
-
-
-   
-  
-
-//      </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-//     <div className="footer--background">
-//     <p> SpeedBike 2024 | FWilliams</p>
-//     </div>
-//    </div>
-
-//      );
-// }
- 
-// export default Footer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  import React from 'react';
  import '../Footer/Footer.css'; 
  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -187,9 +8,36 @@
  import { faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
  // Ensure you save the CSS into this fil
  const Footer = () => {
+
+  const navigate = useNavigate();
+
+  const eventnavigate = () =>{
+    navigate('events')
+  }
+
+
+    const homenavigate = () =>{
+        navigate('/')
+    }
+
+    const aboutnavigate = () =>{
+        navigate('/about')
+    }
+
+    const servicesnavigate = () =>{
+        navigate('/repairandservices')
+    }
+
+
+
+
+
+
+
      return (
          <footer className="footer-section">
              <div className="footer-container">
@@ -260,11 +108,11 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
                                  <div className="footer-widget-heading">
                                      <h4>Useful Links</h4>
                                  </div>
-                                     <p className='footer--useful-links'> Home </p>
-                                     <p className='footer--useful-links'> About </p>
-                                     <p className='footer--useful-links'> Events </p>
-                                     <p className='footer--useful-links'> Services </p>
-                                     <p className='footer--useful-links'> Contact </p>
+                                     <p onClick={homenavigate} className='footer--useful-links'> Home </p>
+                                     <p onClick={aboutnavigate} className='footer--useful-links'> About </p>
+                                     <p onClick={eventnavigate} className='footer--useful-links'> Events </p>
+                                     <p onClick={ servicesnavigate} className='footer--useful-links'> Services </p>
+                                     
                              </div>
                          </div>
                          {/* Footer Widget 3 */}
@@ -299,11 +147,11 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
                          <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                              <div className="footer-menu">
                                  
-                                     <p> Home </p>
+                                     <p onClick={homenavigate}> Home </p>
                                      <p> Terms</p>
                                      <p> Privacy</p>
                                      <p> Policy</p>
-                                     <p> Contact</p>
+                                  
                                 
                              </div>
                          </div>
