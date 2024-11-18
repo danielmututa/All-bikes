@@ -83,13 +83,15 @@ const MechanicEventManagement = () => {
       <div className="mt-8">
         {events.map((event, index) => (
           <div key={index} className="event--allsection">
-            {event.image && <img src={event.image} alt={event.title} className="w-full h-48 object-cover mb-2 rounded" />}
+            {event.image && <img src={event.image} alt={event.title} className="event--imgsize" />}
             <h5>{event.title}</h5>
             <p>Date: {event.date} at {event.time}</p>
             <p>Location: {event.location}</p>
             <p>Ticket Price: ${event.ticketPrice}</p>
             <p>Capacity: {event.capacity}</p>
-            <p>{event.description}</p>
+            <div className="event--description-p">
+            <p >{event.description}</p>
+            </div>
             <button onClick={() => deleteEvent(index)} className="event--delete">Delete</button>
           </div>
         ))}
@@ -101,3 +103,4 @@ const MechanicEventManagement = () => {
 };
 
 export default MechanicEventManagement;
+

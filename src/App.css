@@ -3456,6 +3456,26 @@ margin-bottom: 10px;
 .event--allsection{
   padding: 35px 0px ;
 }
+
+.event--allsection h5{
+  font-size: 16px;
+  font-family: "PTSerif-Bold";
+  padding: 15px 0px 15px 0px;
+}
+.event--allsection p{
+  font-size: 16px;
+  font-family:"PTSans-Regular";
+  padding-bottom: 10px;
+}
+
+.event--imgsize{
+  width: 31%;
+  object-fit: cover;
+}
+
+.event--description-p{
+  width: 50%;
+}
 /* ENDEVENT-MECHANICS */
 
 
@@ -3530,6 +3550,7 @@ margin-bottom: 10px;
  font-family:"PTSans-Regular";
   font-size: 18px;
   line-height: 1.4;
+ 
 }
 
 
@@ -4866,7 +4887,151 @@ font-size: 12px;
 /* ENDSELLER-LISTIMGS */
 
 
+/* EVENTMECHA */
+.event-container {
+  padding: 50px 20px;
+} 
 
+.event-container h2 {
+  font-size: 25px;
+}
+
+.event--uploadimg {
+  padding: 12px 0px 16px 0px;
+}
+
+.event--input-form {
+  width: 44%;
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+
+.event--input-formtextarea {
+  width: 100%;
+  font-size: 12px;
+}
+
+.event--delete {
+  width: 76px;
+  padding: 8px 0px;
+  font-size: 10px;
+}
+
+.event--allsection {
+  padding: 25px 0px;
+}
+
+.event--allsection h5 {
+  font-size: 12px;
+  padding: 12px 0px 15px 0px;
+}
+
+.event--allsection p {
+  font-size: 14px;
+  padding-bottom: 8px;
+}
+
+.event--description-p {
+  width: 100%;
+}
+
+.event--gotolistings {
+  width: 50%;
+  font-size: 12px;
+}
+
+.event--imgsize {
+  border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
+  padding-bottom: 12px;
+}
+
+.userevent--container {
+  padding: 50px 20px;
+}
+
+.userevent--container h2 {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.userevent--allevents h3 {
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.userevent--cover {
+  width: 100%;
+  height: 280px;
+}
+
+.userevent--overlay-cover {
+padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+.userevent--overlay-cover p {
+  font-size: 14px;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.userevent--description {
+  width: 95%;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.userevent--description p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.event--regester {
+  width: 76px;
+  padding: 8px 0px;
+  font-size: 10px;
+  margin: 15px 0px 30px 15px;
+}
+
+
+.event--forregister--container {
+  padding-left: 15px;
+}
+
+.event--forregister h4 {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.userevent--input-form {
+  width: 89%;
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+}
+
+
+   .usreevent--twobtns {
+          width: 76px;
+        padding: 8px 0px;
+        font-size: 10px;
+      }
+
+      .userevent--regesterbtns {
+        width: 170px;
+    }
+
+    .userevents--registered {
+      padding-left: 15px;
+      padding-top: 15px;
+      font-size: 14px;
+  }
+/* ENDEVENTMECHA */
 
 
 
@@ -5840,6 +6005,143 @@ font-size: 15px;
 /* ENDSELLER-DESHBOARD */
 
 
+
+/* EVENT */
+.userevent--container {
+  padding: 50px 40px;
+}
+
+.userevent--container h2 {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.userevent--allevents h3 {
+  font-size: 23px;
+  padding-bottom: 12px;
+}
+
+.userevent--cover {
+  height: 400px;
+}
+
+.userevent--overlay-cover {
+  padding-left: 20px;
+  padding-bottom: 12px;
+}
+
+.userevent--overlay-cover p {
+  font-size: 15px;
+}
+
+.userevent--description {
+  width: 50%;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.userevent--description p {
+  font-family: "PTSans-Regular";
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.event--regester {
+  width: 90px;
+  color: #fff;
+  padding: 8px 0px;
+  margin: 15px 0px 59px 20px;
+  font-size: 12px;
+}
+
+.forregister--container {
+  padding-left: 20px;
+}
+
+.event--forregister h4 {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.userevent--input-form {
+  width: 48%;
+  padding: 10px 10px;
+  font-size: 12px;
+}
+
+.usreevent--twobtns {
+  width: 90px;
+  padding: 8px 0px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.userevent--regesterbtns {
+  width: 200px;
+}
+
+.userevents--registered {
+  padding-left: 21px;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.event-container {
+  padding: 50px 40px;
+}
+.event-container h2 {
+  font-size: 30px;
+}
+
+.event--uploadimg {
+  padding: 13px 0px 20px 0px;
+}
+
+.event--input-form {
+  width: 30%;
+  padding: 8px 0px 8px 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.event--input-formtextarea {
+  width: 64.3%;
+  padding: 10px 0px 10px 10px;
+  font-size: 12px;
+}
+
+.event--allsection {
+  padding: 30px 0px;
+}
+
+.event--allsection h5 {
+  font-size: 14px;
+  padding: 12px 0px 15px 0px;
+}
+
+.event--allsection p {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.event--delete {
+  width: 90px;
+  padding: 8px 0px;
+  margin: 15px 0px;
+  font-size: 12px;
+}
+
+.event--gotolistings {
+  width: 36%;
+  padding: 12px 0px;
+  font-size: 14px;
+}
+/* ENDEVENT */
+
+
+
+
+
 }
 
 
@@ -6778,6 +7080,138 @@ font-size: 15px;
 /* ENDSELLER-DESHBOARD */
 
 
+/* EVENT */
+.userevent--container {
+  padding: 50px 40px;
+}
+
+.userevent--container h2 {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.userevent--allevents h3 {
+  font-size: 23px;
+  padding-bottom: 12px;
+}
+
+.userevent--cover {
+  height: 400px;
+}
+
+.userevent--overlay-cover {
+  padding-left: 20px;
+  padding-bottom: 12px;
+}
+
+.userevent--overlay-cover p {
+  font-size: 15px;
+}
+
+.userevent--description {
+  width: 50%;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.userevent--description p {
+  font-family: "PTSans-Regular";
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.event--regester {
+  width: 90px;
+  color: #fff;
+  padding: 8px 0px;
+  margin: 15px 0px 59px 20px;
+  font-size: 12px;
+}
+
+.forregister--container {
+  padding-left: 20px;
+}
+
+.event--forregister h4 {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.userevent--input-form {
+  width: 48%;
+  padding: 10px 10px;
+  font-size: 12px;
+}
+
+.usreevent--twobtns {
+  width: 90px;
+  padding: 8px 0px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.userevent--regesterbtns {
+  width: 200px;
+}
+
+.userevents--registered {
+  padding-left: 21px;
+  padding-top: 20px;
+  font-size: 15px;
+}
+
+.event-container {
+  padding: 50px 40px;
+}
+.event-container h2 {
+  font-size: 30px;
+}
+
+.event--uploadimg {
+  padding: 13px 0px 20px 0px;
+}
+
+.event--input-form {
+  width: 30%;
+  padding: 8px 0px 8px 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.event--input-formtextarea {
+  width: 64.3%;
+  padding: 10px 0px 10px 10px;
+  font-size: 12px;
+}
+
+.event--allsection {
+  padding: 30px 0px;
+}
+
+.event--allsection h5 {
+  font-size: 14px;
+  padding: 12px 0px 15px 0px;
+}
+
+.event--allsection p {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.event--delete {
+  width: 90px;
+  padding: 8px 0px;
+  margin: 15px 0px;
+  font-size: 12px;
+}
+
+.event--gotolistings {
+  width: 36%;
+  padding: 12px 0px;
+  font-size: 14px;
+}
+/* ENDEVENT */
+
 
 
 }
@@ -7497,6 +7931,78 @@ section a{
   padding-bottom: 15px;
 }
 /* SELLER-DASHBOARD */
+
+
+/* EVENT */
+.event-container {
+  padding: 60px 70px;
+}
+
+.event-container h2 {
+  font-size: 35px;
+}
+
+.event--input-form {
+  width: 30%;
+  
+  padding: 10px 0px 10px 10px;
+  margin-bottom: 17px;
+  font-size: 13px;
+}
+
+.event--input-formtextarea {
+  width: 64.4%;
+  font-size: 13px;
+}
+
+.event--allsection h5 {
+  font-size: 15px;
+}
+
+.event--allsection {
+  padding: 20px 0px;
+}
+
+.userevent--container h2 {
+  font-size: 35px;
+  padding-bottom: 15px;
+}
+
+.userevent--allevents h3 {
+  font-size: 25px;
+  padding-bottom: 15px;
+}
+
+.userevent--cover {
+  height: 450px;
+}
+
+.userevent--overlay-cover p {
+  font-size: 16px;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+.userevent--description {
+  width: 60%;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.userevent--description p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.event--regester {
+  margin: 15px 0px 50px 30px;
+}
+
+.userevent--input-form {
+  width: 48%;
+  font-size: 14px;
+}
+/* ENDEVENT */
 
 
 }
