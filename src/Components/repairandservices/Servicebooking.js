@@ -4,6 +4,26 @@ import axios from 'axios';
 
 const ServiceBooking = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  // const [formData, setFormData] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   phone: '',
+  //   bikeRegistration: '',
+  //   bikeModel: '',
+  //   bikeBrand: 'BMW',
+  //   serviceType: '',
+  //   specificParts: [{
+  //     partName: '',
+  //     quantity: 1,
+  //     additionalDetails: ''
+  //   }],
+  //   paymentMethod: '',
+  //   paymentAmount: 0,
+  //   bookingDate: '',
+  //   bookingTime: '',
+  //   additionalNotes: ''
+  // });
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -22,8 +42,10 @@ const ServiceBooking = () => {
     paymentAmount: 0,
     bookingDate: '',
     bookingTime: '',
-    additionalNotes: ''
+    additionalNotes: '',
+    userId: '' // Ensure this field exists in the form data
   });
+
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -164,16 +186,44 @@ const ServiceBooking = () => {
     setCurrentStep(prev => prev - 1);
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (validateStep(3)) {
+  //     setIsLoading(true);
+  //     try {
+  //       const response = await axios.post('https://speedbike-backend-api-production.up.railway.app/api/bookings', {
+  //         ...formData,
+  //         userId: '65f7d123e12745678901234' // Replace with actual user ID
+  //       });
+        
+  //       if (response.status === 201 || response.status === 200) {
+  //         setIsSubmitted(true);
+  //       }
+  //     } catch (error) {
+  //       setErrors({
+  //         submit: error.response?.data?.message || 'An error occurred during submission'
+  //       });
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateStep(3)) {
       setIsLoading(true);
+      const submissionData = {
+        ...formData,
+        status: 'Pending', // Ensure the status is set to 'Pending' by default
+        createdAt: new Date().toISOString(), // Automatically set createdAt
+        updatedAt: new Date().toISOString(), // Automatically set updatedAt
+        userId: formData.userId || '64f9e1d9dff95512345a67c8', // Default userId if not provided
+      };
+
       try {
-        const response = await axios.post('https://speedbike-backend-api-production.up.railway.app/api/bookings', {
-          ...formData,
-          userId: '65f7d123e12745678901234' // Replace with actual user ID
-        });
-        
+        const response = await axios.post('https://speedbike-backend-api-production.up.railway.app/api/bookings', submissionData);
         if (response.status === 201 || response.status === 200) {
           setIsSubmitted(true);
         }
@@ -185,7 +235,10 @@ const ServiceBooking = () => {
         setIsLoading(false);
       }
     }
-  };
+};
+
+
+
 
   if (isSubmitted) {
     return (
