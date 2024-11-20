@@ -3745,7 +3745,7 @@ margin-bottom: 10px;
 }
 
 .services {
-  z-index: -1;
+
         position: relative;
   padding-right: 10px;
         padding-left: 10px;
@@ -3774,9 +3774,12 @@ margin-bottom: 10px;
 }
 
 .card--container .card--services {
- 
   width: 100%;
   margin-bottom: 10px;
+}
+
+.card--container .card--services:hover{
+  transform: translateY(0px);
 }
 
 .card--services .name {
