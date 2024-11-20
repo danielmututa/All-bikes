@@ -1,42 +1,88 @@
 // BookingForm.jsx
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const ServiceBooking = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    bf_totalGuests: '',
-    bf_date: '',
-    bf_time: '',
-    bf_hours: '',
-    bf_fullname: '',
-    bf_email: '',
-    bf_message: '',
-    bf_creditcard: '',
-    bf_banktransfer: '',
-    bf_paypal: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    bikeRegistration: '',
+    bikeModel: '',
+    bikeBrand: 'BMW',
+    serviceType: '',
+    specificParts: [{
+      partName: '',
+      quantity: 1,
+      additionalDetails: ''
+    }],
+    paymentMethod: '',
+    paymentAmount: 0,
+    bookingDate: '',
+    bookingTime: '',
+    additionalNotes: ''
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [ setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const selectservice = [
-    { name: 'Oil change' },
-    { name: 'Tire rotation' },
-    { name: 'Brake pad replacement' },
-    { name: 'Piston' },
-    { name: 'Gasket' },
+  const bikeBrands = ['BMW', 'Yamaha', 'Honda', 'Kawasaki', 'Ducati', 'Other'];
+  const serviceTypes = [
+    'Regular Maintenance',
+    'Oil Change',
+    'Brake Service',
+    'Tire Replacement',
+    'Full Tune-up',
+    'Diagnostic Check',
+    'Electrical System Check',
+    'Other'
+  ];
+  const paymentMethods = ['Card', 'Cash', 'Bank Transfer'];
+  const timeSlots = [
+    'Morning 08-12:00am',
+    'Midday 12:00-16:30pm',
+    'Late afternoon 16:30-18:00pm'
   ];
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: type === 'number' ? Number(value) : value,
     }));
-    // Clear errors when user types
     setErrors((prev) => ({
       ...prev,
       [name]: '',
+    }));
+  };
+
+  const handlePartsChange = (index, field, value) => {
+    const updatedParts = [...formData.specificParts];
+    updatedParts[index][field] = value;
+    setFormData(prev => ({
+      ...prev,
+      specificParts: updatedParts
+    }));
+  };
+
+  const addPart = () => {
+    if (formData.specificParts.length < 5) {
+      setFormData(prev => ({
+        ...prev,
+        specificParts: [
+          ...prev.specificParts,
+          { partName: '', quantity: 1, additionalDetails: '' }
+        ]
+      }));
+    }
+  };
+
+  const removePart = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      specificParts: prev.specificParts.filter((_, i) => i !== index)
     }));
   };
 
@@ -44,28 +90,63 @@ const ServiceBooking = () => {
     let stepErrors = {};
 
     if (step === 1) {
-      if (!formData.bf_totalGuests) {
-        stepErrors.bf_totalGuests = 'Please select a service';
+      if (!formData.serviceType) {
+        stepErrors.serviceType = 'Please select a service type';
       }
+      if (!formData.bikeRegistration) {
+        stepErrors.bikeRegistration = 'Bike registration is required';
+      }
+      if (!formData.bikeModel) {
+        stepErrors.bikeModel = 'Bike model is required';
+      }
+      if (!formData.bikeBrand) {
+        stepErrors.bikeBrand = 'Bike brand is required';
+      }
+      
+      // Validate specific parts
+      formData.specificParts.forEach((part, index) => {
+        if (!part.partName) {
+          stepErrors[`partName${index}`] = 'Part name is required';
+        }
+        if (part.quantity < 1) {
+          stepErrors[`quantity${index}`] = 'Quantity must be at least 1';
+        }
+      });
     } else if (step === 2) {
-      if (!formData.bf_date) {
-        stepErrors.bf_date = 'Date is required';
+      if (!formData.bookingDate) {
+        stepErrors.bookingDate = 'Date is required';
+      } else {
+        const selectedDate = new Date(formData.bookingDate);
+        if (selectedDate < new Date()) {
+          stepErrors.bookingDate = 'Booking date must be in the future';
+        }
       }
-      if (!formData.bf_time) {
-        stepErrors.bf_time = 'Time is required';
+      
+      if (!formData.bookingTime) {
+        stepErrors.bookingTime = 'Time is required';
       }
-      // Check if at least one payment method is provided
-      if (!formData.bf_creditcard && !formData.bf_banktransfer && !formData.bf_paypal) {
-        stepErrors.payment = 'Please provide at least one payment method';
+      if (!formData.paymentMethod) {
+        stepErrors.paymentMethod = 'Payment method is required';
+      }
+      if (!formData.paymentAmount || formData.paymentAmount <= 0) {
+        stepErrors.paymentAmount = 'Valid payment amount is required';
       }
     } else if (step === 3) {
-      if (!formData.bf_fullname) {
-        stepErrors.bf_fullname = 'Name is required';
+      if (!formData.firstName) {
+        stepErrors.firstName = 'First name is required';
       }
-      if (!formData.bf_email) {
-        stepErrors.bf_email = 'Email is required';
-      } else if (!/\S+@\S+\.\S+/.test(formData.bf_email)) {
-        stepErrors.bf_email = 'Email is invalid';
+      if (!formData.lastName) {
+        stepErrors.lastName = 'Last name is required';
+      }
+      if (!formData.email) {
+        stepErrors.email = 'Email is required';
+      } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        stepErrors.email = 'Email is invalid';
+      }
+      if (!formData.phone) {
+        stepErrors.phone = 'Phone is required';
+      } else if (!/^[0-9]{10}$/.test(formData.phone)) {
+        stepErrors.phone = 'Please enter a valid 10-digit phone number';
       }
     }
 
@@ -74,34 +155,46 @@ const ServiceBooking = () => {
   };
 
   const handleNext = (nextStep) => {
-    const isValid = validateStep(currentStep);
-    console.log("Validation result:", isValid);
-    if (isValid) {
+    if (validateStep(currentStep)) {
       setCurrentStep(nextStep);
     }
+  };
+
+  const handleBack = () => {
+    setCurrentStep(prev => prev - 1);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateStep(3)) {
       setIsLoading(true);
-      setTimeout(() => {
-        setIsSubmitted(true);
+      try {
+        const response = await axios.post('https://speedbike-backend-api-production.up.railway.app/api/bookings', {
+          ...formData,
+          userId: '65f7d123e12745678901234' // Replace with actual user ID
+        });
+        
+        if (response.status === 201 || response.status === 200) {
+          setIsSubmitted(true);
+        }
+      } catch (error) {
+        setErrors({
+          submit: error.response?.data?.message || 'An error occurred during submission'
+        });
+      } finally {
         setIsLoading(false);
-      }, 1000);
+      }
     }
   };
-
-  // Rest of your JSX remains exactly the same...
-  // (I'm keeping all the return JSX code exactly as it was in your original)
 
   if (isSubmitted) {
     return (
       <div className="message--bookingform">
-        <p>Your message was sent successfully. Thanks! We'll be in touch as soon as we can, which is usually like lightning (Unless we're sailing or eating tacos!).</p>
+        <p>Your booking was submitted successfully! We'll contact you shortly to confirm your appointment.</p>
       </div>
     );
   }
+
 
   return (
     <div className="service--bookincontainer">
@@ -113,21 +206,94 @@ const ServiceBooking = () => {
                 <li>
                   <h4>Book A Service</h4>
                   <label>Select A Service Part</label>
-                  <div className="errorTxt">{errors.bf_totalGuests}</div>
+                  <div className="errorTxt">{errors.serviceType}</div>
                   <select
-                    name="bf_totalGuests"
-                    value={formData.bf_totalGuests}
+                    name="serviceType"
+                    value={formData.serviceType}
                     onChange={handleInputChange}
                   >
-                    <option value="">Select</option>
-                    {selectservice.map((service) => (
-                      <option key={service.name} value={service.name}>
-                        {service.name}
+                    <option value="">Select Service</option>
+                    {serviceTypes.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
                       </option>
                     ))}
-                    <option value="More">Other</option>
                   </select>
                 </li>
+
+                <li>
+                  <label>Bike Registration Number</label>
+                  <div className="errorTxt">{errors.bikeRegistration}</div>
+                  <input
+                    type="text"
+                    name="bikeRegistration"
+                    value={formData.bikeRegistration}
+                    onChange={handleInputChange}
+                  />
+                </li>
+                <li>
+                  <label>Bike Model</label>
+                  <div className="errorTxt">{errors.bikeModel}</div>
+                  <input
+                    type="text"
+                    name="bikeModel"
+                    value={formData.bikeModel}
+                    onChange={handleInputChange}
+                  />
+                </li>
+                <li>
+                  <label>Bike Brand</label>
+                  <div className="errorTxt">{errors.bikeBrand}</div>
+                  <select
+                    name="bikeBrand"
+                    value={formData.bikeBrand}
+                    onChange={handleInputChange}
+                  >
+                    {bikeBrands.map((brand) => (
+                      <option key={brand} value={brand}>{brand}</option>
+                    ))}
+                  </select>
+                </li>
+                {formData.specificParts.map((part, index) => (
+                  <li key={index}>
+                    <h5>Part {index + 1}</h5>
+                    <div>
+                      <label>Part Name</label>
+                      <div className="errorTxt">{errors[`partName${index}`]}</div>
+                      <input
+                        type="text"
+                        value={part.partName}
+                        onChange={(e) => handlePartsChange(index, 'partName', e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label>Quantity</label>
+                      <div className="errorTxt">{errors[`quantity${index}`]}</div>
+                      <input
+                        type="number"
+                        min="1"
+                        value={part.quantity}
+                        onChange={(e) => handlePartsChange(index, 'quantity', e.target.value)}
+                      />
+                    </div>
+                    <div>
+                      <label>Additional Details</label>
+                      <textarea
+                        value={part.additionalDetails}
+                        onChange={(e) => handlePartsChange(index, 'additionalDetails', e.target.value)}
+                      />
+                    </div>
+                    {index > 0 && (
+                      <button type="button" onClick={() => removePart(index)}>Remove Part</button>
+                    )}
+                  </li>
+                ))}
+                 {formData.specificParts.length < 5 && (
+                  <li>
+                    <button type="button" onClick={addPart}>Add Another Part</button>
+                  </li>
+                )}
+
                 <li>
                   <button
                     type="button"
@@ -146,57 +312,56 @@ const ServiceBooking = () => {
               <ul>
                 <li>
                   <label>Select Date</label>
-                  <div className="errorTxt">{errors.bf_date}</div>
+                  <div className="errorTxt">{errors.bookingDate}</div>
                   <input
                     type="date"
-                    name="bf_date"
-                    value={formData.bf_date}
+                    name="bookingDate"
+                    value={formData.bookingDate}
                     onChange={handleInputChange}
+                    min={new Date().toISOString().split('T')[0]}
                   />
                 </li>
                 <li>
                   <label>Select Time</label>
-                  <div className="errorTxt">{errors.bf_time}</div>
+                  <div className="errorTxt">{errors.bookingTime}</div>
                   <select
-                    name="bf_time"
-                    value={formData.bf_time}
+                    name="bookingTime"
+                    value={formData.bookingTime}
                     onChange={handleInputChange}
                   >
-                    <option value="">Select</option>
-                    <option value="Morning">Morning 08-12:00am</option>
-                    <option value="Midday">Midday 12:00-16:30pm</option>
-                    <option value="Late afternoon">Late afternoon 16:30-18:00pm</option>
+                    <option value="">Select Time</option>
+                    {timeSlots.map((slot) => (
+                      <option key={slot} value={slot}>{slot}</option>
+                    ))}
                   </select>
                 </li>
                 <li>
-                  <label>Select Payment Method</label>
-                  <div className="errorTxt">{errors.payment}</div>
-                  <label>Credit Card</label>
-                  <input
-                    name="bf_creditcard"
-                    placeholder="Card ID"
-                    value={formData.bf_creditcard}
+                  <label>Payment Method</label>
+                  <div className="errorTxt">{errors.paymentMethod}</div>
+                  <select
+                    name="paymentMethod"
+                    value={formData.paymentMethod}
                     onChange={handleInputChange}
-                    className="sevicetab-payment"
-                  />
-                  <label>Bank Transfer</label>
+                  >
+                    <option value="">Select Payment Method</option>
+                    {paymentMethods.map((method) => (
+                      <option key={method} value={method}>{method}</option>
+                    ))}
+                  </select>
+                  </li>
+                  <li>
+                  <label>Payment Amount</label>
+                  <div className="errorTxt">{errors.paymentAmount}</div>
                   <input
-                    name="bf_banktransfer"
-                    placeholder="Account Number"
-                    value={formData.bf_banktransfer}
+                    type="number"
+                    name="paymentAmount"
+                    value={formData.paymentAmount}
                     onChange={handleInputChange}
-                    className="sevicetab-payment"
-                  />
-                  <label>Paypal</label>
-                  <input
-                    name="bf_paypal"
-                    placeholder="Paypal Email Address"
-                    value={formData.bf_paypal}
-                    onChange={handleInputChange}
-                    className="sevicetab-payment"
+                    min="0"
                   />
                 </li>
                 <li>
+                  <button type="button" onClick={handleBack}>Back</button>
                   <button
                     type="button"
                     className="next-btn"
@@ -209,40 +374,67 @@ const ServiceBooking = () => {
             </div>
           )}
 
+
           {currentStep === 3 && (
             <div className="tab-pane">
               <ul>
-                <li>
-                  <label>Your first and last name</label>
-                  <div className="errorTxt">{errors.bf_fullname}</div>
+              <li>
+                  <label>First Name</label>
+                  <div className="errorTxt">{errors.firstName}</div>
                   <input
                     type="text"
-                    name="bf_fullname"
-                    value={formData.bf_fullname}
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleInputChange}
                   />
                 </li>
                 <li>
-                  <label>Your email address</label>
-                  <div className="errorTxt">{errors.bf_email}</div>
+                  <label>Last Name</label>
+                  <div className="errorTxt">{errors.lastName}</div>
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                  />
+                </li>
+
+                <li>
+                  <label>Email</label>
+                  <div className="errorTxt">{errors.email}</div>
                   <input
                     type="email"
-                    name="bf_email"
-                    value={formData.bf_email}
+                    name="email"
+                    value={formData.email}
                     onChange={handleInputChange}
                   />
                 </li>
+
                 <li>
-                  <label>Do you have any questions or a message? (Optional)</label>
+                  <label>Phone</label>
+                  <div className="errorTxt">{errors.phone}</div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    pattern="[0-9]{10}"
+                  />
+                </li>
+                <li>
+                  <label>Additional Notes (Optional)</label>
                   <textarea
-                    name="bf_message"
-                    value={formData.bf_message}
+                    name="additionalNotes"
+                    value={formData.additionalNotes}
                     onChange={handleInputChange}
+                    maxLength="500"
                   />
                 </li>
                 <li>
-                  <button type="submit" className="submit-btn">
-                    Submit
+                  {errors.submit && <div className="errorTxt">{errors.submit}</div>}
+                  <button type="button" onClick={handleBack}>Back</button>
+                  <button type="submit" className="submit-btn" disabled={isLoading}>
+                    {isLoading ? 'Submitting...' : 'Submit Booking'}
                   </button>
                 </li>
               </ul>
