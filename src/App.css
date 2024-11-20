@@ -3954,14 +3954,14 @@ h4 {
 }
 
 .about--container .about-image .too-image {
-  height: 63vh;
+  height: 320px;
   /* z-index: -1; */
         position: relative;
 }
 
 
 .image--containertooimage {
-  height: 63vh;
+  height: 320px;
   /* z-index: -1; */
 }
 
