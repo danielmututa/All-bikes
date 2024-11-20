@@ -4260,7 +4260,7 @@ h4 {
 
 .text .add--details .b-details-add {
   font-size: 10px;
-  width: 88px;
+  width: 70px;
  
 }
 
@@ -4268,7 +4268,7 @@ h4 {
   padding-top: 12px;
   display: flex;
   justify-content: space-between;
-  width: 55%;
+  width: 200px;
 }
 
 .Card--container .text p {
