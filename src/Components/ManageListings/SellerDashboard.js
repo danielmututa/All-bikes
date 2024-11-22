@@ -430,6 +430,22 @@ useEffect(() => {
         alignItems: 'center'
       }}>
         <div className="listing-info">
+
+        {item.image && (
+  <img
+    src={item.image} // The image URL from the listing
+    alt={item.name}  // Alt text set to the bike name
+    style={{
+      maxWidth: '150px',  // Restrict image size
+      height: 'auto',
+      marginBottom: '10px',
+      borderRadius: '5px',
+      border: '1px solid #ddd',  // Add border for styling
+    }}
+  />
+)}
+
+          
           <h4 style={{ margin: '0 0 10px 0' }}>{item.name}</h4>
           <p style={{ margin: '5px 0' }}>Type: {item.type}</p>
           <p style={{ margin: '5px 0' }}>Model: {item.detail?.model}</p>
