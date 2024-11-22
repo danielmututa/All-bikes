@@ -152,10 +152,17 @@ useEffect(() => {
 
       
       // Prepare bike data
-      const bikeData = {
-        ...listing,
-        image: imageUrl
-      };
+      // const bikeData = {
+      //   ...listing,
+      //   image: imageUrl
+      // };
+
+
+        // Prepare bike data
+    const bikeData = {
+      ...listing,
+      image: imageUrl || listing.image // Use the uploaded image URL or the existing one
+    };
 
       // Submit bike listing
       if (isEditing) {
