@@ -29,20 +29,57 @@ const SellerDashboard = () => {
   const [listings, setListings] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Fetch listings on component mount
+  
+
+
+  // Update fetchListings to use loading state
+const fetchListings = async () => {
+  setIsLoading(true);
+  try {
+    const response = await axios.get('https://speedbike-backend-api-production.up.railway.app/api/bikes/available');
+    console.log('Fetched listings data:', response.data);
+    
+    if (response.data && Array.isArray(response.data.data)) {
+      setListings(response.data.data);
+    } else if (Array.isArray(response.data)) {
+      setListings(response.data);
+    } else {
+      setListings([]);
+    }
+  } catch (error) {
+    console.error('Error fetching listings:', error);
+    setListings([]);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+
   useEffect(() => {
     fetchListings();
   }, []);
 
-  const fetchListings = async () => {
+  useEffect(() => {
+    console.log('Current listings:', listings);
+  }, [listings]);
+
+  // Add this somewhere in your component to test the API
+useEffect(() => {
+  const testAPI = async () => {
     try {
       const response = await axios.get('https://speedbike-backend-api-production.up.railway.app/api/bikes');
-      setListings(response.data);
+      console.log('API Test Response:', response);
     } catch (error) {
-      console.error('Error fetching listings:', error);
+      console.error('API Test Error:', error);
     }
   };
+  
+  testAPI();
+}, []);
+
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -112,6 +149,8 @@ const SellerDashboard = () => {
         imageUrl = imageResponse.data.imageUrl;
       }
 
+
+      
       // Prepare bike data
       const bikeData = {
         ...listing,
@@ -129,6 +168,7 @@ const SellerDashboard = () => {
       fetchListings();
       
       // Reset form
+      await fetchListings();
       resetForm();
     } catch (error) {
       console.error('Error submitting listing:', error);
@@ -164,24 +204,55 @@ const SellerDashboard = () => {
     setEditId(null);
   };
 
+ 
+
   const handleEdit = (bike) => {
+    console.log('Editing bike:', bike);
     setListing({
-      ...bike,
-      image: null // Reset image to allow re-upload
+      serialNumber: bike.serialNumber || '',
+      add: bike.add || 'Cart',
+      price: bike.price || '',
+      type: bike.type || '',
+      name: bike.name || '',
+      show: bike.show || 'Show Bike',
+      review: bike.review || 'Bike Review',
+      details: bike.details || 'Details',
+      detail: {
+        year: bike.detail?.year || '',
+        model: bike.detail?.model || '',
+        engine: bike.detail?.engine || '',
+        horsepower: bike.detail?.horsepower || '',
+        transmission: bike.detail?.transmission || '',
+        fuelCapacity: bike.detail?.fuelCapacity || '',
+        seatHeight: bike.detail?.seatHeight || '',
+        weight: bike.detail?.weight || '',
+        features: bike.detail?.features || []
+      },
+      image: null
     });
     setPreview(bike.image);
     setIsEditing(true);
     setEditId(bike._id);
+    window.scrollTo(0, 0); // Scroll to top to show the form
   };
-
+  
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://speedbike-backend-api-production.up.railway.app/api/bikes/${id}`);
-      fetchListings();
+      console.log('Attempting to delete bike with ID:', id);
+      const response = await axios.delete(`https://speedbike-backend-api-production.up.railway.app/api/bikes/${id}`);
+      console.log('Delete response:', response);
+      
+      if (response.status === 200) {
+        alert('Listing deleted successfully');
+        await fetchListings(); // Refresh the listings
+      }
     } catch (error) {
       console.error('Error deleting listing:', error);
+      alert(`Failed to delete listing: ${error.message}`);
     }
   };
+
+
 
   return (
     <div className="seller-container">
@@ -342,17 +413,70 @@ const SellerDashboard = () => {
       </form>
 
       <h3>Your Listings</h3>
+     
       <div className="listings">
-        {listings.map((item) => (
-          <div key={item._id} className="listing-item">
-            <h4>{item.name} - {item.detail.model}</h4>
-            <div className='seller-buttons'>
-              <button onClick={() => handleEdit(item)}>Edit</button>
-              <button onClick={() => handleDelete(item._id)}>Delete</button>
-            </div>
-          </div>
-        ))}
+
+      {isLoading ? (
+    <p>Loading listings...</p>
+  ) : listings && listings.length > 0 ? (
+    listings.map((item) => (
+      <div key={item._id} className="listing-item" style={{
+        border: '1px solid #ddd',
+        padding: '15px',
+        marginBottom: '15px',
+        borderRadius: '5px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        <div className="listing-info">
+          <h4 style={{ margin: '0 0 10px 0' }}>{item.name}</h4>
+          <p style={{ margin: '5px 0' }}>Type: {item.type}</p>
+          <p style={{ margin: '5px 0' }}>Model: {item.detail?.model}</p>
+          <p style={{ margin: '5px 0' }}>Price: ${item.price}</p>
+        </div>
+        <div className="seller-buttons" style={{
+          display: 'flex',
+          gap: '10px'
+        }}>
+          <button 
+            style={{
+              padding: '8px 16px',
+              backgroundColor: '#4CAF50',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            onClick={() => handleEdit(item)}
+          >
+            Edit
+          </button>
+          <button 
+            style={{
+              padding: '8px 16px',
+              backgroundColor: '#f44336',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            onClick={() => {
+              if (window.confirm('Are you sure you want to delete this listing?')) {
+                handleDelete(item._id);
+              }
+            }}
+          >
+            Delete
+          </button>
+        </div>
       </div>
+    ))
+  ) : (
+    <p>No listings available. Start by adding a new motorcycle.</p>
+  )}
+</div>
+
     </div>
   );
 };
