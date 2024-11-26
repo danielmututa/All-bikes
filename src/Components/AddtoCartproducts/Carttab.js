@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import DataCards from '../Datafile/Datafile'
 import { ShopContext } from '../context/Shop-context'
 import { Cartitem } from './Cartitem'
 import { useNavigate } from 'react-router-dom'
@@ -8,14 +7,15 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 
 const Carttab = () => {
- const {cartItems ,  getTotalCartAmount} = useContext(ShopContext);
+ const {cartItems ,  getTotalCartAmount,  availableBikes} = useContext(ShopContext);
  const totalAmount =  getTotalCartAmount();
  const navigate = useNavigate();
 
-const purchasebtn = () =>{
-  navigate('/payments')
-} 
- console.log('Cart Items:', cartItems);
+// Add these console logs for debugging
+console.log('CartItems:', cartItems);
+console.log('Available Bikes:', availableBikes);
+console.log('Total Amount:', totalAmount);
+
 
   return (
     <div className='cart'>
@@ -31,9 +31,10 @@ const purchasebtn = () =>{
       </div>  */}
 
       <div className='cartItems'>
-        {DataCards.map((product)=> {
-          if(cartItems[product.id] > 0) {
-            return <Cartitem key={product.id} data = {product} />
+        {availableBikes.map((product)=> {
+              console.log('Product ID:', product._id, 'Cart Amount:', cartItems[product._id]);
+          if(cartItems[product._id] && cartItems[product._id]  > 0) {
+            return <Cartitem key={product._id} data = {product} />
           }
           return null
         })}
@@ -49,7 +50,7 @@ const purchasebtn = () =>{
       <p className='totalamount'>Subtotal: <span className='color--btn'> £{totalAmount}</span></p>
       <div className="checkout--button">
       <button onClick={() => navigate('/Rentabike')}>Continue <FontAwesomeIcon icon={faShoppingCart}/></button>
-      <button onClick={purchasebtn}>Purchase</button>
+      <button onClick={() => navigate('/payments')}>Purchase</button>
       </div>
       </div> 
       </div>

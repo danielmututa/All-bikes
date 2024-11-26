@@ -88,7 +88,7 @@ const Productsfile = () => {
           items.map((item) => (
             <Productsrent
               key={item._id}
-              id={item._id}
+              _id={item._id}
               image={item.image}
               name={item.name}
               type={item.type}

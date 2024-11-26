@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShopContext } from '../context/Shop-context';
 import { useNavigate } from 'react-router-dom';
 
-const Productsrent = ({ image, name, type, price, add, details, alldetails, id }) => {
+const Productsrent = ({ image, name, type, price, add, details, alldetails, _id }) => {
   const [showDetails, setShowDetails] = useState(false);
   const navigate = useNavigate();
   const { addToCart, cartItems } = useContext(ShopContext);
   
-  const cartItemAmount = cartItems[id] || 0;
+  const cartItemAmount = cartItems[_id] || 0;
 
   const toggleDetails = () => {
     if (showDetails) {
@@ -20,10 +20,16 @@ const Productsrent = ({ image, name, type, price, add, details, alldetails, id }
     }
   };
 
+  
   const handleAddToCart = () => {
-    console.log('Adding to cart:', id);
-    addToCart(id);
-  };
+    if (!_id) {
+        console.error('No _id provided to ProductsRent');
+        return;
+    }
+    console.log('Adding to cart, _id:', _id);
+    addToCart(_id); // This should trigger the context function
+};
+
 
   return (
     <div className="Card--container">
