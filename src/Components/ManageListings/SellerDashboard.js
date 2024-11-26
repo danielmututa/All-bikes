@@ -34,25 +34,42 @@ const SellerDashboard = () => {
 
 
 
-const fetchListings = async () => {
-  setIsLoading(true);
-  try {
-    const response = await axios.get('https://speedbike-backend-api-production.up.railway.app/api/bikes/available');
-    
-    const processedListings = response.data.map(item => ({
-      ...item,
-      image: item.image ? `https://speedbike-backend-api-production.up.railway.app${item.image}` : null
-    }));
-
-    console.log('Processed listings with images:', processedListings);
-    setListings(processedListings);
-  } catch (error) {
-    console.error('Error fetching listings:', error);
-    setListings([]);
-  } finally {
-    setIsLoading(false);
-  }
-};
+  const fetchListings = async () => {
+    setIsLoading(true);
+    try {
+      // Make the API call to your endpoint
+      const response = await axios.get('https://speedbike-backend-api-production.up.railway.app/api/bikes/available');
+      
+      // Process the listings to ensure image URLs are handled correctly
+      const processedListings = response.data.map(item => ({
+        ...item,
+        // The backend should already be providing the full URL through processImagePath
+        // But we'll add a fallback just in case
+        image: item.image ? item.image : null,
+        // Ensure all nested properties are preserved
+        detail: {
+          ...item.detail,
+          features: item.detail?.features || []
+        }
+      }));
+  
+      // Log for debugging
+      console.log('Raw response data:', response.data);
+      console.log('Processed listings with images:', processedListings);
+      
+      setListings(processedListings);
+    } catch (error) {
+      console.error('Error fetching listings:', error);
+      if (error.response) {
+        // Log more detailed error information
+        console.error('Error response:', error.response.data);
+        console.error('Error status:', error.response.status);
+      }
+      setListings([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   useEffect(() => {
@@ -293,6 +310,7 @@ const handleEdit = (bike) => {
   setEditId(bike._id);
   window.scrollTo(0, 0);
 };
+
 
 
   
