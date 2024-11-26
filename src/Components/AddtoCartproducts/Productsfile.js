@@ -73,7 +73,7 @@ const Productsfile = () => {
           <div>
             <button className="btn" onClick={resetItems}>All</button>
           </div>
-          {['BMW', 'Yamaha', 'Honda', 'Kawasaki', 'Ducati'].map((type) => (
+          {['Roadbike', 'Quadbike', 'Offroad', 'Dirtbike', ].map((type) => (
             <div className="btn" key={type}>
               <button onClick={() => filterItem(type)}>{type}</button>
             </div>

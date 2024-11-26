@@ -1,26 +1,12 @@
 
 
 
-
+import { useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
 
 const Reviewandrating = () => {
-  const Datafile = [
-    {
-      img: "bmw1.jpg",
-      detail: {
-        year: 2022,
-        model: 'R 18',
-        engine: '1.8L 2-cylinder',
-        horsepower: 91,
-        transmission: '6-speed',
-        fuelCapacity: '4.2 gal',
-        seatHeight: '27.7 in',
-        weight: '592 lbs',
-        features: ['ABS', 'Traction Control', 'Heated Grips']
-      }
-    }
-  ];
+  const location = useLocation();
+  const { image, alldetails} = location.state || {};
 
   const Star = ({ filled, onClick }) => (
     <span
@@ -98,25 +84,34 @@ const Reviewandrating = () => {
   return (
     <div className='reviewandrating--container'>
       <div className="reviewandrating--datafile">
-        {Datafile.map((item) => (
-          <div className="reviewandrating--img-text" key={item.detail.model}>
-            <img className='reviewrating--img' src={require('../images/' + item.img)} alt="" />
+       
+          <div className="reviewandrating--img-text" >
+            <img className='reviewrating--img' src={image} alt="name" />
             <div className="reviewanddetails--text">
-              <div className="reviewandrating--text-flex"><p>Year :</p> <p>{item.detail.year}</p></div>
-              <div className="reviewandrating--text-flex"><p>Model :</p> <p>{item.detail.model}</p></div>
-              <div className="reviewandrating--text-flex"><p>Engine :</p> <p>{item.detail.engine}</p></div>
-              <div className="reviewandrating--text-flex"><p>Horsepower :</p> <p>{item.detail.horsepower}</p></div>
-              <div className="reviewandrating--text-flex"><p>Transmission :</p> <p>{item.detail.transmission}</p></div>
-              <div className="reviewandrating--text-flex"><p>Fuel Capacity :</p> <p>{item.detail.fuelCapacity}</p></div>
-              <div className="reviewandrating--text-flex"><p>Seat Height :</p> <p>{item.detail.seatHeight}</p></div>
-              <div className="reviewandrating--text-flex"><p>Weight :</p> <p>{item.detail.weight}</p></div>
-              <div className="reviewandrating--text-flex">
+            {Object.entries(alldetails || {}).map(([key, value]) => (
+              <div className="reviewandrating--text-flex" key={key}>
+                 <p>{key.charAt(0).toUpperCase() + key.slice(1)}:</p>
+                <p>
+                {Array.isArray(value)
+      ? value.map((item, index) => (
+          <React.Fragment key={index}>
+            {item}
+            <br />
+          </React.Fragment>
+        ))
+      : value}
+                  
+                  </p>
+        </div>
+      ))}
+
+{/*             
                 <p>Features :</p>
                 <p>{item.detail.features.map((feature) => (<p key={feature}>{feature}</p>))}</p>
-              </div>
+              </div> */} 
             </div>
           </div>
-        ))}
+    
       </div>
       <div className="reviewsandrating--allreviews">
         <div className="reviewandrating--stars">

@@ -14,11 +14,20 @@ const Productsrent = ({ image, name, type, price, add, details, alldetails, _id 
 
   const toggleDetails = () => {
     if (showDetails) {
-      navigate('/reviews');
+      navigate('/reviews', {
+        state: {
+          image,
+          alldetails,
+        },
+      });
     } else {
       setShowDetails(true);
     }
   };
+
+
+  
+
 
   
   const handleAddToCart = () => {
