@@ -80,7 +80,7 @@ const Productsrent = ({ image, name, type, price, add, details, alldetails, _id 
         </div>
       )}
       
-      <img src={image} alt={name} />
+      <img loading="lazy" src={image} alt={name} />
       <div className="text">
         <p className="type">{type}</p>
         <p>£{price}</p>
