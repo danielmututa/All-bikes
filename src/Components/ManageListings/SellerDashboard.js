@@ -369,11 +369,10 @@ const handleEdit = (bike) => {
       required
     >
       <option value="">Select Bike Type</option>
-      <option value="BMW">BMW</option>
-      <option value="Yamaha">Yamaha</option>
-      <option value="Honda">Honda</option>
-      <option value="Kawasaki">Kawasaki</option>
-      <option value="Ducati">Ducati</option>
+      <option value="Roadbike">Roadbike</option>
+      <option value="Quadbike">Quadbike</option>
+      <option value="Offroad">Offroad</option>
+      <option value="Dirtbike">Dirtbike</option>
     </select>
     
     <input 
