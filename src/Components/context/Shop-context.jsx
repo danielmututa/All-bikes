@@ -3,25 +3,25 @@ import React, { createContext, useState, useEffect, useCallback } from 'react';
 
 export const ShopContext = createContext(null);
 
-// const getDefaultCart = () => {
-//     const savedCart = localStorage.getItem('cart');
-//     if (savedCart) {
-//         return JSON.parse(savedCart);
-//     }
-   
-//     return {};
-// };
-
-
-const getDefaultCart = (availableBikes) => {
-    const defaultCart = {};
-    if (Array.isArray(availableBikes)) {
-        availableBikes.forEach((bike) => {
-            defaultCart[bike._id] = 0;
-        });
+const getDefaultCart = () => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        return JSON.parse(savedCart);
     }
-    return defaultCart;
+   
+    return {};
 };
+
+
+// const getDefaultCart = (availableBikes) => {
+//     const defaultCart = {};
+//     if (Array.isArray(availableBikes)) {
+//         availableBikes.forEach((bike) => {
+//             defaultCart[bike._id] = 0;
+//         });
+//     }
+//     return defaultCart;
+// };
 
 
 
