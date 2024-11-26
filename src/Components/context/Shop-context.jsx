@@ -12,6 +12,20 @@ const getDefaultCart = () => {
     return {};
 };
 
+
+// const getDefaultCart = (availableBikes) => {
+//     const defaultCart = {};
+//     if (Array.isArray(availableBikes)) {
+//         availableBikes.forEach((bike) => {
+//             defaultCart[bike._id] = 0;
+//         });
+//     }
+//     return defaultCart;
+// };
+
+
+
+
 const Shopcontextprovider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [availableBikes, setAvailableBikes] = useState([]);
