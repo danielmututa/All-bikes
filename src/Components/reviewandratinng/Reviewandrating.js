@@ -93,20 +93,60 @@ const Reviewandrating = () => {
 
 
 
+  // useEffect(() => {
+  //   const fetchReviews = async () => {
+
+  //     // Check if alldetails and alldetails.id are valid
+   
+  //     try {
+  //       const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?.id}`);
+  //       if (!response.ok) {
+  //         throw new Error('Failed to fetch reviews.');
+  //       }
+  
+  //       const data = await response.json();
+
+  //       // setReviews(data.reviews);
+  //       setReviews(Array.isArray(data.reviews) ? data.reviews.filter(r => r && r.name) : []); // Populate reviews state
+  //     } catch (error) {
+  //       console.error(error);
+  //       alert('An error occurred while fetching reviews.');
+  //     }
+  //   };
+  
+  //   if (alldetails?.id) {
+  //     fetchReviews();
+  //   }
+  // }, [alldetails]);
+
+
   useEffect(() => {
     const fetchReviews = async () => {
+      // Check if alldetails and alldetails.id are valid
+      if (!alldetails?.id) {
+        console.error("No bike ID found in alldetails.");
+        return;
+      }
+  
       try {
-        const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?.id}`);
+        const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails._id}`);
+        
+        // Check if response is valid
         if (!response.ok) {
           throw new Error('Failed to fetch reviews.');
         }
   
         const data = await response.json();
-
-        // setReviews(data.reviews);
-        setReviews(Array.isArray(data.reviews) ? data.reviews.filter(r => r && r.name) : []); // Populate reviews state
+        console.log("Fetched reviews:", data);  // Log the response to check structure
+  
+        // Assuming the API returns a `reviews` field with an array
+        if (Array.isArray(data.reviews)) {
+          setReviews(data.reviews.filter(r => r && r.name)); // Filter out invalid reviews
+        } else {
+          console.error("Reviews are not in expected array format:", data.reviews);
+        }
       } catch (error) {
-        console.error(error);
+        console.error("Error fetching reviews:", error);
         alert('An error occurred while fetching reviews.');
       }
     };
@@ -115,6 +155,10 @@ const Reviewandrating = () => {
       fetchReviews();
     }
   }, [alldetails]);
+  
+
+
+
 
 
 
@@ -131,7 +175,7 @@ const Reviewandrating = () => {
     const reviewToReply = reviews[index];
   
     try {
-      const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?.id}`, {
+      const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

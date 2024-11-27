@@ -97,7 +97,7 @@ const MechanicEventManagement = () => {
         ))}
       </div>
 
-      <button onClick={() => navigate('/usermechanics')} className="event--gotolistings">Go to User Event Listing</button>
+      <button onClick={() => navigate('/events')} className="event--gotolistings">Go to User Event Listing</button>
     </div>
   );
 };

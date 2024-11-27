@@ -42,7 +42,7 @@
 /* src/styles/Auth.css */
 .Signup_Form {
   width: 100%;
-  height: 88vh;
+  padding: 100px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2334,7 +2334,7 @@ height: 5vh;
 
 .payment--allcontainer{
 
-  height: 88vh;
+ padding: 80px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3341,6 +3341,30 @@ display: block;
  background-color: #002AC4;
  color: #fff;
  outline: none;
+}
+
+.servicebooking--addanotherpart{
+  width: 130px;
+  padding: 10px 0px;
+  border-radius: 25px;
+  background-color: transparent;
+  border: 1px solid #201E1E;
+  margin-bottom: 20px;
+  font-family:"PTSans-Regular" ;
+  font-size: 15px;
+  
+}
+
+.servicebooking--backbutton{
+  width: 89px;
+  padding: 10px 0px;
+  border-radius: 25px;
+  background-color: transparent;
+  border: 1px solid #201E1E;
+  margin-bottom: 20px;
+  font-family:"PTSans-Regular" ;
+  font-size: 15px;
+
 }
 
 
@@ -4693,6 +4717,17 @@ flex-direction: column;
   font-size: 13px;
 }
 
+.servicebooking--backbutton{
+  width: 70px;
+  font-size: 13px;
+}
+
+.servicebooking--addanotherpart{
+  font-size: 13px;
+  width: 120px;
+}
+
+
 .message--bookingform{
   padding: 0px 20px;
   height: 500px;
@@ -4810,7 +4845,7 @@ flex-direction: column;
 
 /* SIGN IN FORM */
 .Signup_Form {
-  height: 490px;
+  padding: 50px 0px;
 }
 
 .AlreadyRegistered {
@@ -4883,7 +4918,7 @@ font-size: 12px;
 }
 
 .payment--allcontainer {
-  height: 513px;
+  padding: 50px 0px;
 }
 
 .formInput {
@@ -5869,7 +5904,7 @@ h5 {
 
 /* SIGNIN FORM */
 .Signup_Form {
-  height: 759px;
+  padding: 70px 0px;
 }
 
 .AlreadyRegistered {
@@ -5968,7 +6003,7 @@ font-size: 14px;
 
 /* PAYMENT */
 .payment--allcontainer {
-  height: 509px;
+  padding: 60px 0px;
 }
 
 .container--payment {
@@ -7010,7 +7045,7 @@ font-size: 14px;
 /* ENDREVIEWANDRIGHT */
 
 .Signup_Form {
-  height: 759px;
+  padding: 70px 0px;
 }
 
 .AlreadyRegistered {
@@ -7043,7 +7078,7 @@ section a{
 
 /* PAYMENT */
 .payment--allcontainer {
-  height: 509px;
+  padding: 60px 0px;
 }
 
 .container--payment {
@@ -7873,7 +7908,7 @@ allthreebooks h3 {
 
 /* SIGNIN-FORM */
 .Signup_Form {
-  height: 741px;
+  padding: 58px 0px;
 }
 
 .AlreadyRegistered {
@@ -7905,7 +7940,7 @@ section a{
 
 /* PAYMENT */
 .payment--allcontainer {
-  height: 545px;
+  padding:  70px 0px;
  
 }
 

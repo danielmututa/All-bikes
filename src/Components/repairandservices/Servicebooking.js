@@ -337,13 +337,13 @@ const ServiceBooking = () => {
                       />
                     </div>
                     {index > 0 && (
-                      <button type="button" onClick={() => removePart(index)}>Remove Part</button>
+                      <button  className='servicebooking--addanotherpart' type="button" onClick={() => removePart(index)}>Remove Part</button>
                     )}
                   </li>
                 ))}
                  {formData.specificParts.length < 5 && (
                   <li>
-                    <button type="button" onClick={addPart}>Add Another Part</button>
+                    <button className='servicebooking--addanotherpart' type="button" onClick={addPart}>Add Another Part</button>
                   </li>
                 )}
 
@@ -414,7 +414,7 @@ const ServiceBooking = () => {
                   />
                 </li>
                 <li>
-                  <button type="button" onClick={handleBack}>Back</button>
+                  <button className='servicebooking--backbutton' type="button" onClick={handleBack}>Back</button>
                   <button
                     type="button"
                     className="next-btn"
@@ -485,7 +485,7 @@ const ServiceBooking = () => {
                 </li>
                 <li>
                   {errors.submit && <div className="errorTxt">{errors.submit}</div>}
-                  <button type="button" onClick={handleBack}>Back</button>
+                  <button className='servicebooking--backbutton' type="button" onClick={handleBack}>Back</button>
                   <button type="submit" className="submit-btn" disabled={isLoading}>
                     {isLoading ? 'Submitting...' : 'Submit Booking'}
                   </button>
