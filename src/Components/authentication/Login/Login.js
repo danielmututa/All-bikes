@@ -1,10 +1,8 @@
 
 
-// src/components/Login/LoginForm.jsx
 import React, { useState, useEffect } from 'react';
 import { FaSave } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-
 
 function LoginForm({ onSwitchForm, showMessage }) {
   const navigate = useNavigate();
@@ -25,10 +23,42 @@ function LoginForm({ onSwitchForm, showMessage }) {
     }
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your login logic here
-    navigate('/Rentabike');
+
+    // Validation
+    if (!formData.email || !formData.password) {
+      showMessage('All fields are mandatory');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://speedbike-backend-api-production.up.railway.app/api/register/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        })
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // On successful login, navigate and store user details
+        localStorage.setItem('clientemail', formData.email);
+        localStorage.setItem('clientpassword', formData.password);
+        navigate('/Rentabike');
+      } else {
+        // Show error message if login fails
+        showMessage(data.message || 'Login failed, please try again');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      showMessage('Error during login, please try again');
+    }
   };
 
   const saveDetails = () => {
@@ -66,7 +96,7 @@ function LoginForm({ onSwitchForm, showMessage }) {
       <center>
         <h2>SIGN IN</h2>
         <input
-        className='login--input-signup'
+          className='login--input-signup'
           type="email"
           value={formData.email}
           onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -74,7 +104,7 @@ function LoginForm({ onSwitchForm, showMessage }) {
           required
         />
         <input
-         className='login--input-signup'
+          className='login--input-signup'
           type="password"
           value={formData.password}
           onChange={(e) => setFormData({...formData, password: e.target.value})}
@@ -82,7 +112,7 @@ function LoginForm({ onSwitchForm, showMessage }) {
           required
         />
         <button className="login-btn1" type="submit">SignIn</button>
-        <section className='login-section' >
+        <section className='login-section'>
           <span><p className='AlreadyRegistered' href="#">Forgot Password?</p></span>
           <span><p className='AlreadyRegistered' onClick={onSwitchForm}>Don't have an account?</p></span>
         </section>

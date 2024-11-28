@@ -1,11 +1,11 @@
-// import { Outlet , useLocation, Navigate } from "react-router-dom";
-// import { ProjectAuth } from "../firebase/Firebase";
+import { Outlet , useLocation, Navigate } from "react-router-dom";
+import { ProjectAuth } from "../firebase/Firebase";
 
-// const PrivateRouteLayout = () => {
-//     const location = useLocation()
+const PrivateRouteLayout = () => {
+    const location = useLocation()
  
 
-//   return ProjectAuth.currentUser ? (<Outlet />) : (<Navigate to = "/authentication" state={{from : location}} replace />)
-// }
+  return ProjectAuth.currentUser ? (<Outlet />) : (<Navigate to = "/authentication" state={{from : location}} replace />)
+}
 
-// export default PrivateRouteLayout
+export default PrivateRouteLayout
