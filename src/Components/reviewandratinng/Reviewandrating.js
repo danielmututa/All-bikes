@@ -47,10 +47,19 @@ const Reviewandrating = () => {
 
   
 
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (formData.stars === 0 || !formData.name || !formData.email || !formData.message) {
       alert('Please fill in all fields and select a star rating.');
+      return;
+    }
+  
+    // Make sure you have the bikeId from location.state
+    const bikeId = location.state?.bikeId;
+    if (!bikeId) {
+      alert('Bike ID is missing');
       return;
     }
   
@@ -60,7 +69,13 @@ const Reviewandrating = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, bikeId: alldetails?.id }), // Pass the bike ID if needed
+        body: JSON.stringify({
+          bikeId: bikeId,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          stars: formData.stars
+        }),
       });
   
       if (!response.ok) {
@@ -68,93 +83,45 @@ const Reviewandrating = () => {
       }
   
       const result = await response.json();
-      alert('Review submitted successfully!');
-      
-      // Update reviews state with the newly submitted review
-      setReviews(prevReviews => [...prevReviews, result.review]);
-
-  
-      // Reset form data
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-        stars: 0,
-      });
+      if (result.success) {
+        alert('Review submitted successfully!');
+        setReviews((prevReviews) => [...prevReviews, result.review]);
+        setFormData({ name: '', email: '', message: '', stars: 0 });
+      }
     } catch (error) {
-      console.error(error);
-      alert('An error occurred while submitting your review.');
+      console.error('Error submitting review:', error);
+      alert('Failed to submit review. Please try again.');
     }
   };
-  
 
 
 
-
-
-
-  // useEffect(() => {
-  //   const fetchReviews = async () => {
-
-  //     // Check if alldetails and alldetails.id are valid
-   
-  //     try {
-  //       const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?.id}`);
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch reviews.');
-  //       }
-  
-  //       const data = await response.json();
-
-  //       // setReviews(data.reviews);
-  //       setReviews(Array.isArray(data.reviews) ? data.reviews.filter(r => r && r.name) : []); // Populate reviews state
-  //     } catch (error) {
-  //       console.error(error);
-  //       alert('An error occurred while fetching reviews.');
-  //     }
-  //   };
-  
-  //   if (alldetails?.id) {
-  //     fetchReviews();
-  //   }
-  // }, [alldetails]);
 
 
   useEffect(() => {
     const fetchReviews = async () => {
-      // Check if alldetails and alldetails.id are valid
-      if (!alldetails?.id) {
-        console.error("No bike ID found in alldetails.");
+      if (!location.state?.bikeId) {
+        console.error('No bike ID provided.');
         return;
       }
   
       try {
-        const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails._id}`);
-        
-        // Check if response is valid
+        const response = await fetch(
+          `https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${location.state.bikeId}`
+        );
         if (!response.ok) {
           throw new Error('Failed to fetch reviews.');
         }
   
         const data = await response.json();
-        console.log("Fetched reviews:", data);  // Log the response to check structure
-  
-        // Assuming the API returns a `reviews` field with an array
-        if (Array.isArray(data.reviews)) {
-          setReviews(data.reviews.filter(r => r && r.name)); // Filter out invalid reviews
-        } else {
-          console.error("Reviews are not in expected array format:", data.reviews);
-        }
+        setReviews(data.reviews.filter((r) => r && r.name)); // Filter invalid reviews
       } catch (error) {
-        console.error("Error fetching reviews:", error);
-        alert('An error occurred while fetching reviews.');
+        console.error('Error fetching reviews:', error);
       }
     };
   
-    if (alldetails?.id) {
-      fetchReviews();
-    }
-  }, [alldetails]);
+    fetchReviews();
+  }, [location.state?.bikeId]);
   
 
 
@@ -171,38 +138,34 @@ const Reviewandrating = () => {
 
 
 
-  const handleReplySubmit = async (index) => {
-    const reviewToReply = reviews[index];
-  
+  const handleReplySubmit = async (reviewId, index) => {
     try {
-      const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/bikes/${alldetails?._id}`, {
+      const response = await fetch(`https://speedbike-backend-api-production.up.railway.app/api/reviews/${reviewId}/reply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ reply: replyText[index] }),
+        body: JSON.stringify({ 
+          ownerResponse: replyText[index]
+        }),
       });
   
       if (!response.ok) {
         throw new Error('Failed to submit reply.');
       }
   
-      const updatedReview = await response.json();
-  
-      // Update the review in the state
-      setReviews(reviews.map((review, i) =>
-        i === index ? updatedReview : review
-      ));
-  
-      // Clear the reply text
-      setReplyText({ ...replyText, [index]: '' });
+      const result = await response.json();
+      if (result.success) {
+        setReviews(reviews.map((review, i) =>
+          i === index ? { ...review, ownerResponse: replyText[index] } : review
+        ));
+        setReplyText({ ...replyText, [index]: '' });
+      }
     } catch (error) {
-      console.error(error);
-      alert('An error occurred while submitting your reply.');
+      console.error('Error submitting reply:', error);
+      alert('Failed to submit reply. Please try again.');
     }
   };
-  
-
 
 
 
@@ -301,17 +264,18 @@ const Reviewandrating = () => {
               <button className='reviewandrating--button' type="submit">Submit</button>
             </form>
           </div>
+         
           <div id="reviewSection">
   <hr />
   {reviews.map((review, index) => (
-    review ? (
-      <div className="review" key={review._id || index}>
-        <p className='review--pname'>{review.name || 'Anonymous'}</p>
+    review && review._id ? (
+      <div className="review" key={review._id}>
+        <p className='review--pname'>{review.name}</p>
         <p className="review-pemail">{review.email}</p>
-        <StarDisplay className="review--star" count={review.stars || 0} />
+        <StarDisplay className="review--star" count={review.stars} />
         <p className="message">{review.message}</p>
 
-        {isOwner && ( // Only show reply section and reply if owner
+        {isOwner && (
           <>
             {review.ownerResponse && (
               <p className="review--reply">
@@ -319,21 +283,29 @@ const Reviewandrating = () => {
               </p>
             )}
 
-            <div className="reply-section">
-              <textarea
-                placeholder="Write a reply..."
-                value={replyText[index] || ''}
-                onChange={(e) => handleReplyChange(e, index)}
-                className="reply-input"
-              />
-              <button className='review--button-reply' onClick={() => handleReplySubmit(index)}>Reply</button>
-            </div>
+            {!review.ownerResponse && (
+              <div className="reply-section">
+                <textarea
+                  placeholder="Write a reply..."
+                  value={replyText[index] || ''}
+                  onChange={(e) => handleReplyChange(e, index)}
+                  className="reply-input"
+                />
+                <button 
+                  className='review--button-reply' 
+                  onClick={() => handleReplySubmit(review._id, index)}
+                >
+                  Reply
+                </button>
+              </div>
+            )}
           </>
         )}
       </div>
-    ) : null // Return null if review is invalid
+    ) : null
   ))}
 </div>
+
 
         </div>
       </div>

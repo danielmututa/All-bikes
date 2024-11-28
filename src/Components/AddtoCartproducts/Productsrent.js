@@ -18,6 +18,7 @@ const Productsrent = ({ image, name, type, price, add, details, alldetails, _id 
         state: {
           image,
           alldetails,
+          _id
         },
       });
     } else {
