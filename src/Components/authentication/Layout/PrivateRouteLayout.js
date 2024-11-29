@@ -1,11 +1,18 @@
-// import { Outlet , useLocation, Navigate } from "react-router-dom";
-// import { ProjectAuth } from "../firebase/Firebase";
+// import { Outlet, useLocation, Navigate } from "react-router-dom";
 
 // const PrivateRouteLayout = () => {
-//     const location = useLocation()
- 
+//     const location = useLocation();
+//     const isAuthenticated = !!localStorage.getItem('authToken'); // Check if JWT exists in storage
 
-//   return ProjectAuth.currentUser ? (<Outlet />) : (<Navigate to = "/authentication" state={{from : location}} replace />)
-// }
+//     return isAuthenticated ? (
+//         <Outlet />
+//     ) : (
+//         <Navigate to="/auth" state={{ from: location }} replace />
+//     );
+// };
 
-// export default PrivateRouteLayout
+// export default PrivateRouteLayout;
+
+
+
+

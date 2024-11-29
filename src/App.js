@@ -23,6 +23,7 @@ import MechanicEventManagement from './Components/ManageListings/Mechanicsandeve
 import UserListing from './Components/ManageListings/UserListing';
 import Auth from './Components/authentication/auth/Auth';
 import MotBooking from './Components/repairandservices/MotBooking';
+import PrivateRouteLayout from './Components/authentication/Layout/PrivateRouteLayout';
 
 function App() {
   return (
@@ -56,11 +57,14 @@ function App() {
         
 
   
+               {/* Protected route (only this one will be protected) */}
+        {/* <Route element={<PrivateRouteLayout/>}> */}
+        <Route path='Rentabike' element={<Productsfile/>} />
+        {/* </Route> */}
 
 
-
-            {/* <Route  element={<PrivateRouteLayout/>} > */}
-            <Route path='Rentabike' element={<Productsfile/>} />
+            
+         
            {/* </Route>  */}
 
           </Routes>
